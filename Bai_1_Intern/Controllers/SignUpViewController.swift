@@ -30,8 +30,15 @@ class SignUpViewController: UIViewController {
         
         continue_btn.clipsToBounds = true
         continue_btn.layer.cornerRadius = phoneNum_view.frame.size.height
-        continue_btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        continue_btn.titleLabel?.minimumScaleFactor = 0.5
+//        continue_btn.titleLabel?.adjustsFontSizeToFitWidth = true
+//        continue_btn.titleLabel?.minimumScaleFactor = 0.5
+        
+        continue_btn.titleLabel?.font = UIFont.init(name: "Arial", size: continue_btn.frame.height/2)
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            continue_btn.titleLabel?.font = UIFont.init(name: "Arial", size: continue_btn.frame.height)
+        } else {
+            continue_btn.titleLabel?.font = UIFont.init(name: "Arial", size: continue_btn.frame.height/2)
+        }
         continue_btn.isEnabled = false
         
         //Auto Resize font
@@ -44,12 +51,17 @@ class SignUpViewController: UIViewController {
         phoneNumber_tf.textContentType = UITextContentType.telephoneNumber
         
 //        phoneNumber_tf.clear = true
-        phoneNumber_tf.font = UIFont.init(name: "Nunito Sans", size: 50)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            phoneNumber_tf.font = UIFont.init(name: "Arial", size: reigonNum_lb.frame.height*1.5)
+        }
+        else {
+            phoneNumber_tf.font = UIFont.init(name: "Arial", size: reigonNum_lb.frame.height)
+        }
         phoneNumber_tf.keyboardType = UIKeyboardType.numberPad
     
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange(_:)), for: .editingChanged)
-//        
-    
+
         // Do any additional setup after loading the view.
     }
     @objc func textFieldDidChange(_ textField: UITextField) {
