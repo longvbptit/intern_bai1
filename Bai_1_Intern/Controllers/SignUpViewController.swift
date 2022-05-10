@@ -14,34 +14,31 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var phoneNumber_tf: UITextField!
     
     @IBAction func back(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        self.setupHideKeyboardOnTap()
         
         phoneNum_view.clipsToBounds = true
-        phoneNum_view.layer.cornerRadius = phoneNum_view.frame.size.height
-        phoneNum_view.layer.borderColor = (UIColor.gray).cgColor
-        phoneNum_view.layer.borderWidth = 0.1
+        phoneNum_view.layer.cornerRadius = 10
+        phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
+        phoneNum_view.layer.borderWidth = 1
         
-        // shadow
-        phoneNum_view.layer.shadowColor = UIColor.lightGray.cgColor
-        phoneNum_view.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+//        // shadow
+//        phoneNum_view.layer.masksToBounds = false
+//        phoneNum_view.layer.shadowColor = UIColor.black.cgColor
+//        phoneNum_view.layer.shadowOffset = .zero
+//        phoneNum_view.layer.shadowRadius = 1
+//        phoneNum_view.layer.opacity = 1
+//        phoneNum_view.dropShadow(color: .darkGray, opacity: 1, offSet: .zero, radius: 1, scale: true)
+        
         
         continue_btn.clipsToBounds = true
-        continue_btn.layer.cornerRadius = phoneNum_view.frame.size.height
-//        continue_btn.titleLabel?.adjustsFontSizeToFitWidth = true
-//        continue_btn.titleLabel?.minimumScaleFactor = 0.5
-        
-        continue_btn.titleLabel?.font = UIFont.init(name: "Arial", size: continue_btn.frame.height/2)
-        if UIDevice.current.userInterfaceIdiom == .pad{
-            continue_btn.titleLabel?.font = UIFont.init(name: "Arial", size: continue_btn.frame.height)
-        } else {
-            continue_btn.titleLabel?.font = UIFont.init(name: "Arial", size: continue_btn.frame.height/2)
-        }
+        continue_btn.layer.cornerRadius = 10
         continue_btn.isEnabled = false
         
-        //Auto Resize font
         reigonNum_lb.adjustsFontSizeToFitWidth = true
         reigonNum_lb.minimumScaleFactor = 0.5
         
@@ -49,25 +46,12 @@ class SignUpViewController: UIViewController {
         phoneNumber_tf.minimumFontSize = 10
         phoneNumber_tf.placeholder = "Nhập số điện thoại"
         phoneNumber_tf.textContentType = UITextContentType.telephoneNumber
-        
-//        phoneNumber_tf.clear = true
-        
-        if UIDevice.current.userInterfaceIdiom == .pad{
-            phoneNumber_tf.font = UIFont.init(name: "Arial", size: reigonNum_lb.frame.height*1.5)
-        }
-        else {
-            phoneNumber_tf.font = UIFont.init(name: "Arial", size: reigonNum_lb.frame.height)
-        }
-        phoneNumber_tf.keyboardType = UIKeyboardType.numberPad
-    
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange(_:)), for: .editingChanged)
-
-        // Do any additional setup after loading the view.
+        phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldEditingDidEnd(_:)), for: .editingDidEnd)
+        
     }
     @objc func textFieldDidChange(_ textField: UITextField) {
-        phoneNum_view.layer.borderColor = (UIColor.green).cgColor
-//        CGColor.init(red: 44, green: 134, blue: 103,alpha: 100)
-        phoneNum_view.layer.borderWidth = 1
+        phoneNum_view.layer.borderColor = #colorLiteral(red: 0.1723190546, green: 0.5255185366, blue: 0.4038655162, alpha: 1)
         let phoneNum = phoneNumber_tf.text!
         if(phoneNum.count >= 9 && phoneNum.prefix(1) != "0"
             || phoneNum.prefix(1) == "0" && phoneNum.count >= 10){
@@ -79,6 +63,23 @@ class SignUpViewController: UIViewController {
             continue_btn.alpha = 0.5
         }
     }
+    
+    @objc func textFieldEditingDidEnd(_ textField: UITextField){
+        phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
+    }
+    
+    //hide keyboard, change hightlight color and end editing
+    func setupHideKeyboardOnTap() {
+        self.view.addGestureRecognizer(self.endEditingRecognizer())
+        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+    }
+    private func endEditingRecognizer() -> UIGestureRecognizer {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        return tap
+    }
+    
+    
     
 
     /*
@@ -92,3 +93,18 @@ class SignUpViewController: UIViewController {
     */
 
 }
+//
+//extension UIView {
+//
+//  func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+//    layer.masksToBounds = false
+//    layer.shadowColor = color.cgColor
+//    layer.shadowOpacity = opacity
+//    layer.shadowOffset = offSet
+//    layer.shadowRadius = radius
+//
+//    layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+//    layer.shouldRasterize = true
+//    layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+//  }
+//}

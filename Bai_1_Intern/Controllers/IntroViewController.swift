@@ -13,13 +13,22 @@ class IntroViewController: UIViewController {
 
     @IBOutlet weak var intro_clv: UICollectionView!
     @IBOutlet weak var dots: UIPageControl!
-
     @IBOutlet weak var lg_btn: UIButton!
     @IBOutlet weak var createAcc_btn: UIButton!
     
+    @IBAction func login_act(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func cre_act(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
         intro_clv.register(UINib(nibName: "IntroCLVCell", bundle: nil), forCellWithReuseIdentifier: "IntroCLVCell")
         dots.currentPage = Int(
@@ -29,9 +38,11 @@ class IntroViewController: UIViewController {
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
         
-        lg_btn.layer.cornerRadius = lg_btn.frame.size.height
+        lg_btn.layer.cornerRadius = 10
         
-        createAcc_btn.layer.cornerRadius = createAcc_btn.frame.size.height 
+        print(lg_btn.frame.size.height)
+        
+        createAcc_btn.layer.cornerRadius = 10
         createAcc_btn.clipsToBounds = true;
         createAcc_btn.layer.borderColor = (UIColor.black).cgColor
         createAcc_btn.layer.borderWidth = 1
@@ -63,14 +74,10 @@ extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroCLVCell", for: indexPath) as! IntroCLVCell
         
-        cell.backGround.image = UIImage(named: "bg_intro")
-//        var index_path = 0
-//        for intro in intro_image{
-//            if(indexPath.row == index_path){
-//                cell.intro_img.image = UIImage(named: intro)
-//                index_path += 1
-//            }
-//        }
+        cell.bgIntro_img.image = UIImage(named: "bg_intro")
+        cell.inf1_lb.text = "Bác sĩ sẵn lòng chăm sóc khi bạn cần"
+        cell.inf2_lb.text = "Chọn chuyên khoa, bác sĩ phù hợp và được thăm khám trong không gian thoải mái tại nhà"
+
         for index in 0...2{
             if(indexPath.row == index){
                 cell.intro_img.image = UIImage(named: intro_image[index])
@@ -80,10 +87,6 @@ extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         return cell
     }
-
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-//
-//    }
     
 }
 
@@ -101,12 +104,7 @@ extension IntroViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-//        if UIDevice.current.userInterfaceIdiom == .pad{
-//            return CGSize(width: screenWidth, height: screenHeight*0.46)
-//        }
-        return CGSize(width: screenWidth, height: screenHeight*0.46)
+        return CGSize(width: UIScreen.main.bounds.width, height: collectionView.frame.size.height)
 
     }
 }
