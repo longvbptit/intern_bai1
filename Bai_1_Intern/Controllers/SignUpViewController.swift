@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
         self.setupHideKeyboardOnTap()
         
         phoneNum_view.clipsToBounds = true
-        phoneNum_view.layer.cornerRadius = 10
+        phoneNum_view.layer.cornerRadius = 20
         phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
         phoneNum_view.layer.borderWidth = 1
         
@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         
         
         continue_btn.clipsToBounds = true
-        continue_btn.layer.cornerRadius = 10
+        continue_btn.layer.cornerRadius = 20
         continue_btn.isEnabled = false
         
         reigonNum_lb.adjustsFontSizeToFitWidth = true
@@ -60,7 +60,7 @@ class SignUpViewController: UIViewController {
         }
         else {
             continue_btn.isEnabled = false
-            continue_btn.alpha = 0.5
+            continue_btn.alpha = 0.3
         }
     }
     

@@ -38,11 +38,11 @@ class IntroViewController: UIViewController {
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
         
-        lg_btn.layer.cornerRadius = 10
+        lg_btn.layer.cornerRadius = 18
         
         print(lg_btn.frame.size.height)
         
-        createAcc_btn.layer.cornerRadius = 10
+        createAcc_btn.layer.cornerRadius = 18
         createAcc_btn.clipsToBounds = true;
         createAcc_btn.layer.borderColor = (UIColor.black).cgColor
         createAcc_btn.layer.borderWidth = 1

@@ -201,7 +201,7 @@
                             </view>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8L-bz-8xh">
                                 <rect key="frame" x="24" y="326.66666666666669" width="366" height="53.666666666666686"/>
-                                <color key="backgroundColor" red="0.1370757222" green="0.41963106389999999" blue="0.32152277229999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.17232289910000001" green="0.52159672980000005" blue="0.39994442460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="E8L-bz-8xh" secondAttribute="height" multiplier="327:48" id="aVF-XP-gDj"/>
                                 </constraints>
