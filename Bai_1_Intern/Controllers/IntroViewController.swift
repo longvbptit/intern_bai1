@@ -29,22 +29,21 @@ class IntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        // Do any additional setup after loading the view.
+
         intro_clv.register(UINib(nibName: "IntroCLVCell", bundle: nil), forCellWithReuseIdentifier: "IntroCLVCell")
         dots.currentPage = Int(
                 (intro_clv.contentOffset.x / intro_clv.frame.width)
                 .rounded(.toNearestOrAwayFromZero)
             )
+        
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
         
         lg_btn.layer.cornerRadius = 18
         
-        print(lg_btn.frame.size.height)
-        
         createAcc_btn.layer.cornerRadius = 18
         createAcc_btn.clipsToBounds = true;
-        createAcc_btn.layer.borderColor = (UIColor.black).cgColor
+        createAcc_btn.layer.borderColor = #colorLiteral(red: 0.1411542892, green: 0.1647263467, blue: 0.3803414106, alpha: 1)
         createAcc_btn.layer.borderWidth = 1
         
     }
@@ -72,8 +71,8 @@ extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroCLVCell", for: indexPath) as! IntroCLVCell
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroCLVCell", for: indexPath) as! IntroCLVCell
         cell.bgIntro_img.image = UIImage(named: "bg_intro")
         cell.inf1_lb.text = "Bác sĩ sẵn lòng chăm sóc khi bạn cần"
         cell.inf2_lb.text = "Chọn chuyên khoa, bác sĩ phù hợp và được thăm khám trong không gian thoải mái tại nhà"
@@ -81,10 +80,8 @@ extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSou
         for index in 0...2{
             if(indexPath.row == index){
                 cell.intro_img.image = UIImage(named: intro_image[index])
-                
             }
         }
-        
         return cell
     }
     

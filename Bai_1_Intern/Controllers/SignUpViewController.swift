@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
         self.setupHideKeyboardOnTap()
         
         phoneNum_view.clipsToBounds = true
-        phoneNum_view.layer.cornerRadius = 20
+        phoneNum_view.layer.cornerRadius = 24
         phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
         phoneNum_view.layer.borderWidth = 1
         
@@ -33,10 +33,9 @@ class SignUpViewController: UIViewController {
 //        phoneNum_view.layer.shadowRadius = 1
 //        phoneNum_view.layer.opacity = 1
 //        phoneNum_view.dropShadow(color: .darkGray, opacity: 1, offSet: .zero, radius: 1, scale: true)
-        
-        
+           
         continue_btn.clipsToBounds = true
-        continue_btn.layer.cornerRadius = 20
+        continue_btn.layer.cornerRadius = 22
         continue_btn.isEnabled = false
         
         reigonNum_lb.adjustsFontSizeToFitWidth = true
@@ -45,11 +44,11 @@ class SignUpViewController: UIViewController {
         phoneNumber_tf.adjustsFontSizeToFitWidth = true
         phoneNumber_tf.minimumFontSize = 10
         phoneNumber_tf.placeholder = "Nhập số điện thoại"
-        phoneNumber_tf.textContentType = UITextContentType.telephoneNumber
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange(_:)), for: .editingChanged)
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldEditingDidEnd(_:)), for: .editingDidEnd)
         
     }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         phoneNum_view.layer.borderColor = #colorLiteral(red: 0.1723190546, green: 0.5255185366, blue: 0.4038655162, alpha: 1)
         let phoneNum = phoneNumber_tf.text!
@@ -64,11 +63,12 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    //change hightlight color
     @objc func textFieldEditingDidEnd(_ textField: UITextField){
         phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
     }
     
-    //hide keyboard, change hightlight color and end editing
+    //hide keyboard and end editing
     func setupHideKeyboardOnTap() {
         self.view.addGestureRecognizer(self.endEditingRecognizer())
         self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
