@@ -7,8 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78A283632F600C69F3A /* OTPViewController.swift */; };
+		E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78D28363A4800C69F3A /* CustomTextField.swift */; };
 		E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF286282822B700B22B88 /* SignUpViewController.swift */; };
 		E776AAE62828BA580064D271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776AAE42828BA580064D271 /* Main.storyboard */; };
+		E7792D1128318DF00096CC61 /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */; };
+		E7792D1228318DF00096CC61 /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */; };
+		E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */; };
+		E7792D1428318DF00096CC61 /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0528318DF00096CC61 /* NunitoSans-Light.ttf */; };
+		E7792D1528318DF00096CC61 /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0628318DF00096CC61 /* NunitoSans-BlackItalic.ttf */; };
+		E7792D1628318DF00096CC61 /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0728318DF00096CC61 /* NunitoSans-ExtraBold.ttf */; };
+		E7792D1728318DF00096CC61 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0828318DF00096CC61 /* NunitoSans-Regular.ttf */; };
+		E7792D1828318DF00096CC61 /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0928318DF00096CC61 /* NunitoSans-SemiBoldItalic.ttf */; };
+		E7792D1928318DF00096CC61 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0A28318DF00096CC61 /* NunitoSans-Italic.ttf */; };
+		E7792D1A28318DF00096CC61 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0B28318DF00096CC61 /* OFL.txt */; };
+		E7792D1B28318DF00096CC61 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0C28318DF00096CC61 /* NunitoSans-Bold.ttf */; };
+		E7792D1C28318DF00096CC61 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0D28318DF00096CC61 /* NunitoSans-SemiBold.ttf */; };
+		E7792D1D28318DF00096CC61 /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0E28318DF00096CC61 /* NunitoSans-Black.ttf */; };
+		E7792D1E28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0F28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf */; };
+		E7792D1F28318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D1028318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf */; };
+		E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F401B283B2A2F0063FF79 /* IntroModel.swift */; };
 		E7EB3B552827792B0007677B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B542827792B0007677B /* AppDelegate.swift */; };
 		E7EB3B572827792B0007677B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B562827792B0007677B /* SceneDelegate.swift */; };
 		E7EB3B592827792B0007677B /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B582827792B0007677B /* IntroViewController.swift */; };
@@ -38,8 +56,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E70AB78A283632F600C69F3A /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		E70AB78D28363A4800C69F3A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E71DF286282822B700B22B88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E776AAE52828BA580064D271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E7792D0528318DF00096CC61 /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Light.ttf"; sourceTree = "<group>"; };
+		E7792D0628318DF00096CC61 /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		E7792D0728318DF00096CC61 /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E7792D0828318DF00096CC61 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		E7792D0928318DF00096CC61 /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E7792D0A28318DF00096CC61 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
+		E7792D0B28318DF00096CC61 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E7792D0C28318DF00096CC61 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
+		E7792D0D28318DF00096CC61 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		E7792D0E28318DF00096CC61 /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Black.ttf"; sourceTree = "<group>"; };
+		E7792D0F28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		E7792D1028318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		E78F401B283B2A2F0063FF79 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		E7EB3B512827792B0007677B /* Bai_1_Intern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bai_1_Intern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EB3B542827792B0007677B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7EB3B562827792B0007677B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +118,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E70AB78C28363A2000C69F3A /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E70AB78D28363A4800C69F3A /* CustomTextField.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		E7792D0128318DF00096CC61 /* Nunito_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */,
+				E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */,
+				E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */,
+				E7792D0528318DF00096CC61 /* NunitoSans-Light.ttf */,
+				E7792D0628318DF00096CC61 /* NunitoSans-BlackItalic.ttf */,
+				E7792D0728318DF00096CC61 /* NunitoSans-ExtraBold.ttf */,
+				E7792D0828318DF00096CC61 /* NunitoSans-Regular.ttf */,
+				E7792D0928318DF00096CC61 /* NunitoSans-SemiBoldItalic.ttf */,
+				E7792D0A28318DF00096CC61 /* NunitoSans-Italic.ttf */,
+				E7792D0B28318DF00096CC61 /* OFL.txt */,
+				E7792D0C28318DF00096CC61 /* NunitoSans-Bold.ttf */,
+				E7792D0D28318DF00096CC61 /* NunitoSans-SemiBold.ttf */,
+				E7792D0E28318DF00096CC61 /* NunitoSans-Black.ttf */,
+				E7792D0F28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf */,
+				E7792D1028318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf */,
+			);
+			path = Nunito_Sans;
+			sourceTree = "<group>";
+		};
+		E78F401A283B29E60063FF79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E78F401B283B2A2F0063FF79 /* IntroModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E79B6A21282908C100F88668 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				E7792D0128318DF00096CC61 /* Nunito_Sans */,
 			);
 			path = font;
 			sourceTree = "<group>";
@@ -112,6 +187,8 @@
 		E7EB3B532827792B0007677B /* Bai_1_Intern */ = {
 			isa = PBXGroup;
 			children = (
+				E78F401A283B29E60063FF79 /* Models */,
+				E70AB78C28363A2000C69F3A /* Custom */,
 				E79B6A21282908C100F88668 /* font */,
 				E7EB3B85282787030007677B /* Cells */,
 				E7EB3B84282786F50007677B /* Controllers */,
@@ -148,6 +225,7 @@
 			children = (
 				E7EB3B582827792B0007677B /* IntroViewController.swift */,
 				E71DF286282822B700B22B88 /* SignUpViewController.swift */,
+				E70AB78A283632F600C69F3A /* OTPViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -264,10 +342,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7792D1A28318DF00096CC61 /* OFL.txt in Resources */,
+				E7792D1C28318DF00096CC61 /* NunitoSans-SemiBold.ttf in Resources */,
+				E7792D1F28318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf in Resources */,
+				E7792D1628318DF00096CC61 /* NunitoSans-ExtraBold.ttf in Resources */,
+				E7792D1928318DF00096CC61 /* NunitoSans-Italic.ttf in Resources */,
+				E7792D1B28318DF00096CC61 /* NunitoSans-Bold.ttf in Resources */,
 				E7EB3B612827792C0007677B /* LaunchScreen.storyboard in Resources */,
+				E7792D1228318DF00096CC61 /* NunitoSans-BoldItalic.ttf in Resources */,
 				E7EB3B5E2827792C0007677B /* Assets.xcassets in Resources */,
 				E7EB3B892827872E0007677B /* IntroCLVCell.xib in Resources */,
+				E7792D1828318DF00096CC61 /* NunitoSans-SemiBoldItalic.ttf in Resources */,
+				E7792D1E28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
+				E7792D1728318DF00096CC61 /* NunitoSans-Regular.ttf in Resources */,
 				E776AAE62828BA580064D271 /* Main.storyboard in Resources */,
+				E7792D1128318DF00096CC61 /* NunitoSans-LightItalic.ttf in Resources */,
+				E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */,
+				E7792D1D28318DF00096CC61 /* NunitoSans-Black.ttf in Resources */,
+				E7792D1528318DF00096CC61 /* NunitoSans-BlackItalic.ttf in Resources */,
+				E7792D1428318DF00096CC61 /* NunitoSans-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +385,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */,
+				E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */,
+				E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */,
 				E7EB3B592827792B0007677B /* IntroViewController.swift in Sources */,
 				E7EB3B552827792B0007677B /* AppDelegate.swift in Sources */,
 				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,

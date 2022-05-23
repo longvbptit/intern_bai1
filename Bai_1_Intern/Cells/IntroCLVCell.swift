@@ -9,8 +9,6 @@ import UIKit
 
 class IntroCLVCell: UICollectionViewCell {
     
-
-    @IBOutlet weak var bgIntro_img: UIImageView!
     @IBOutlet weak var intro_img: UIImageView!
     @IBOutlet weak var inf1_lb: UILabel!
     @IBOutlet weak var inf2_lb: UILabel!
@@ -24,4 +22,11 @@ class IntroCLVCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func configViews(_ model: IntroModel) {
+        intro_img.image = model.image
+        inf1_lb.text = model.info1
+        inf1_lb.font = UIFont(name: "NunitoSans-Bold", size: 24)
+        inf2_lb.text = model.info2
+        inf2_lb.font = UIFont(name: "NunitoSans-Regular", size: 14)
+    }
 }
