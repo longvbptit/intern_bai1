@@ -178,11 +178,8 @@
                                 <rect key="frame" x="43.5" y="244" width="327" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCi-Ra-O5V">
-                                        <rect key="frame" x="17" y="12.5" width="31" height="31"/>
+                                        <rect key="frame" x="17" y="16.5" width="31" height="23.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="DCi-Ra-O5V" secondAttribute="height" multiplier="1:1" id="96V-nZ-5db"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
                                         <color key="textColor" red="0.090183056890000002" green="0.094126142560000001" blue="0.11762735990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -195,7 +192,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleAspectFit" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFD-NH-jkc" customClass="CustomTextField" customModule="Bai_1_Intern" customModuleProvider="target">
-                                        <rect key="frame" x="81.5" y="12.5" width="235.5" height="31"/>
+                                        <rect key="frame" x="81.5" y="15.5" width="235.5" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.1644872725" green="0.50198805329999996" blue="0.38818123939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.090183056890000002" green="0.094126142560000001" blue="0.11762735990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -209,7 +206,6 @@
                                     <constraint firstItem="Rgi-Ka-D3X" firstAttribute="height" secondItem="68W-jD-Lm5" secondAttribute="height" multiplier="0.5" id="28O-qr-Ufg"/>
                                     <constraint firstItem="Rgi-Ka-D3X" firstAttribute="centerY" secondItem="DCi-Ra-O5V" secondAttribute="centerY" id="2Ak-Ca-l6R"/>
                                     <constraint firstItem="DCi-Ra-O5V" firstAttribute="centerY" secondItem="68W-jD-Lm5" secondAttribute="centerY" id="AmT-om-ATs"/>
-                                    <constraint firstItem="gFD-NH-jkc" firstAttribute="height" secondItem="DCi-Ra-O5V" secondAttribute="height" multiplier="1:1" id="BWG-0W-K9Z"/>
                                     <constraint firstAttribute="width" constant="327" id="J2s-fg-HQw"/>
                                     <constraint firstAttribute="trailing" secondItem="gFD-NH-jkc" secondAttribute="trailing" constant="10" id="THy-w3-A4c"/>
                                     <constraint firstItem="gFD-NH-jkc" firstAttribute="centerY" secondItem="68W-jD-Lm5" secondAttribute="centerY" id="fCm-bU-GIt"/>
@@ -228,6 +224,9 @@
                                 <state key="normal" title="Tiếp tục">
                                     <color key="titleColor" red="0.99207025770000001" green="0.99221235510000005" blue="0.99203926320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="contunueOPT_btn:" destination="fgD-nu-3Ce" eventType="touchUpInside" id="c1i-uC-OM9"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yd7-7t-1Rw">
                                 <rect key="frame" x="43.5" y="764" width="327" height="48"/>
@@ -296,7 +295,7 @@
         <!--View Controller-->
         <scene sceneID="FCV-6z-UgS">
             <objects>
-                <viewController id="zoH-AU-nLr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OTPViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zoH-AU-nLr" customClass="OTPViewController" customModule="Bai_1_Intern" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdg-lx-V43">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,6 +316,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVz-qo-obD">
                                 <rect key="frame" x="16" y="52.5" width="32" height="32"/>
                                 <state key="normal" image="back1"/>
+                                <connections>
+                                    <action selector="back_btn:" destination="zoH-AU-nLr" eventType="touchUpInside" id="djF-hh-zFR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AVm-8d-akB"/>

@@ -9,6 +9,11 @@ import UIKit
 
 class OTPViewController: UIViewController {
 
+    
+
+    @IBAction func back_btn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

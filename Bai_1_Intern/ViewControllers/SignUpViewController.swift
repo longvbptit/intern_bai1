@@ -20,6 +20,11 @@ class SignUpViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func contunueOPT_btn(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "OTPViewController") as? OTPViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light 

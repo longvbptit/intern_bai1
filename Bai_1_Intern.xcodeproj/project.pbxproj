@@ -164,6 +164,26 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		E7D85CC1283DD9B70042A994 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E776AAE42828BA580064D271 /* Main.storyboard */,
+				E7EB3B5D2827792C0007677B /* Assets.xcassets */,
+				E7EB3B5F2827792C0007677B /* LaunchScreen.storyboard */,
+				E7EB3B622827792C0007677B /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E7D85CC2283DD9D50042A994 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E7EB3B542827792B0007677B /* AppDelegate.swift */,
+				E7EB3B562827792B0007677B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		E7EB3B482827792B0007677B = {
 			isa = PBXGroup;
 			children = (
@@ -187,17 +207,12 @@
 		E7EB3B532827792B0007677B /* Bai_1_Intern */ = {
 			isa = PBXGroup;
 			children = (
+				E7D85CC2283DD9D50042A994 /* App */,
+				E7D85CC1283DD9B70042A994 /* Resources */,
 				E78F401A283B29E60063FF79 /* Models */,
 				E70AB78C28363A2000C69F3A /* Custom */,
 				E79B6A21282908C100F88668 /* font */,
-				E7EB3B85282787030007677B /* Cells */,
-				E7EB3B84282786F50007677B /* Controllers */,
-				E776AAE42828BA580064D271 /* Main.storyboard */,
-				E7EB3B542827792B0007677B /* AppDelegate.swift */,
-				E7EB3B562827792B0007677B /* SceneDelegate.swift */,
-				E7EB3B5D2827792C0007677B /* Assets.xcassets */,
-				E7EB3B5F2827792C0007677B /* LaunchScreen.storyboard */,
-				E7EB3B622827792C0007677B /* Info.plist */,
+				E7EB3B84282786F50007677B /* ViewControllers */,
 			);
 			path = Bai_1_Intern;
 			sourceTree = "<group>";
@@ -220,14 +235,15 @@
 			path = Bai_1_InternUITests;
 			sourceTree = "<group>";
 		};
-		E7EB3B84282786F50007677B /* Controllers */ = {
+		E7EB3B84282786F50007677B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7EB3B85282787030007677B /* Cells */,
 				E7EB3B582827792B0007677B /* IntroViewController.swift */,
 				E71DF286282822B700B22B88 /* SignUpViewController.swift */,
 				E70AB78A283632F600C69F3A /* OTPViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E7EB3B85282787030007677B /* Cells */ = {
