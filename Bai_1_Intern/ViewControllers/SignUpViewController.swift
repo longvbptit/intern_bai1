@@ -9,7 +9,6 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    
     @IBOutlet weak var phoneNum_view: UIView!
     @IBOutlet weak var continue_btn: UIButton!
     @IBOutlet weak var reigonNum_lb: UILabel!
@@ -20,11 +19,19 @@ class SignUpViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func contunueOPT_btn(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "OTPViewController") as? OTPViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+    @IBAction func continueOTP_act(_ sender: Any) {
+        
+        var phoneNumber = (phoneNumber_tf.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        if phoneNumber.first == "0", phoneNumber.count > 9 {
+            phoneNumber.removeFirst()
+        }
+        
+        let vc = UIViewController.fromStoryboard(OTPViewController.self)
+        vc.phoneNumberWithoutPrefix = phoneNumber
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+  
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light 
@@ -37,7 +44,7 @@ class SignUpViewController: UIViewController {
     func setUpView(){
         phoneNum_view.clipsToBounds = true
         
-        phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
+        phoneNum_view.layer.borderColor = Constants.Color.borderGray.cgColor
         phoneNum_view.layer.borderWidth = 1
            
         continue_btn.clipsToBounds = true
@@ -52,23 +59,22 @@ class SignUpViewController: UIViewController {
         phoneNumber_tf.placeholder = "Nhập số điện thoại"
         
         // create attributed string
-        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 17.0)! ]
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: Constants.Font.regular, size: 17.0)! ]
         let hotline = NSMutableAttributedString(string: "Hotline 1900 636 893", attributes: myAttribute )
-        var myRange = NSRange(location: 8, length: 12) // range starting at
-        hotline.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 0.1723190546, green: 0.5255185366, blue: 0.4038655162, alpha: 1).cgColor, range: myRange)
+        hotline.addAttribute(NSAttributedString.Key.foregroundColor, value: Constants.Color.greenBlue.cgColor, range: NSRange(location: 8, length: 12))
 
         // set attributed text on a UILabel
         hotLine_label.attributedText = hotline
-//        phoneNumber_tf.setEditActions(only: [.copy, .cut, .paste])
+        
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldEditingDidBegin(_:)), for: .editingDidBegin)
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange(_:)), for: .editingChanged)
         phoneNumber_tf.addTarget(self, action: #selector(SignUpViewController.textFieldEditingDidEnd(_:)), for: .editingDidEnd)
         
         //shadow
-        phoneNum_view.layer.shadowColor = UIColor.black.cgColor
-        phoneNum_view.layer.shadowOpacity = 1
-        phoneNum_view.layer.shadowRadius = 20
-        phoneNum_view.layer.shadowOffset = CGSize(width: 0, height: 4)
+//        phoneNum_view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+//        phoneNum_view.layer.shadowOpacity = 1
+//        phoneNum_view.layer.shadowRadius = 20
+//        phoneNum_view.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,13 +85,13 @@ class SignUpViewController: UIViewController {
         hotLine_view.layer.cornerRadius = 24
         
         // shadow
-//        phoneNum_view.layer.masksToBounds = false
-//        phoneNum_view.layer.shadowColor = UIColor.black.cgColor
-//        phoneNum_view.layer.shadowOffset = .zero
-//        phoneNum_view.layer.shadowRadius = 1
-//        phoneNum_view.layer.opacity = 1
+        phoneNum_view.layer.masksToBounds = false
+        phoneNum_view.layer.shadowColor = UIColor.black.cgColor
+        phoneNum_view.layer.shadowOffset = .zero
+        phoneNum_view.layer.shadowRadius = 1
+        phoneNum_view.layer.opacity = 1
         
-//        self.phoneNum_view.layoutIfNeeded()
+
     }
     
     //MARK: Set event for text field phone number
@@ -105,10 +111,10 @@ class SignUpViewController: UIViewController {
     
     //change hightlight color
     @objc func textFieldEditingDidBegin(_ textField: UITextField) {
-        phoneNum_view.layer.borderColor = #colorLiteral(red: 0.1723190546, green: 0.5255185366, blue: 0.4038655162, alpha: 1)
+        phoneNum_view.layer.borderColor = Constants.Color.greenBlue.cgColor
     }
     @objc func textFieldEditingDidEnd(_ textField: UITextField){
-        phoneNum_view.layer.borderColor = #colorLiteral(red: 0.9332506061, green: 0.9373078942, blue: 0.9567487836, alpha: 1)
+        phoneNum_view.layer.borderColor = Constants.Color.borderGray.cgColor
     }
     
     //hide keyboard and end editing
@@ -122,18 +128,5 @@ class SignUpViewController: UIViewController {
         return tap
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

@@ -17,7 +17,6 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var lg_btn: UIButton!
     @IBOutlet weak var createAcc_btn: UIButton!
     @IBOutlet weak var bgIntro: UIView!
-//    @IBOutlet weak var myCollectionViewHeight: NSLayoutConstraint!
     
     var introDetails : [IntroModel]!
     
@@ -32,17 +31,12 @@ class IntroViewController: UIViewController {
     func setupViews() {
         
         intro_clv.register(UINib(nibName: "IntroCLVCell", bundle: nil), forCellWithReuseIdentifier: "IntroCLVCell")
-        dots.currentPage = Int(
-                (intro_clv.contentOffset.x / intro_clv.frame.width)
-                .rounded(.toNearestOrAwayFromZero)
-            )
 
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
         dots.transform = CGAffineTransform(scaleX: 1, y: 1)
 
-        createAcc_btn.clipsToBounds = true;
-        createAcc_btn.layer.borderColor = #colorLiteral(red: 0.1411542892, green: 0.1647263467, blue: 0.3803414106, alpha: 1)
+        createAcc_btn.layer.borderColor = Constants.Color.borderBlue.cgColor
         createAcc_btn.layer.borderWidth = 1
         
         let intro1: String = "Bác sĩ sẵn lòng chăm sóc khi bạn cần"
@@ -58,8 +52,8 @@ class IntroViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         //gradient
         let gradient = CAGradientLayer()
-        let startColor = #colorLiteral(red: 0.6509803922, green: 0.9450980392, blue: 0.968627451, alpha: 1).cgColor
-        let endColor = #colorLiteral(red: 0.952855885, green: 0.9608387351, blue: 0.9841964841, alpha: 1).cgColor
+        let startColor = Constants.Color.startGradientIntro.cgColor
+        let endColor = Constants.Color.endGradientIntro.cgColor
         gradient.frame = bgIntro.bounds
         gradient.colors = [startColor, endColor]
         gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
@@ -78,13 +72,13 @@ class IntroViewController: UIViewController {
     
     //MARK: IBAction
     @IBAction func login_act(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = UIViewController.fromStoryboard(SignUpViewController.self)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func cre_act(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = UIViewController.fromStoryboard(SignUpViewController.self)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 
