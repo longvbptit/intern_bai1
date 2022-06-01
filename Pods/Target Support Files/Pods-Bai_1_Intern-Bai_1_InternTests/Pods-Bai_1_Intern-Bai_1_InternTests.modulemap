@@ -1,0 +1,6 @@
+framework module Pods_Bai_1_Intern_Bai_1_InternTests {
+  umbrella header "Pods-Bai_1_Intern-Bai_1_InternTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
