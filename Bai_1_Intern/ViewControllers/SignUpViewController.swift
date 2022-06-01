@@ -42,10 +42,6 @@ class SignUpViewController: UIViewController {
     
     //MARK: set up view
     func setUpView(){
-        phoneNum_view.clipsToBounds = true
-        
-        phoneNum_view.layer.borderColor = Constants.Color.borderGray.cgColor
-        phoneNum_view.layer.borderWidth = 1
            
         continue_btn.clipsToBounds = true
         
@@ -80,17 +76,17 @@ class SignUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
-        phoneNum_view.layer.cornerRadius = 28
         continue_btn.layer.cornerRadius = 24
         hotLine_view.layer.cornerRadius = 24
         
         // shadow
-        phoneNum_view.layer.masksToBounds = false
-        phoneNum_view.layer.shadowColor = UIColor.black.cgColor
-        phoneNum_view.layer.shadowOffset = .zero
-        phoneNum_view.layer.shadowRadius = 1
-        phoneNum_view.layer.opacity = 1
-        
+        phoneNum_view.layer.cornerRadius = 28
+        phoneNum_view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        phoneNum_view.layer.shadowOpacity = 1
+        phoneNum_view.layer.shadowRadius = 20
+        phoneNum_view.layer.shadowOffset = CGSize(width: 0, height: 4)
+        phoneNum_view.layer.borderColor = Constants.Color.borderGray.cgColor
+        phoneNum_view.layer.borderWidth = 1
 
     }
     
