@@ -8,17 +8,19 @@
 import UIKit
 
 class OTPViewController: UIViewController {
-//    var counter : Int = 60
+    
     var dateStart = Date()
     var timer : Timer? = nil
     var phoneNumberWithoutPrefix : String = ""
-
+    
+    //MARK: IBOutlet
     @IBOutlet weak var otpGuide_lb: UILabel!
     @IBOutlet weak var otp_stv: OTPStackView!
     @IBOutlet weak var otpError_lb: UILabel!
     @IBOutlet weak var resendOTP_btn: UIButton!
     @IBOutlet weak var continue_btn: UIButton!
-
+    
+    //MARK: IBAction
     @IBAction func back_btn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -63,6 +65,7 @@ class OTPViewController: UIViewController {
         otpError_lb.isHidden = hidden
     }
     
+    //MARK: Setup view
     func setupView(){
         
         otpError_lb.isHidden = true
@@ -75,15 +78,15 @@ class OTPViewController: UIViewController {
         let phoneNumberfont = UIFont(name: Constants.Font.bold, size: 14)
         otpGuide_lb.attributedText = NSMutableAttributedString().attrStr(text: guide, font: font)
             .attrStr(text: prefixPhoneNumber + " " + displayPhoneNumber, font: phoneNumberfont)
-
+        
         let otpFont = UIFont(name: Constants.Font.semiBold, size: 20)
         otp_stv.configTextFieldView(borderStyle: .none,
-                                   font: otpFont,
-                                   editingBorderColor: Constants.Color.greenBlue,
-                                   nonEditingborderColor: .white,
-                                   borderWidth: 1,
-                                   cornerRadius: 8)
-
+                                    font: otpFont,
+                                    editingBorderColor: Constants.Color.greenBlue,
+                                    nonEditingborderColor: .white,
+                                    borderWidth: 1,
+                                    cornerRadius: 8)
+        
         otp_stv.otpValueDidChanged = {[weak self] in
             guard let self = self else { return}
             self.updateErrorLabelUI(hidden: true)
@@ -100,42 +103,21 @@ class OTPViewController: UIViewController {
     
     private func startCountDown(){
         let counter = Int(60 + dateStart.timeIntervalSinceNow)
-        guard counter >= 0 else {
-            return
-        }
+        guard counter >= 0 else { return }
+            
         var counterStr = counter < 10 ? "0\(counter)" : "\(counter)"
         counterStr += "s"
         resendOTP_btn.setTitle("Gửi lại mã sau" + " " + counterStr, for: .disabled)
         if counter == 0 {
             self.updateResendOTPButtonUI(enable: true)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {[weak self] in
-            guard let self = self else { return}
-            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1)
+        {[weak self] in
+            guard let self = self else { return }
             self.startCountDown()
         }
     }
     
-//    @objc func updateCounter() {
-//
-//        guard counter >= 0 else {
-//            return
-//        }
-//        var counterStr = counter < 10 ? "0\(counter)" : "\(counter)"
-//        counterStr += "s"
-//        resendOTP_btn.setTitle("Gửi lại mã sau" + " " + counterStr, for: .disabled)
-//        if counter > 0 {
-//            print(counter)
-//            counter -= 1
-//        } else {
-//            timer?.invalidate()
-//            timer = nil
-//        }
-//        if counter == 0 {
-//            self.updateResendOTPButtonUI(enable: true)
-//        }
-//    }
-//
     private func restartCountDown() {
         dateStart = Date()
         updateResendOTPButtonUI(enable: false)
@@ -143,12 +125,11 @@ class OTPViewController: UIViewController {
     }
     
     //MARK: Observer
-    
     private func registerObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     private func removeObserver() {
         NotificationCenter.default.removeObserver(self)
     }
@@ -163,7 +144,7 @@ class OTPViewController: UIViewController {
             self.continue_btn.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height + self.safeAreaInsets.bottom)
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         let duration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double) ?? 0
         

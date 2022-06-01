@@ -30,7 +30,9 @@ class IntroViewController: UIViewController {
     //MARK: Set up view
     func setupViews() {
         
-        intro_clv.register(UINib(nibName: "IntroCLVCell", bundle: nil), forCellWithReuseIdentifier: "IntroCLVCell")
+//        intro_clv.register(UINib(nibName: "IntroCLVCell", bundle: nil), forCellWithReuseIdentifier: "IntroCLVCell")
+        intro_clv.registerCells(IntroCLVCell.self)
+//        intro_clv.register(IntroCLVCell.self, forCellWithReuseIdentifier: String(describing: IntroCLVCell.self))
 
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
@@ -113,6 +115,5 @@ extension IntroViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
-
     }
 }

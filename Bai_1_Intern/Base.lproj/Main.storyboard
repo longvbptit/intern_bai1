@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.625" y="116.19718309859155"/>
+            <point key="canvasLocation" x="1041" y="116"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bde-Xi-z9p">
@@ -293,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaC-9v-GDx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014.4927536231885" y="131.25"/>
+            <point key="canvasLocation" x="2100" y="116"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FCV-6z-UgS">
@@ -340,6 +340,7 @@
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-M1-dy0" customClass="OTPStackView" customModule="Bai_1_Intern" customModuleProvider="target">
                                 <rect key="frame" x="59" y="171.5" width="296" height="42"/>
+                                <color key="tintColor" red="0.17254901959999999" green="0.52551853660000003" blue="0.4038655162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="296" id="L7H-10-8yn"/>
                                     <constraint firstAttribute="height" constant="42" id="USU-jn-Mgd"/>
@@ -432,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bu4-Fi-cHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3046" y="116"/>
+            <point key="canvasLocation" x="3086" y="116"/>
         </scene>
         <!--Patient Home View Controller-->
         <scene sceneID="LmW-xm-Sbl">
@@ -441,13 +442,69 @@
                     <view key="view" contentMode="scaleToFill" id="qPv-Jx-u9G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-Hd-Ahy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="a9u-hZ-mK0"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="99F-eo-XpY">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ và tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2S-sb-6ht">
+                                <rect key="frame" x="16" y="61" width="67" height="20.5"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
+                                <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ud4-CJ-Gye">
+                                <rect key="frame" x="16" y="87.5" width="8" height="8"/>
+                                <color key="backgroundColor" red="0.17231905459999999" green="0.52551853660000003" blue="0.4038655162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="J1S-B9-jMc"/>
+                                    <constraint firstAttribute="width" constant="8" id="cWC-aJ-Jo9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang trực tuyến" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQI-C1-1C5">
+                                <rect key="frame" x="30" y="83.5" width="86.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-OI-Yh2">
+                                <rect key="frame" x="356" y="60" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="2la-Dg-s3y"/>
+                                    <constraint firstAttribute="width" constant="42" id="gwj-mg-orS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uBT-4X-1M7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T2S-sb-6ht" firstAttribute="top" secondItem="qPv-Jx-u9G" secondAttribute="top" constant="61" id="BdU-ZG-dcd"/>
+                            <constraint firstItem="99F-eo-XpY" firstAttribute="top" secondItem="b0j-Hd-Ahy" secondAttribute="top" constant="118" id="D0g-ja-73y"/>
+                            <constraint firstItem="Gm2-OI-Yh2" firstAttribute="top" secondItem="qPv-Jx-u9G" secondAttribute="top" constant="60" id="Dwb-XI-0Ot"/>
+                            <constraint firstItem="uBT-4X-1M7" firstAttribute="trailing" secondItem="99F-eo-XpY" secondAttribute="trailing" id="EVC-mJ-m7p"/>
+                            <constraint firstItem="oQI-C1-1C5" firstAttribute="leading" secondItem="Ud4-CJ-Gye" secondAttribute="trailing" constant="6" id="FCm-uj-Hyq"/>
+                            <constraint firstItem="99F-eo-XpY" firstAttribute="leading" secondItem="uBT-4X-1M7" secondAttribute="leading" id="Fx2-xw-ia5"/>
+                            <constraint firstItem="T2S-sb-6ht" firstAttribute="leading" secondItem="uBT-4X-1M7" secondAttribute="leading" constant="16" id="HLH-Lc-XGR"/>
+                            <constraint firstAttribute="trailing" secondItem="Gm2-OI-Yh2" secondAttribute="trailing" constant="16" id="KGR-9G-M0x"/>
+                            <constraint firstAttribute="bottom" secondItem="99F-eo-XpY" secondAttribute="bottom" id="Lce-w2-JQx"/>
+                            <constraint firstItem="oQI-C1-1C5" firstAttribute="centerY" secondItem="Ud4-CJ-Gye" secondAttribute="centerY" id="Ruc-Q2-ci0"/>
+                            <constraint firstItem="Ud4-CJ-Gye" firstAttribute="top" secondItem="T2S-sb-6ht" secondAttribute="bottom" constant="6" id="Sta-9D-cE1"/>
+                            <constraint firstItem="Ud4-CJ-Gye" firstAttribute="leading" secondItem="uBT-4X-1M7" secondAttribute="leading" constant="16" id="elg-gW-Idi"/>
+                            <constraint firstItem="uBT-4X-1M7" firstAttribute="trailing" secondItem="b0j-Hd-Ahy" secondAttribute="trailing" id="nFv-Tv-4nt"/>
+                            <constraint firstItem="b0j-Hd-Ahy" firstAttribute="top" secondItem="qPv-Jx-u9G" secondAttribute="top" id="pKj-Zq-Ed6"/>
+                            <constraint firstItem="b0j-Hd-Ahy" firstAttribute="leading" secondItem="uBT-4X-1M7" secondAttribute="leading" id="ysh-tP-mnN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="758-bw-ZHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3933" y="137"/>
+            <point key="canvasLocation" x="131.8840579710145" y="868.52678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E0b-Lh-eo3">
@@ -474,6 +531,7 @@
         <image name="language" width="69" height="28"/>
         <image name="phone" width="22" height="22"/>
         <image name="registerIMG" width="375" height="188"/>
+        <image name="topBackGround" width="375" height="143"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

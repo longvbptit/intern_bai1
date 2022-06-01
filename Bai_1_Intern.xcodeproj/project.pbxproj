@@ -31,6 +31,9 @@
 		E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F401B283B2A2F0063FF79 /* IntroModel.swift */; };
 		E79DFAD228408B4600702C40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79DFAD128408B4600702C40 /* String+Extensions.swift */; };
 		E79DFAD428408C9F00702C40 /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */; };
+		E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A217FA284724D500CAF323 /* PatientHomeTableViewCell.swift */; };
+		E7A217FD284724D500CAF323 /* PatientHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */; };
+		E7A2180128474A3100CAF323 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2180028474A3100CAF323 /* UICollectionViewExtension.swift */; };
 		E7BAC84F283E2E9D000F6DCB /* OTPStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BAC84E283E2E9D000F6DCB /* OTPStackView.swift */; };
 		E7EB3B552827792B0007677B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B542827792B0007677B /* AppDelegate.swift */; };
 		E7EB3B572827792B0007677B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B562827792B0007677B /* SceneDelegate.swift */; };
@@ -87,6 +90,9 @@
 		E78F401B283B2A2F0063FF79 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		E79DFAD128408B4600702C40 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		E7A217FA284724D500CAF323 /* PatientHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHomeTableViewCell.swift; sourceTree = "<group>"; };
+		E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientHomeTableViewCell.xib; sourceTree = "<group>"; };
+		E7A2180028474A3100CAF323 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		E7BAC84E283E2E9D000F6DCB /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
 		E7EB3B512827792B0007677B /* Bai_1_Intern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bai_1_Intern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EB3B542827792B0007677B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +193,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		E7A217FE284724E700CAF323 /* IntroCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7EB3B862827872E0007677B /* IntroCLVCell.swift */,
+				E7EB3B872827872E0007677B /* IntroCLVCell.xib */,
+			);
+			path = IntroCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E7A217FF284724FC00CAF323 /* PatientHomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7A217FA284724D500CAF323 /* PatientHomeTableViewCell.swift */,
+				E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */,
+			);
+			path = PatientHomeTableViewCell;
+			sourceTree = "<group>";
+		};
 		E7BAC84D283E2DF1000F6DCB /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +289,7 @@
 				E79DFAD128408B4600702C40 /* String+Extensions.swift */,
 				E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */,
 				E7F0579E28467E4800AA6883 /* UIViewController+Extensions.swift */,
+				E7A2180028474A3100CAF323 /* UICollectionViewExtension.swift */,
 			);
 			path = Cores;
 			sourceTree = "<group>";
@@ -334,8 +359,8 @@
 		E7EB3B85282787030007677B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E7EB3B862827872E0007677B /* IntroCLVCell.swift */,
-				E7EB3B872827872E0007677B /* IntroCLVCell.xib */,
+				E7A217FE284724E700CAF323 /* IntroCollectionViewCell */,
+				E7A217FF284724FC00CAF323 /* PatientHomeTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -457,6 +482,7 @@
 				E7792D1E28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				E7792D1728318DF00096CC61 /* NunitoSans-Regular.ttf in Resources */,
 				E776AAE62828BA580064D271 /* Main.storyboard in Resources */,
+				E7A217FD284724D500CAF323 /* PatientHomeTableViewCell.xib in Resources */,
 				E7792D1128318DF00096CC61 /* NunitoSans-LightItalic.ttf in Resources */,
 				E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */,
 				E7792D1D28318DF00096CC61 /* NunitoSans-Black.ttf in Resources */,
@@ -494,8 +520,10 @@
 				E7EB3B592827792B0007677B /* IntroViewController.swift in Sources */,
 				E78C645F283F2B5100C62B9C /* Constants.swift in Sources */,
 				E7F0579F28467E4800AA6883 /* UIViewController+Extensions.swift in Sources */,
+				E7A2180128474A3100CAF323 /* UICollectionViewExtension.swift in Sources */,
 				E79DFAD428408C9F00702C40 /* NSMutableAttributedString+Extensions.swift in Sources */,
 				E7EB3B552827792B0007677B /* AppDelegate.swift in Sources */,
+				E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */,
 				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,
 				E78C6461283F2EEB00C62B9C /* UIColor+Extensions.swift in Sources */,
 				E7EB3B572827792B0007677B /* SceneDelegate.swift in Sources */,
