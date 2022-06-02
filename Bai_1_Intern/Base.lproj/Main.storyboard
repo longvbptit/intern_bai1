@@ -153,9 +153,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerIMG" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-Zv-qix">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Xg5-Zv-qix" secondAttribute="height" multiplier="207:94" id="UAz-ej-9zH"/>
-                                </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf4-Eg-UIn">
@@ -461,11 +458,16 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ud4-CJ-Gye">
                                 <rect key="frame" x="16" y="87.5" width="8" height="8"/>
-                                <color key="backgroundColor" red="0.17231905459999999" green="0.52551853660000003" blue="0.4038655162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.062745098039215685" green="1" blue="0.72539293770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="J1S-B9-jMc"/>
                                     <constraint firstAttribute="width" constant="8" id="cWC-aJ-Jo9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang trực tuyến" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQI-C1-1C5">
                                 <rect key="frame" x="30" y="83.5" width="86.5" height="16.5"/>
@@ -473,7 +475,7 @@
                                 <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-OI-Yh2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-OI-Yh2">
                                 <rect key="frame" x="356" y="60" width="42" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="2la-Dg-s3y"/>
@@ -526,6 +528,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Avatar" width="42" height="42"/>
         <image name="back" width="32" height="32"/>
         <image name="back1" width="32" height="32"/>
         <image name="language" width="69" height="28"/>

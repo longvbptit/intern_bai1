@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,12 @@
 		E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78D28363A4800C69F3A /* CustomTextField.swift */; };
 		E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF286282822B700B22B88 /* SignUpViewController.swift */; };
 		E776AAE62828BA580064D271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776AAE42828BA580064D271 /* Main.storyboard */; };
+		E7787A3D284864E5008F45E3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A3C284864E5008F45E3 /* UIView+Extensions.swift */; };
+		E7787A4628486BA3008F45E3 /* PatientArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4528486BA3008F45E3 /* PatientArticleListModel.swift */; };
+		E7787A4828486BB1008F45E3 /* PatientDoctorListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4728486BB1008F45E3 /* PatientDoctorListModel.swift */; };
+		E7787A4A28486BC2008F45E3 /* PatientPromotionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4928486BC2008F45E3 /* PatientPromotionListModel.swift */; };
+		E7787A4C28486BD3008F45E3 /* PatientNewFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4B28486BD3008F45E3 /* PatientNewFeedModel.swift */; };
+		E7787A4F28486E0B008F45E3 /* APIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4E28486E0B008F45E3 /* APIUtilities.swift */; };
 		E7792D1128318DF00096CC61 /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */; };
 		E7792D1228318DF00096CC61 /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */; };
 		E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */; };
@@ -82,6 +88,12 @@
 		E70AB78D28363A4800C69F3A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E71DF286282822B700B22B88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E776AAE52828BA580064D271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7787A3C284864E5008F45E3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E7787A4528486BA3008F45E3 /* PatientArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientArticleListModel.swift; sourceTree = "<group>"; };
+		E7787A4728486BB1008F45E3 /* PatientDoctorListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDoctorListModel.swift; sourceTree = "<group>"; };
+		E7787A4928486BC2008F45E3 /* PatientPromotionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientPromotionListModel.swift; sourceTree = "<group>"; };
+		E7787A4B28486BD3008F45E3 /* PatientNewFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientNewFeedModel.swift; sourceTree = "<group>"; };
+		E7787A4E28486E0B008F45E3 /* APIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUtilities.swift; sourceTree = "<group>"; };
 		E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -173,7 +185,6 @@
 				B6E0D232D15A1B3BF3F12AA6 /* Pods-Bai_1_Intern-Bai_1_InternUITests.debug.xcconfig */,
 				9B08E612BB01423738D133A7 /* Pods-Bai_1_Intern-Bai_1_InternUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +194,25 @@
 				E70AB78D28363A4800C69F3A /* CustomTextField.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		E7787A3E284869AB008F45E3 /* PatientNewFeedModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7787A4528486BA3008F45E3 /* PatientArticleListModel.swift */,
+				E7787A4728486BB1008F45E3 /* PatientDoctorListModel.swift */,
+				E7787A4928486BC2008F45E3 /* PatientPromotionListModel.swift */,
+				E7787A4B28486BD3008F45E3 /* PatientNewFeedModel.swift */,
+			);
+			path = PatientNewFeedModel;
+			sourceTree = "<group>";
+		};
+		E7787A4D28486DE7008F45E3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E7787A4E28486E0B008F45E3 /* APIUtilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		E7792D0128318DF00096CC61 /* Nunito_Sans */ = {
@@ -281,6 +311,7 @@
 		E7D85CC3283DDFE30042A994 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E7787A4D28486DE7008F45E3 /* Utilities */,
 				E78C645D283F2B3200C62B9C /* Projects */,
 				E7BAC84D283E2DF1000F6DCB /* CommonViews */,
 				E7D85CC7283DE1160042A994 /* Extentions */,
@@ -293,6 +324,7 @@
 		E7D85CC4283DDFFD0042A994 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				E7787A3E284869AB008F45E3 /* PatientNewFeedModel */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -317,7 +349,10 @@
 		E7D85CC8283DE12E0042A994 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7F0579E28467E4800AA6883 /* UIViewController+Extensions.swift */,
+				E7A2180028474A3100CAF323 /* UICollectionViewExtension.swift */,
 				E78C6460283F2EEB00C62B9C /* UIColor+Extensions.swift */,
+				E7787A3C284864E5008F45E3 /* UIView+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,8 +362,6 @@
 			children = (
 				E79DFAD128408B4600702C40 /* String+Extensions.swift */,
 				E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */,
-				E7F0579E28467E4800AA6883 /* UIViewController+Extensions.swift */,
-				E7A2180028474A3100CAF323 /* UICollectionViewExtension.swift */,
 			);
 			path = Cores;
 			sourceTree = "<group>";
@@ -417,6 +450,7 @@
 				E7EB3B4D2827792B0007677B /* Sources */,
 				E7EB3B4E2827792B0007677B /* Frameworks */,
 				E7EB3B4F2827792B0007677B /* Resources */,
+				D7EBA5EC0A0CB326D765242A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -455,6 +489,7 @@
 				E7EB3B6E2827792C0007677B /* Sources */,
 				E7EB3B6F2827792C0007677B /* Frameworks */,
 				E7EB3B702827792C0007677B /* Resources */,
+				B80E11AA45EB7C918D96EB79 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -636,6 +671,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern-Bai_1_InternTests/Pods-Bai_1_Intern-Bai_1_InternTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B80E11AA45EB7C918D96EB79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern-Bai_1_InternUITests/Pods-Bai_1_Intern-Bai_1_InternUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern-Bai_1_InternUITests/Pods-Bai_1_Intern-Bai_1_InternUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern-Bai_1_InternUITests/Pods-Bai_1_Intern-Bai_1_InternUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7EBA5EC0A0CB326D765242A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern/Pods-Bai_1_Intern-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern/Pods-Bai_1_Intern-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern/Pods-Bai_1_Intern-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -643,10 +712,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7787A4C28486BD3008F45E3 /* PatientNewFeedModel.swift in Sources */,
 				E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */,
 				E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */,
 				E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */,
 				E7BAC84F283E2E9D000F6DCB /* OTPStackView.swift in Sources */,
+				E7787A4A28486BC2008F45E3 /* PatientPromotionListModel.swift in Sources */,
 				E79DFAD228408B4600702C40 /* String+Extensions.swift in Sources */,
 				E7EB3B592827792B0007677B /* IntroViewController.swift in Sources */,
 				E78C645F283F2B5100C62B9C /* Constants.swift in Sources */,
@@ -655,11 +726,15 @@
 				E79DFAD428408C9F00702C40 /* NSMutableAttributedString+Extensions.swift in Sources */,
 				E7EB3B552827792B0007677B /* AppDelegate.swift in Sources */,
 				E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */,
+				E7787A4828486BB1008F45E3 /* PatientDoctorListModel.swift in Sources */,
+				E7787A3D284864E5008F45E3 /* UIView+Extensions.swift in Sources */,
 				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,
+				E7787A4628486BA3008F45E3 /* PatientArticleListModel.swift in Sources */,
 				E78C6461283F2EEB00C62B9C /* UIColor+Extensions.swift in Sources */,
 				E7EB3B572827792B0007677B /* SceneDelegate.swift in Sources */,
 				E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */,
 				E7F0579D28467A9A00AA6883 /* PatientHomeViewController.swift in Sources */,
+				E7787A4F28486E0B008F45E3 /* APIUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

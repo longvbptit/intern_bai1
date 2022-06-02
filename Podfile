@@ -4,7 +4,7 @@
 target 'Bai_1_Intern' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+    pod 'Alamofire'
   # Pods for Bai_1_Intern
 
   target 'Bai_1_InternTests' do
