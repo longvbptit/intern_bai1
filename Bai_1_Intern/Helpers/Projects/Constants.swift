@@ -28,4 +28,13 @@ struct Constants {
         static let semiBold = "NunitoSans-SemiBold"
         static let bold = "NunitoSans-Bold"
     }
+    
+    struct Icon {
+        static let imagePlacehold = UIImage.imageWithColor(color: .lightGray)
+    }
+    
+    struct HomeVC {
+        static let tableNewsCellHeight: CGFloat = 320
+        static let tableSuggestionCellHeight: CGFloat = 290
+    }
 }

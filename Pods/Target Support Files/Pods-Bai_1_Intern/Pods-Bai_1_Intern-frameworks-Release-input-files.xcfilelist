@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern/Pods-Bai_1_Intern-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

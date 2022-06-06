@@ -503,6 +503,13 @@
                             <constraint firstItem="b0j-Hd-Ahy" firstAttribute="leading" secondItem="uBT-4X-1M7" secondAttribute="leading" id="ysh-tP-mnN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imvAvatar" destination="Gm2-OI-Yh2" id="xwN-5m-DZz"/>
+                        <outlet property="imvIsActive" destination="Ud4-CJ-Gye" id="ngN-Cc-1hR"/>
+                        <outlet property="lblFullName" destination="T2S-sb-6ht" id="ZU9-y1-1xZ"/>
+                        <outlet property="lblIsActive" destination="oQI-C1-1C5" id="TJU-NJ-ceS"/>
+                        <outlet property="tbvNewsFeed" destination="99F-eo-XpY" id="KAR-xi-hsK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="758-bw-ZHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-Bold.ttf">
+            <string>NunitoSans-Bold</string>
+        </array>
+        <array key="NunitoSans-Regular.ttf">
+            <string>NunitoSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="231" id="KGk-i7-Jjw" customClass="SuggestDoctorTableViewCell" customModule="Bai_1_Intern" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="231"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="325" height="231"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới thiệu bác sĩ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctm-lB-vma">
+                        <rect key="frame" x="16" y="0.0" width="195" height="26"/>
+                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="19"/>
+                        <color key="textColor" red="0.18823529411764706" green="0.23139601949999999" blue="0.45484250780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZXp-w7-jzx">
+                        <rect key="frame" x="0.0" y="42" width="325" height="161"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k30-uM-fGi">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VI-Mp-Lff">
+                        <rect key="frame" x="227" y="3" width="82" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="3eg-To-FKQ"/>
+                            <constraint firstAttribute="width" constant="82" id="C2Q-68-7Xj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
+                        <state key="normal" title="Xem tất cả " image="nextAction">
+                            <color key="titleColor" red="0.17231905459999999" green="0.52551853660000003" blue="0.4038655162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="3VI-Mp-Lff" secondAttribute="trailing" constant="16" id="Gkb-dn-ieK"/>
+                    <constraint firstItem="Ctm-lB-vma" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NKo-aV-ElU"/>
+                    <constraint firstItem="ZXp-w7-jzx" firstAttribute="top" secondItem="Ctm-lB-vma" secondAttribute="bottom" constant="16" id="Pi0-3S-eQb"/>
+                    <constraint firstAttribute="bottom" secondItem="ZXp-w7-jzx" secondAttribute="bottom" constant="28" id="Uqq-yQ-Xh5"/>
+                    <constraint firstItem="ZXp-w7-jzx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WD4-2z-awZ"/>
+                    <constraint firstItem="Ctm-lB-vma" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nKJ-jU-BZM"/>
+                    <constraint firstItem="3VI-Mp-Lff" firstAttribute="leading" secondItem="Ctm-lB-vma" secondAttribute="trailing" constant="16" id="tAa-Xc-xOh"/>
+                    <constraint firstItem="3VI-Mp-Lff" firstAttribute="centerY" secondItem="Ctm-lB-vma" secondAttribute="centerY" id="ufv-Vw-3XZ"/>
+                    <constraint firstAttribute="trailing" secondItem="ZXp-w7-jzx" secondAttribute="trailing" id="xzR-Pf-ldG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cltvSuggestion" destination="ZXp-w7-jzx" id="Bc2-gt-u3T"/>
+                <outlet property="lbTitle" destination="Ctm-lB-vma" id="eWm-dz-rLh"/>
+            </connections>
+            <point key="canvasLocation" x="135.50724637681159" y="166.40625"/>
+        </tableViewCell>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ATm-DL-1al">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="132" y="39"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="nextAction" width="6.5" height="11"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

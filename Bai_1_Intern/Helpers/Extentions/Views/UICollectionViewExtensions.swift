@@ -20,4 +20,10 @@ extension UICollectionView{
             self.register(cell, forCellWithReuseIdentifier: identifier)
         }
     }
+    
+    func dequeueReusableCell <T: UICollectionViewCell> (_ cell: T.Type, indexPath: IndexPath) -> T {
+        let identifier = String(describing: cell)
+        let cell = self.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        return cell as! T
+    }
 }

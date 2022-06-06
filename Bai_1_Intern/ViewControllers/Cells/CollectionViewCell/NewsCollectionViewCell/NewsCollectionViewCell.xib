@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-Bold.ttf">
+            <string>NunitoSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewsCollectionViewCell" customModule="Bai_1_Intern" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="241" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="241" height="220"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqS-tl-TgX">
+                        <rect key="frame" x="0.0" y="0.0" width="241" height="220"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSC-E3-Fm5">
+                                <rect key="frame" x="0.0" y="0.0" width="241" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="iXg-ii-PWP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5o-1g-736">
+                                <rect key="frame" x="12" y="191" width="62.5" height="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Ưu đãi hot">
+                                        <attributes>
+                                            <color key="NSColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="NunitoSans-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQA-w3-n4h">
+                                <rect key="frame" x="80.5" y="198" width="4" height="4"/>
+                                <color key="backgroundColor" red="0.8509035707" green="0.85887247320000004" blue="0.88224714989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="8uu-8o-HJn"/>
+                                    <constraint firstAttribute="width" constant="4" id="Pze-sZ-DUv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozq-zI-jH1">
+                                <rect key="frame" x="90.5" y="191" width="62" height="18"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="28/6/2021">
+                                        <attributes>
+                                            <color key="NSColor" red="0.58817702530000004" green="0.60787981749999997" blue="0.67050570249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="NunitoSans-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jio Health khởi động chương trình Doctor Tour 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zme-fR-79H">
+                                <rect key="frame" x="12" y="146" width="217" height="41"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zme-fR-79H" secondAttribute="trailing" constant="12" id="08x-0Z-YXk"/>
+                            <constraint firstAttribute="trailing" secondItem="DSC-E3-Fm5" secondAttribute="trailing" id="3CQ-QY-p4N"/>
+                            <constraint firstItem="DSC-E3-Fm5" firstAttribute="leading" secondItem="SqS-tl-TgX" secondAttribute="leading" id="81Y-mj-iv9"/>
+                            <constraint firstItem="i5o-1g-736" firstAttribute="leading" secondItem="SqS-tl-TgX" secondAttribute="leading" constant="12" id="AQE-PI-g9D"/>
+                            <constraint firstItem="YQA-w3-n4h" firstAttribute="leading" secondItem="i5o-1g-736" secondAttribute="trailing" constant="6" id="HQr-mg-d2f"/>
+                            <constraint firstItem="YQA-w3-n4h" firstAttribute="top" secondItem="Zme-fR-79H" secondAttribute="bottom" constant="11" id="WC0-3N-rji"/>
+                            <constraint firstItem="DSC-E3-Fm5" firstAttribute="top" secondItem="SqS-tl-TgX" secondAttribute="top" id="ZOU-G5-IbL"/>
+                            <constraint firstItem="i5o-1g-736" firstAttribute="top" secondItem="Zme-fR-79H" secondAttribute="bottom" constant="4" id="ZWk-nR-PUp"/>
+                            <constraint firstItem="Zme-fR-79H" firstAttribute="leading" secondItem="SqS-tl-TgX" secondAttribute="leading" constant="12" id="bCq-CG-6ZN"/>
+                            <constraint firstItem="Zme-fR-79H" firstAttribute="top" secondItem="DSC-E3-Fm5" secondAttribute="bottom" constant="12" id="j7k-zt-jkD"/>
+                            <constraint firstItem="ozq-zI-jH1" firstAttribute="leading" secondItem="YQA-w3-n4h" secondAttribute="trailing" constant="6" id="mDd-5O-OF6"/>
+                            <constraint firstItem="ozq-zI-jH1" firstAttribute="top" secondItem="Zme-fR-79H" secondAttribute="bottom" constant="4" id="nkb-Ft-vmF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SqS-tl-TgX" secondAttribute="trailing" id="86b-SO-69g"/>
+                <constraint firstItem="SqS-tl-TgX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8A9-XV-Ewb"/>
+                <constraint firstItem="SqS-tl-TgX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bqX-Wg-6yX"/>
+                <constraint firstAttribute="bottom" secondItem="SqS-tl-TgX" secondAttribute="bottom" id="xRM-Hm-4P7"/>
+            </constraints>
+            <size key="customSize" width="241" height="220"/>
+            <connections>
+                <outlet property="imvFeed" destination="DSC-E3-Fm5" id="H4g-jJ-M8R"/>
+                <outlet property="lblDate" destination="ozq-zI-jH1" id="pmI-2y-VPf"/>
+                <outlet property="lblSpecial" destination="i5o-1g-736" id="sEM-Jo-NAx"/>
+                <outlet property="lblTitle" destination="Zme-fR-79H" id="AJA-ek-RBH"/>
+            </connections>
+            <point key="canvasLocation" x="166" y="24"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
