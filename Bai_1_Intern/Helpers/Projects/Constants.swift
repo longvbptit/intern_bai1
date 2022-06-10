@@ -17,7 +17,11 @@ struct Constants {
         static let startGradientIntro = UIColor(hexString: "#A6F1F7")
         static let endGradientIntro = UIColor(hexString: "#F3F5FB")
         static let borderGray = UIColor(hexString: "#EEEFF4")
+        static let gray1 = UIColor(hexString: "#18191F")
+        static let gray2 = UIColor(hexString: "#474A57")
+        static let gray3 = UIColor(hexString: "#969BAB")
         static let gray4 = UIColor(hexString: "#D9DBE1")
+        static let gray6 = UIColor(hexString: "#F4F5F7")
         static let borderBlue = UIColor(hexString: "#242A61")
         
     }
@@ -31,6 +35,7 @@ struct Constants {
     
     struct Icon {
         static let imagePlacehold = UIImage.imageWithColor(color: .lightGray)
+        static let doctorAvatarPlacehold = UIImage(named: "doctor-placeholder")
     }
     
     struct HomeVC {

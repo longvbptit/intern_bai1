@@ -73,6 +73,7 @@ extension PatientHomeTableViewCell: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(NewsCollectionViewCell.self, indexPath: indexPath)
         
+        
         if let articleList = articleList {
             
             let news = articleList[indexPath.item]
@@ -85,6 +86,10 @@ extension PatientHomeTableViewCell: UICollectionViewDataSource {
         cell.configViews(promotion: promotion)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

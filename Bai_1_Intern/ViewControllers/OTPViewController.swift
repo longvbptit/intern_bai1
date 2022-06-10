@@ -14,22 +14,22 @@ class OTPViewController: UIViewController {
     var phoneNumberWithoutPrefix : String = ""
     
     //MARK: IBOutlet
-    @IBOutlet weak var otpGuide_lb: UILabel!
-    @IBOutlet weak var otp_stv: OTPStackView!
-    @IBOutlet weak var otpError_lb: UILabel!
-    @IBOutlet weak var resendOTP_btn: UIButton!
-    @IBOutlet weak var continue_btn: UIButton!
+    @IBOutlet weak var lblOtpGuid: UILabel!
+    @IBOutlet weak var stvOtp: OTPStackView!
+    @IBOutlet weak var lblOtpError: UILabel!
+    @IBOutlet weak var btnResendOTP: UIButton!
+    @IBOutlet weak var btnContinue: UIButton!
     
     //MARK: IBAction
     @IBAction func back_btn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func resendOTPAct_btn(_ sender: Any) {
+    @IBAction func btnResendOTPTapped(_ sender: Any) {
         restartCountDown()
     }
     
     @IBAction func btnContinueTapped(_ sender: Any) {
-        if otp_stv.getOTPString() == "111111" {
+        if stvOtp.getOTPString() == "111111" {
             let vc = UIViewController.fromStoryboard(PatientHomeViewController.self)
             self.navigationController?.viewControllers = [vc]
         } else {
@@ -51,24 +51,24 @@ class OTPViewController: UIViewController {
     }
     
     private func updateResendOTPButtonUI(enable: Bool) {
-        resendOTP_btn.isEnabled = enable
-        resendOTP_btn.layer.borderColor = enable ? Constants.Color.greenBlue.cgColor : Constants.Color.gray4.cgColor
-        resendOTP_btn.setTitleColor(enable ? Constants.Color.greenBlue : Constants.Color.gray4 , for: .normal)
+        btnResendOTP.isEnabled = enable
+        btnResendOTP.layer.borderColor = enable ? Constants.Color.greenBlue.cgColor : Constants.Color.gray4.cgColor
+        btnResendOTP.setTitleColor(enable ? Constants.Color.greenBlue : Constants.Color.gray4 , for: .normal)
     }
     
     private func updateContinueButtonUI(enable: Bool) {
-        continue_btn.isEnabled = enable
-        continue_btn.backgroundColor = enable ? Constants.Color.greenBlue : Constants.Color.greenBlue.withAlphaComponent(0.3)
+        btnContinue.isEnabled = enable
+        btnContinue.backgroundColor = enable ? Constants.Color.greenBlue : Constants.Color.greenBlue.withAlphaComponent(0.3)
     }
     
     private func updateErrorLabelUI(hidden: Bool) {
-        otpError_lb.isHidden = hidden
+        lblOtpError.isHidden = hidden
     }
     
     //MARK: Setup view
     func setupView(){
         
-        otpError_lb.isHidden = true
+        lblOtpError.isHidden = true
         self.updateResendOTPButtonUI(enable: false)
         
         let guide = "Vui lòng nhập mã gồm 6 chữ số đã được gửi đến bạn vào số điện thoại "
@@ -76,28 +76,28 @@ class OTPViewController: UIViewController {
         let displayPhoneNumber = phoneNumberWithoutPrefix.split(by: 3, fromEnd: false).joined(separator: " ")
         let font = UIFont(name: Constants.Font.regular, size: 14)
         let phoneNumberfont = UIFont(name: Constants.Font.bold, size: 14)
-        otpGuide_lb.attributedText = NSMutableAttributedString().attrStr(text: guide, font: font)
+        lblOtpGuid.attributedText = NSMutableAttributedString().attrStr(text: guide, font: font)
             .attrStr(text: prefixPhoneNumber + " " + displayPhoneNumber, font: phoneNumberfont)
         
         let otpFont = UIFont(name: Constants.Font.semiBold, size: 20)
-        otp_stv.configTextFieldView(borderStyle: .none,
+        stvOtp.configTextFieldView(borderStyle: .none,
                                     font: otpFont,
                                     editingBorderColor: Constants.Color.greenBlue,
                                     nonEditingborderColor: .white,
                                     borderWidth: 1,
                                     cornerRadius: 8)
         
-        otp_stv.otpValueDidChanged = {[weak self] in
+        stvOtp.otpValueDidChanged = {[weak self] in
             guard let self = self else { return}
             self.updateErrorLabelUI(hidden: true)
             self.updateContinueButtonUI(enable: $0.count == 6)
         }
-        otp_stv.becomeFirstResponder()
+        stvOtp.becomeFirstResponder()
         
-        resendOTP_btn.layer.cornerRadius = 18
-        resendOTP_btn.layer.borderWidth = 1
+        btnResendOTP.layer.cornerRadius = 18
+        btnResendOTP.layer.borderWidth = 1
         
-        continue_btn.layer.cornerRadius = 24
+        btnContinue.layer.cornerRadius = 24
         updateContinueButtonUI(enable: false)
     }
     
@@ -107,7 +107,7 @@ class OTPViewController: UIViewController {
             
         var counterStr = counter < 10 ? "0\(counter)" : "\(counter)"
         counterStr += "s"
-        resendOTP_btn.setTitle("Gửi lại mã sau" + " " + counterStr, for: .disabled)
+        btnResendOTP.setTitle("Gửi lại mã sau" + " " + counterStr, for: .disabled)
         if counter == 0 {
             self.updateResendOTPButtonUI(enable: true)
         }
@@ -141,7 +141,7 @@ class OTPViewController: UIViewController {
         UIView.animate(withDuration: duration) {[weak self] in
             guard let self = self else { return}
             
-            self.continue_btn.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height + self.safeAreaInsets.bottom)
+            self.btnContinue.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height + self.safeAreaInsets.bottom)
         }
     }
     
@@ -151,7 +151,7 @@ class OTPViewController: UIViewController {
         UIView.animate(withDuration: duration) {[weak self] in
             guard let self = self else { return}
             
-            self.continue_btn.transform = .identity
+            self.btnContinue.transform = .identity
         }
     }
     

@@ -8,21 +8,20 @@
 import UIKit
 
 
-let intro_image: [String] = ["intro1", "intro2", "intro3"]
+let imgIntro: [String] = ["intro1", "intro2", "intro3"]
 class IntroViewController: UIViewController {
-
+    
     //MARK: IB Outlet
-    @IBOutlet weak var intro_clv: UICollectionView!
+    @IBOutlet weak var clvIntro: UICollectionView!
     @IBOutlet weak var dots: UIPageControl!
-    @IBOutlet weak var lg_btn: UIButton!
-    @IBOutlet weak var createAcc_btn: UIButton!
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnCreateAccount: UIButton!
     @IBOutlet weak var bgIntro: UIView!
     
     var introDetails : [IntroModel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .light
         self.navigationController?.isNavigationBarHidden = true
         setupViews()
     }
@@ -30,60 +29,65 @@ class IntroViewController: UIViewController {
     //MARK: Set up view
     func setupViews() {
         
-//        intro_clv.register(UINib(nibName: "IntroCLVCell", bundle: nil), forCellWithReuseIdentifier: "IntroCLVCell")
-        intro_clv.registerCells(IntroCLVCell.self)
-//        intro_clv.register(IntroCLVCell.self, forCellWithReuseIdentifier: String(describing: IntroCLVCell.self))
-
+        clvIntro.registerCells(IntroCLVCell.self)
+        
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
         dots.transform = CGAffineTransform(scaleX: 1, y: 1)
-
-        createAcc_btn.layer.borderColor = Constants.Color.borderBlue.cgColor
-        createAcc_btn.layer.borderWidth = 1
         
-        let intro1: String = "Bác sĩ sẵn lòng chăm sóc khi bạn cần"
-        let introDetail1 :String = "Chọn chuyên khoa, bác sĩ phù hợp và được thăm khám trong không gian thoải mái tại nhà"
-        let intro2: String = "Bác sĩ sẵn lòng chăm sóc khi bạn cần"
-        let introDetail2 :String = "Chọn chuyên khoa, bác sĩ phù hợp và được thăm khám trong không gian thoải mái tại nhà"
-        let intro3: String = "Bác sĩ sẵn lòng chăm sóc khi bạn cần"
-        let introDetail3 :String = "Chọn chuyên khoa, bác sĩ phù hợp và được thăm khám trong không gian thoải mái tại nhà"
-        introDetails = [IntroModel(image: UIImage(named: intro_image[0]), info1: intro1, info2: introDetail1), IntroModel(image: UIImage(named: intro_image[1]), info1: intro2, info2: introDetail2), IntroModel(image: UIImage(named: intro_image[2]), info1: intro3, info2: introDetail3)]
+        btnCreateAccount.layer.borderColor = Constants.Color.borderBlue.cgColor
+        btnCreateAccount.layer.borderWidth = 1
+        
+        let introTitle1: String = LCString.introTitle1.localized
+        let introDetail1 :String = LCString.introDetail1.localized
+        let introTitle2: String = LCString.introTitle2.localized
+        let introDetail2 :String = LCString.introDetail2.localized
+        let introTitle3: String = LCString.introTitle3.localized
+        let introDetail3 :String = LCString.introDetail3.localized
+        introDetails = [IntroModel(image: UIImage(named: imgIntro[0]), title: introTitle1, detail: introDetail1), IntroModel(image: UIImage(named: imgIntro[1]), title: introTitle2, detail: introDetail2), IntroModel(image: UIImage(named: imgIntro[2]), title: introTitle3, detail: introDetail3)]
+        
+        btnLogin.layer.cornerRadius = 24
+        btnCreateAccount.layer.cornerRadius = 24
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //gradient
-        let gradient = CAGradientLayer()
-        let startColor = Constants.Color.startGradientIntro.cgColor
-        let endColor = Constants.Color.endGradientIntro.cgColor
-        gradient.frame = bgIntro.bounds
-        gradient.colors = [startColor, endColor]
-        gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
-        gradient.frame = bgIntro.bounds
-        bgIntro.layer.insertSublayer(gradient, at: 0)
-        lg_btn.layer.cornerRadius = lg_btn.frame.height / 2
-        createAcc_btn.layer.cornerRadius = createAcc_btn.frame.height / 2
+        super.viewDidAppear(false)
+       
     }
+    
+    //    override func viewWillLayoutSubviews() {
+    //        <#code#>
+    //    }
+        override func viewDidLayoutSubviews() {
+            //gradient
+            let gradient = CAGradientLayer()
+            let startColor = Constants.Color.startGradientIntro.cgColor
+            let endColor = Constants.Color.endGradientIntro.cgColor
+            gradient.frame = bgIntro.bounds
+            gradient.colors = [startColor, endColor]
+            gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+            gradient.frame = bgIntro.bounds
+            bgIntro.layer.insertSublayer(gradient, at: 0)
+        }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         dots.currentPage = Int(
-            (intro_clv.contentOffset.x / intro_clv.frame.width)
+            (clvIntro.contentOffset.x / clvIntro.frame.width)
                 .rounded(.toNearestOrAwayFromZero)
-            )
+        )
     }
     
     //MARK: IBAction
-    @IBAction func login_act(_ sender: Any) {
+    @IBAction func btnLoginTapped(_ sender: Any) {
         let vc = UIViewController.fromStoryboard(SignUpViewController.self)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func cre_act(_ sender: Any) {
+    @IBAction func btnCreateAccountTapped(_ sender: Any) {
         let vc = UIViewController.fromStoryboard(SignUpViewController.self)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-
 }
 
 //MARK: UICollectionViewDelegate
@@ -91,12 +95,12 @@ class IntroViewController: UIViewController {
 extension IntroViewController {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dots.numberOfPages = intro_image.count
-        return intro_image.count
+        dots.numberOfPages = imgIntro.count
+        return imgIntro.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroCLVCell", for: indexPath) as! IntroCLVCell
+        let cell = collectionView.dequeueReusableCell(IntroCLVCell.self, indexPath: indexPath)
         cell.configViews(introDetails[indexPath.item])
         return cell
     }
@@ -108,11 +112,11 @@ extension IntroViewController:  UICollectionViewDataSource {
 }
 
 extension IntroViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }

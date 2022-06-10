@@ -33,16 +33,26 @@ class PatientHomeViewController: UIViewController {
     func setUpView(){
         
         tbvNewsFeed.registerCells(PatientHomeTableViewCell.self, SuggestDoctorTableViewCell.self)
-        
+        tbvNewsFeed.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tbvNewsFeed.delegate = self
         tbvNewsFeed.dataSource = self
     }
     
+    func showLoaderView( toView: UIView? = nil) {
+        self.view.endEditing(true)
+        ProgressHUD.colorStatus = .black
+        ProgressHUD.show(LCString.loading.localized, interaction: false)
+    }
+    
+    func dismissLoaderView() {
+        ProgressHUD.dismiss()
+    }
+    
     @objc func fetchPatientNewFeed() {
-//        self.showLoaderView()
+        self.showLoaderView()
         APIUtilities.requestHomePatientFeed { [weak self] patientNewFeed, error in
             guard let self = self else { return}
-//            self.dismissLoaderView()
+            self.dismissLoaderView()
             self.refreshControl.endRefreshing()
 
             guard let patientNewFeed = patientNewFeed, error == nil else {
@@ -63,18 +73,22 @@ class PatientHomeViewController: UIViewController {
 
 extension PatientHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.item == 2 {
+            return Constants.HomeVC.tableSuggestionCellHeight
+        }
         return Constants.HomeVC.tableNewsCellHeight
     }
 }
 
 extension PatientHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.item == 0 {
             let cell = tableView.dequeueReusableCell(PatientHomeTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
             cell.configViews(articleList: newFeed?.articleList, pushVCHandler: { [weak self] vc in
                 guard let self = self else { return }
                 
@@ -86,6 +100,7 @@ extension PatientHomeViewController: UITableViewDataSource {
         
         if indexPath.item == 1 {
             let cell = tableView.dequeueReusableCell(PatientHomeTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
             cell.configViews(promotionList: newFeed?.promotionList, pushVCHandler: { [weak self] vc in
                 guard let self = self else { return }
                 
@@ -94,6 +109,19 @@ extension PatientHomeViewController: UITableViewDataSource {
             
             return cell
         }
+        
+        if indexPath.item == 2 {
+            let cell = tableView.dequeueReusableCell(SuggestDoctorTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
+            cell.configViews(doctorList: newFeed?.doctorList, pushVCHandler: {
+                
+            })
+            return cell
+        }
         fatalError()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }

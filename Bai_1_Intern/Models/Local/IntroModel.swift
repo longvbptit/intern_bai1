@@ -10,6 +10,6 @@ import UIKit
 
 struct IntroModel {
     var image: UIImage?
-    var info1: String? = ""
-    var info2: String? = ""
+    var title: String? = ""
+    var detail: String? = ""
 }

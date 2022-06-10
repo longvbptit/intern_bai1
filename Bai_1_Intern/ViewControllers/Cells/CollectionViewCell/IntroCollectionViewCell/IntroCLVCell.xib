@@ -69,9 +69,9 @@
             </constraints>
             <size key="customSize" width="378" height="526"/>
             <connections>
-                <outlet property="inf1_lb" destination="ryK-cI-c9G" id="14X-G5-Q7l"/>
-                <outlet property="inf2_lb" destination="4yj-2m-5cO" id="S82-s7-U2S"/>
                 <outlet property="intro_img" destination="bAx-FP-wfc" id="rbg-f5-25V"/>
+                <outlet property="lblDetail" destination="4yj-2m-5cO" id="S82-s7-U2S"/>
+                <outlet property="lblTitle" destination="ryK-cI-c9G" id="14X-G5-Q7l"/>
             </connections>
             <point key="canvasLocation" x="143.47826086956522" y="123.88392857142857"/>
         </collectionViewCell>

@@ -10,8 +10,8 @@ import UIKit
 class IntroCLVCell: UICollectionViewCell {
     
     @IBOutlet weak var intro_img: UIImageView!
-    @IBOutlet weak var inf1_lb: UILabel!
-    @IBOutlet weak var inf2_lb: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDetail: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +24,7 @@ class IntroCLVCell: UICollectionViewCell {
 
     func configViews(_ model: IntroModel) {
         intro_img.image = model.image
-        inf1_lb.text = model.info1
-        inf1_lb.font = UIFont(name: "NunitoSans-Bold", size: 24)
-        inf2_lb.text = model.info2
-        inf2_lb.font = UIFont(name: "NunitoSans-Regular", size: 14)
+        lblTitle.text = model.title
+        lblDetail.text = model.detail
     }
 }
