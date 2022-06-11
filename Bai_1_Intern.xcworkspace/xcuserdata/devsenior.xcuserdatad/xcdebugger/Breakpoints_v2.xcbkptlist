@@ -23,145 +23,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A2CC46A7-A356-4993-A711-A908399CE903"
-            shouldBeEnabled = "No"
+            uuid = "910A805D-E3B4-48B9-B933-F944EEB133D8"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bai_1_Intern/ViewControllers/PatientHomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A2CC46A7-A356-4993-A711-A908399CE903 - daae30db2c3c44ef"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bai_1_Intern.PatientHomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Bai_1_Intern"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baolong/Desktop/intern/intern_bai1/Bai_1_Intern/ViewControllers/PatientHomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "876">
-               </Location>
-               <Location
-                  uuid = "A2CC46A7-A356-4993-A711-A908399CE903 - 24997c432ca0e1d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.UIViewController) -&gt; () in Bai_1_Intern.PatientHomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Bai_1_Intern"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baolong/Desktop/intern/intern_bai1/Bai_1_Intern/ViewControllers/PatientHomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "105">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9A480E17-AB34-4020-BB3F-02764F20953F"
-            shouldBeEnabled = "No"
+            uuid = "74C00010-BEE7-45AD-8FA4-CB13C97D6953"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bai_1_Intern/ViewControllers/PatientHomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "seeAllDoctor(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9A480E17-AB34-4020-BB3F-02764F20953F - daae30db2c3c457a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bai_1_Intern.PatientHomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Bai_1_Intern"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baolong/Desktop/intern/intern_bai1/Bai_1_Intern/ViewControllers/PatientHomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "286">
-               </Location>
-               <Location
-                  uuid = "9A480E17-AB34-4020-BB3F-02764F20953F - ce9510241f018a4c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UIViewController) -&gt; () in Bai_1_Intern.PatientHomeViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Bai_1_Intern"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baolong/Desktop/intern/intern_bai1/Bai_1_Intern/ViewControllers/PatientHomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "105">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E345266A-BFA4-4980-9534-2529EF5F2189"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bai_1_Intern/Helpers/Utilities/APIUtilities.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "requestHomePatientFeed(completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "09142688-0D81-406C-9A1B-EFD927989885"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bai_1_Intern/Helpers/Utilities/APIUtilities.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "requestHomePatientFeed(completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B5F834A-BC48-40E0-8BEA-8AA30FE38FA1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bai_1_Intern/ViewControllers/Cells/TableViewCell/SuggestDoctorTableViewCell/SuggestDoctorTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "SuggestDoctorTableViewCell"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

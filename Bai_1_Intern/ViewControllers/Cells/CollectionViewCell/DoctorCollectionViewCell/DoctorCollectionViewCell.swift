@@ -9,6 +9,7 @@ import UIKit
 
 class DoctorCollectionViewCell: UICollectionViewCell {
 
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

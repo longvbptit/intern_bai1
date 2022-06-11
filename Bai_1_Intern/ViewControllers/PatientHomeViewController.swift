@@ -31,7 +31,6 @@ class PatientHomeViewController: UIViewController {
     
     
     func setUpView(){
-        
         tbvNewsFeed.registerCells(PatientHomeTableViewCell.self, SuggestDoctorTableViewCell.self)
         tbvNewsFeed.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tbvNewsFeed.delegate = self
@@ -69,6 +68,11 @@ class PatientHomeViewController: UIViewController {
         }
     }
     
+    @objc func seeAllDoctor(_ sender: Any?){
+        let vc = UIViewController.fromStoryboard(DoctorViewController.self)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension PatientHomeViewController: UITableViewDelegate {
@@ -94,7 +98,6 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
-            
             return cell
         }
         
@@ -116,6 +119,13 @@ extension PatientHomeViewController: UITableViewDataSource {
             cell.configViews(doctorList: newFeed?.doctorList, pushVCHandler: {
                 
             })
+            cell.btnShowListDoctor.addTarget(self, action: #selector(PatientHomeViewController.seeAllDoctor(_:)), for: .touchUpInside)
+//            cell.showListDoctor = {
+//                let vc = UIViewController.fromStoryboard(DoctorViewController.self)
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            print("Hello")
+//            }
+            
             return cell
         }
         fatalError()

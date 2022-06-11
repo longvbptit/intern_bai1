@@ -41,7 +41,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VI-Mp-Lff">
+                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VI-Mp-Lff" userLabel="Xem tất cả">
                         <rect key="frame" x="227" y="3" width="82" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="3eg-To-FKQ"/>
@@ -51,6 +51,9 @@
                         <state key="normal" title="Xem tất cả " image="nextAction">
                             <color key="titleColor" red="0.17231905459999999" green="0.52551853660000003" blue="0.4038655162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="btnShowListDoctorTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lbR-w4-7Ag"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -68,6 +71,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="btnShowListDoctor" destination="3VI-Mp-Lff" id="t4c-vf-Ej6"/>
                 <outlet property="clvSuggestion" destination="ZXp-w7-jzx" id="Bc2-gt-u3T"/>
                 <outlet property="lblTitle" destination="Ctm-lB-vma" id="eWm-dz-rLh"/>
             </connections>

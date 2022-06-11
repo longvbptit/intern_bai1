@@ -27,19 +27,17 @@ class PatientNewFeedModel: NSObject, JsonInitObject {
     required convenience init(json: [String: Any]) {
         self.init()
         
-        for (key, value) in json {
-            if key == "doctorList", let wrapValue = value as? [[String: Any]]{
-                let jsonValue = wrapValue.map({ PatientDoctorListModel(json: $0)})
-                self.doctorList = jsonValue
-            }
-            if key == "articleList", let wrapValue = value as? [[String: Any]]{
-                let jsonValue = wrapValue.map({ PatientArticleListModel(json: $0)})
-                self.articleList = jsonValue
-            }
-            if key == "promotionList", let wrapValue = value as? [[String: Any]]{
-                let jsonValue = wrapValue.map({ PatientPromotionListModel(json: $0)})
-                self.promotionList = jsonValue
-            }
+        if let wrapValue = json["articleList"] as? [[String: Any]]{
+            let jsonValue = wrapValue.map({ PatientArticleListModel(json: $0)})
+            self.articleList = jsonValue
+        }
+        if let wrapValue = json["doctorList"] as? [[String: Any]]{
+            let jsonValue = wrapValue.map({ PatientDoctorListModel(json: $0)})
+            self.doctorList = jsonValue
+        }
+        if let wrapValue = json["promotionList"] as? [[String: Any]]{
+            let jsonValue = wrapValue.map({ PatientPromotionListModel(json: $0)})
+            self.promotionList = jsonValue
         }
     }
 }

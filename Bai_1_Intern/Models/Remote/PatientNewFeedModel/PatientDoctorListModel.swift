@@ -19,7 +19,7 @@ class PatientDoctorListModel {
     var last_name     : String?
     var contact_email     : String?
     var majors_name     : String?
-    var number_of_stars     : String?
+    var number_of_stars     : Int?
     
     convenience init(full_name: String?,
                      phone: String?,
@@ -31,7 +31,7 @@ class PatientDoctorListModel {
                      last_name: String?,
                      contact_email: String?,
                      majors_name: String?,
-                     number_of_stars : String?) {
+                     number_of_stars : Int?) {
         
         self.init()
         self.full_name = full_name
@@ -51,51 +51,38 @@ class PatientDoctorListModel {
     convenience init(json: [String: Any]) {
         self.init()
         
-        for (key, value) in json {
-            if key == "full_name", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.full_name = jsonValue
-            }
-            if key == "phone", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.phone = jsonValue
-            }
-            if key == "avatar", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.avatar = jsonValue
-            }
-            if key == "id", let wrapValue = value as? Int{
-                let jsonValue = wrapValue
-                self.id = jsonValue
-            }
-            if key == "number_of_reviews", let wrapValue = value as? Int{
-                let jsonValue = wrapValue
-                self.number_of_reviews = jsonValue
-            }
-            if key == "name", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.name = jsonValue
-            }
-            if key == "ratio_star", let wrapValue = value as? Double{
-                let jsonValue = wrapValue
-                self.ratio_star = jsonValue
-            }
-            if key == "last_name", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.last_name = jsonValue
-            }
-            if key == "contact_email", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.contact_email = jsonValue
-            }
-            if key == "majors_name", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.majors_name = jsonValue
-            }
-            if key == "number_of_stars", let wrapValue = value as? String{
-                let jsonValue = wrapValue
-                self.number_of_stars = jsonValue
-            }
+        if let wrapValue = json["avatar"] as? String {
+            self.avatar = wrapValue
+        }
+        if let wrapValue = json["contact_email"] as? String {
+            self.contact_email = wrapValue
+        }
+        if let wrapValue = json["full_name"] as? String {
+            self.full_name = wrapValue
+        }
+        if let wrapValue = json["id"] as? Int {
+            self.id = wrapValue
+        }
+        if let wrapValue = json["last_name"] as? String {
+            self.last_name = wrapValue
+        }
+        if let wrapValue = json["majors_name"] as? String {
+            self.majors_name = wrapValue
+        }
+        if let wrapValue = json["name"] as? String {
+            self.name = wrapValue
+        }
+        if let wrapValue = json["number_of_reviews"] as? Int {
+            self.number_of_reviews = wrapValue
+        }
+        if let wrapValue = json["number_of_stars"] as? Int {
+            self.number_of_stars = wrapValue
+        }
+        if let wrapValue = json["phone"] as? String {
+            self.phone = wrapValue
+        }
+        if let wrapValue = json["ratio_star"] as? Double {
+            self.ratio_star = wrapValue
         }
     }
 }

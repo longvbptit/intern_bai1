@@ -23,10 +23,6 @@
 		E7787A4F28486E0B008F45E3 /* APIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4E28486E0B008F45E3 /* APIUtilities.swift */; };
 		E7787A592848AE7B008F45E3 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A572848AE7B008F45E3 /* NewsCollectionViewCell.swift */; };
 		E7787A5A2848AE7B008F45E3 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7787A582848AE7B008F45E3 /* NewsCollectionViewCell.xib */; };
-		E7787A5E2848AEA1008F45E3 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A5C2848AEA1008F45E3 /* PromotionCollectionViewCell.swift */; };
-		E7787A5F2848AEA1008F45E3 /* PromotionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7787A5D2848AEA1008F45E3 /* PromotionCollectionViewCell.xib */; };
-		E7787A632848AECE008F45E3 /* DoctorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A612848AECE008F45E3 /* DoctorCollectionViewCell.swift */; };
-		E7787A642848AECE008F45E3 /* DoctorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7787A622848AECE008F45E3 /* DoctorCollectionViewCell.xib */; };
 		E7792D1128318DF00096CC61 /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */; };
 		E7792D1228318DF00096CC61 /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */; };
 		E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */; };
@@ -51,6 +47,11 @@
 		E7A217FD284724D500CAF323 /* PatientHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */; };
 		E7A2180128474A3100CAF323 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2180028474A3100CAF323 /* UICollectionViewExtensions.swift */; };
 		E7BAC84F283E2E9D000F6DCB /* OTPStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BAC84E283E2E9D000F6DCB /* OTPStackView.swift */; };
+		E7C6A1F328535E0800F7C96B /* DoctorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1F128535E0800F7C96B /* DoctorCollectionViewCell.swift */; };
+		E7C6A1F428535E0800F7C96B /* DoctorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C6A1F228535E0800F7C96B /* DoctorCollectionViewCell.xib */; };
+		E7C6A1F62853671500F7C96B /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1F52853671500F7C96B /* DoctorViewController.swift */; };
+		E7C6A1F928536E3300F7C96B /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1F828536E3300F7C96B /* DoctorModel.swift */; };
+		E7C6A1FB28538A2600F7C96B /* ListDoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1FA28538A2600F7C96B /* ListDoctorModel.swift */; };
 		E7E8BE62284DEAC80028267C /* Ultilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8BE61284DEAC80028267C /* Ultilities.swift */; };
 		E7E8BE64284DF12D0028267C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8BE63284DF12D0028267C /* UIImage+Extensions.swift */; };
 		E7E8BE66284DFB4C0028267C /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8BE65284DFB4C0028267C /* UITableViewExtensions.swift */; };
@@ -113,10 +114,6 @@
 		E7787A4E28486E0B008F45E3 /* APIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUtilities.swift; sourceTree = "<group>"; };
 		E7787A572848AE7B008F45E3 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7787A582848AE7B008F45E3 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
-		E7787A5C2848AEA1008F45E3 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
-		E7787A5D2848AEA1008F45E3 /* PromotionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionCollectionViewCell.xib; sourceTree = "<group>"; };
-		E7787A612848AECE008F45E3 /* DoctorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCollectionViewCell.swift; sourceTree = "<group>"; };
-		E7787A622848AECE008F45E3 /* DoctorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7792D0228318DF00096CC61 /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		E7792D0328318DF00096CC61 /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E7792D0428318DF00096CC61 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -141,6 +138,11 @@
 		E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientHomeTableViewCell.xib; sourceTree = "<group>"; };
 		E7A2180028474A3100CAF323 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		E7BAC84E283E2E9D000F6DCB /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
+		E7C6A1F128535E0800F7C96B /* DoctorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7C6A1F228535E0800F7C96B /* DoctorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCollectionViewCell.xib; sourceTree = "<group>"; };
+		E7C6A1F52853671500F7C96B /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		E7C6A1F828536E3300F7C96B /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
+		E7C6A1FA28538A2600F7C96B /* ListDoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDoctorModel.swift; sourceTree = "<group>"; };
 		E7E8BE61284DEAC80028267C /* Ultilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultilities.swift; sourceTree = "<group>"; };
 		E7E8BE63284DF12D0028267C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		E7E8BE65284DFB4C0028267C /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
@@ -257,24 +259,6 @@
 			path = NewsCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		E7787A5B2848AE7F008F45E3 /* PromotionCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				E7787A5C2848AEA1008F45E3 /* PromotionCollectionViewCell.swift */,
-				E7787A5D2848AEA1008F45E3 /* PromotionCollectionViewCell.xib */,
-			);
-			path = PromotionCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		E7787A602848AEA5008F45E3 /* DoctorCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				E7787A612848AECE008F45E3 /* DoctorCollectionViewCell.swift */,
-				E7787A622848AECE008F45E3 /* DoctorCollectionViewCell.xib */,
-			);
-			path = DoctorCollectionViewCell;
-			sourceTree = "<group>";
-		};
 		E7792D0128318DF00096CC61 /* Nunito_Sans */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +332,24 @@
 			path = CommonViews;
 			sourceTree = "<group>";
 		};
+		E7C6A1F028535DCB00F7C96B /* DoctorCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E7C6A1F128535E0800F7C96B /* DoctorCollectionViewCell.swift */,
+				E7C6A1F228535E0800F7C96B /* DoctorCollectionViewCell.xib */,
+			);
+			path = DoctorCollectionView;
+			sourceTree = "<group>";
+		};
+		E7C6A1F728536E0C00F7C96B /* DoctorModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7C6A1F828536E3300F7C96B /* DoctorModel.swift */,
+				E7C6A1FA28538A2600F7C96B /* ListDoctorModel.swift */,
+			);
+			path = DoctorModel;
+			sourceTree = "<group>";
+		};
 		E7D85CC1283DD9B70042A994 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +388,7 @@
 		E7D85CC4283DDFFD0042A994 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				E7C6A1F728536E0C00F7C96B /* DoctorModel */,
 				E7787A3E284869AB008F45E3 /* PatientNewFeedModel */,
 			);
 			path = Remote;
@@ -499,6 +502,7 @@
 				E71DF286282822B700B22B88 /* SignUpViewController.swift */,
 				E70AB78A283632F600C69F3A /* OTPViewController.swift */,
 				E7F0579C28467A9A00AA6883 /* PatientHomeViewController.swift */,
+				E7C6A1F52853671500F7C96B /* DoctorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -533,9 +537,8 @@
 		E7FC6B8A2849C79C0096E480 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E7C6A1F028535DCB00F7C96B /* DoctorCollectionView */,
 				E7FC6B852849C7690096E480 /* SuggestDoctorCollectionViewCell */,
-				E7787A602848AEA5008F45E3 /* DoctorCollectionViewCell */,
-				E7787A5B2848AE7F008F45E3 /* PromotionCollectionViewCell */,
 				E7787A562848AE5F008F45E3 /* NewsCollectionViewCell */,
 				E7A217FE284724E700CAF323 /* IntroCollectionViewCell */,
 			);
@@ -677,13 +680,12 @@
 				E776AAE62828BA580064D271 /* Main.storyboard in Resources */,
 				E7787A5A2848AE7B008F45E3 /* NewsCollectionViewCell.xib in Resources */,
 				E7FC6B842849BEA90096E480 /* SuggestDoctorTableViewCell.xib in Resources */,
-				E7787A642848AECE008F45E3 /* DoctorCollectionViewCell.xib in Resources */,
 				E7A217FD284724D500CAF323 /* PatientHomeTableViewCell.xib in Resources */,
 				E7792D1128318DF00096CC61 /* NunitoSans-LightItalic.ttf in Resources */,
 				E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */,
-				E7787A5F2848AEA1008F45E3 /* PromotionCollectionViewCell.xib in Resources */,
 				E7792D1D28318DF00096CC61 /* NunitoSans-Black.ttf in Resources */,
 				E7FC6B892849C7910096E480 /* SuggestDoctorCollectionViewCell.xib in Resources */,
+				E7C6A1F428535E0800F7C96B /* DoctorCollectionViewCell.xib in Resources */,
 				E7792D1528318DF00096CC61 /* NunitoSans-BlackItalic.ttf in Resources */,
 				E7792D1428318DF00096CC61 /* NunitoSans-Light.ttf in Resources */,
 			);
@@ -831,15 +833,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7787A4C28486BD3008F45E3 /* PatientNewFeedModel.swift in Sources */,
+				E7C6A1F928536E3300F7C96B /* DoctorModel.swift in Sources */,
+				E7C6A1F328535E0800F7C96B /* DoctorCollectionViewCell.swift in Sources */,
 				E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */,
 				E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */,
 				E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */,
 				E7BAC84F283E2E9D000F6DCB /* OTPStackView.swift in Sources */,
 				E7787A4A28486BC2008F45E3 /* PatientPromotionListModel.swift in Sources */,
+				E7C6A1FB28538A2600F7C96B /* ListDoctorModel.swift in Sources */,
 				E79DFAD228408B4600702C40 /* String+Extensions.swift in Sources */,
 				E7EB3B592827792B0007677B /* IntroViewController.swift in Sources */,
 				E75C685F2852044000EBCC74 /* ProgressHUB.swift in Sources */,
 				E78C645F283F2B5100C62B9C /* Constants.swift in Sources */,
+				E7C6A1F62853671500F7C96B /* DoctorViewController.swift in Sources */,
 				E7F0579F28467E4800AA6883 /* UIViewController+Extensions.swift in Sources */,
 				E7A2180128474A3100CAF323 /* UICollectionViewExtensions.swift in Sources */,
 				E79DFAD428408C9F00702C40 /* NSMutableAttributedString+Extensions.swift in Sources */,
@@ -848,7 +854,6 @@
 				E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */,
 				E7E8BE69284E0D1C0028267C /* LCString.swift in Sources */,
 				E7787A4828486BB1008F45E3 /* PatientDoctorListModel.swift in Sources */,
-				E7787A632848AECE008F45E3 /* DoctorCollectionViewCell.swift in Sources */,
 				E7787A3D284864E5008F45E3 /* UIView+Extensions.swift in Sources */,
 				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,
 				E7FC6B832849BEA90096E480 /* SuggestDoctorTableViewCell.swift in Sources */,
@@ -861,7 +866,6 @@
 				E7F0579D28467A9A00AA6883 /* PatientHomeViewController.swift in Sources */,
 				E7E8BE64284DF12D0028267C /* UIImage+Extensions.swift in Sources */,
 				E7E8BE66284DFB4C0028267C /* UITableViewExtensions.swift in Sources */,
-				E7787A5E2848AEA1008F45E3 /* PromotionCollectionViewCell.swift in Sources */,
 				E7787A4F28486E0B008F45E3 /* APIUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
