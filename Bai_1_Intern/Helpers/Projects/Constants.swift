@@ -17,6 +17,7 @@ struct Constants {
         static let startGradientIntro = UIColor(hexString: "#A6F1F7")
         static let endGradientIntro = UIColor(hexString: "#F3F5FB")
         static let borderGray = UIColor(hexString: "#EEEFF4")
+        static let gray = UIColor(hexString: "#EEEEEE")
         static let gray1 = UIColor(hexString: "#18191F")
         static let gray2 = UIColor(hexString: "#474A57")
         static let gray3 = UIColor(hexString: "#969BAB")

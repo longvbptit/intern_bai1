@@ -52,6 +52,9 @@
                                 </fragment>
                             </attributedString>
                         </state>
+                        <connections>
+                            <action selector="btnSeeAllTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AYj-NG-XDQ"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -68,6 +71,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnSeeAll" destination="1ZZ-P2-A5Q" id="OI8-2b-YVb"/>
                 <outlet property="cltvHome" destination="g3z-Xb-rIB" id="Gbd-dk-hqO"/>
                 <outlet property="lbTitle" destination="pDG-4L-zMs" id="Ljt-ZU-YAd"/>
             </connections>

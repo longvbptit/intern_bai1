@@ -25,7 +25,7 @@ final class APIUtilities {
     
     }
     
-    static func requestNews(completionHandler: ((PatientNewFeedModel?, APIError?) -> Void)?) {
+    static func requestNews(completionHandler: ((ListNewsModel?, APIError?) -> Void)?) {
         
         let tailStrURL = "/hdhuy179/84d1dfe96f2c0ab1ddea701df352a7a6/raw"
         jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)

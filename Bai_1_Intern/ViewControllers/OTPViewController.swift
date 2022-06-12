@@ -42,7 +42,7 @@ class OTPViewController: UIViewController {
         setupView()
         startCountDown()
         registerObserver()
-        self.setupHideKeyboardOnTap()
+//        self.setupHideKeyboardOnTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -155,14 +155,14 @@ class OTPViewController: UIViewController {
         }
     }
     
-    //hide keyboard and end editing
-    func setupHideKeyboardOnTap() {
-        self.view.addGestureRecognizer(self.endEditingRecognizer())
-        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
-    }
-    private func endEditingRecognizer() -> UIGestureRecognizer {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
-        tap.cancelsTouchesInView = false
-        return tap
-    }
+//    //hide keyboard and end editing
+//    func setupHideKeyboardOnTap() {
+//        self.view.addGestureRecognizer(self.endEditingRecognizer())
+//        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+//    }
+//    private func endEditingRecognizer() -> UIGestureRecognizer {
+//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+//        tap.cancelsTouchesInView = false
+//        return tap
+//    }
 }

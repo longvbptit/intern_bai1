@@ -11,7 +11,11 @@ class PatientHomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var cltvHome: UICollectionView!
-    
+    @IBOutlet weak var btnSeeAll: UIButton!
+    var seeAll: (() -> Void)? = nil
+    @IBAction func btnSeeAllTapped(_ sender: Any) {
+        seeAll?()
+    }
     var articleList     : [PatientArticleListModel]?
     var promotionList     : [PatientPromotionListModel]?
     var pushVCHandler: ((UIViewController) -> ())? = nil

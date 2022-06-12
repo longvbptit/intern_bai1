@@ -73,6 +73,16 @@ class PatientHomeViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc func seeAllNews(_ sender: Any?){
+        let vc = UIViewController.fromStoryboard(NewsViewController.self)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func seeAllPromotion(_ sender: Any?){
+        let vc = UIViewController.fromStoryboard(DoctorViewController.self)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension PatientHomeViewController: UITableViewDelegate {
@@ -98,6 +108,7 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
+            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllNews(_:)), for: .touchUpInside)
             return cell
         }
         
