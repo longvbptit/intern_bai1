@@ -9,9 +9,9 @@ import UIKit
 
 class NewsViewController: UIViewController {
 
-    @IBOutlet weak var imvNews: UIImageView!
-    @IBOutlet weak var lblNewsTitle: UILabel!
-    @IBOutlet weak var lblDate: UILabel!
+//    @IBOutlet weak var imvNews: UIImageView!
+//    @IBOutlet weak var lblNewsTitle: UILabel!
+//    @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var tbvNews: UITableView!
     
     @IBAction func btnBackTapped(_ sender: Any) {
@@ -26,10 +26,10 @@ class NewsViewController: UIViewController {
     }
     
     func configView(){
-        tbvNews.registerCells(NewsTableViewCell.self)
+        tbvNews.registerCells(NewsTableViewCell.self, FirstNewsTableViewCell.self)
         tbvNews.delegate = self
         tbvNews.dataSource = self
-        tbvNews.separatorColor = UIColor.black
+        tbvNews.separatorColor = Constants.Color.gray
     }
     
     @objc func fetchNews() {
@@ -42,9 +42,9 @@ class NewsViewController: UIViewController {
 
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
-                Ultilities.loadImage(self.imvNews, strURL: listNews?.newsList[0].picture ?? "", placeHolder: Constants.Icon.imagePlacehold)
-                self.lblNewsTitle.text = self.listNews?.newsList[0].title ?? " "
-                self.lblDate.text = self.listNews?.newsList[0].created_at ?? " "
+//                Ultilities.loadImage(self.imvNews, strURL: listNews?.newsList[0].picture ?? "", placeHolder: Constants.Icon.imagePlacehold)
+//                self.lblNewsTitle.text = self.listNews?.newsList[0].title ?? " "
+//                self.lblDate.text = self.listNews?.newsList[0].created_at ?? " "
                 self.tbvNews.reloadData()
             }
         }
@@ -52,32 +52,54 @@ class NewsViewController: UIViewController {
 }
 
 extension NewsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 102
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 296
+        }
+        else {
+            return 102
+        }
+//        return UITableView.automaticDimension
     }
+    
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let vc = UIViewController.fromStoryboard(DetailsViewController.self)
+        vc.urlString = listNews?.newsList[indexPath.row].link
+        vc.titles = "news"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(listNews?.newsList.count  ?? 1)
-        return (listNews?.newsList.count  ?? 1 ) - 1
+//        print(listNews?.newsList.count  ?? 1)
+        return (listNews?.newsList.count  ?? 0)
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(NewsTableViewCell.self, indexPath: indexPath)
-        cell.selectionStyle = .none
-        let news = listNews?.newsList[indexPath.row + 1]
-        cell.configViews(news: news)
-
-        return cell
-        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(FirstNewsTableViewCell.self, indexPath: indexPath)
+            let news = listNews?.newsList[indexPath.row]
+            cell.configViews(news: news)
+            cell.selectionStyle = .none
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(NewsTableViewCell.self, indexPath: indexPath)
+            let news = listNews?.newsList[indexPath.row]
+            cell.configViews(news: news)
+            cell.selectionStyle = .none
+            return cell
+        }    
     }
+    
     
 
 }

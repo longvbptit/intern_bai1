@@ -79,7 +79,7 @@ class PatientHomeViewController: UIViewController {
     }
     
     @objc func seeAllPromotion(_ sender: Any?){
-        let vc = UIViewController.fromStoryboard(DoctorViewController.self)
+        let vc = UIViewController.fromStoryboard(PromotionsViewController.self)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -96,7 +96,7 @@ extension PatientHomeViewController: UITableViewDelegate {
 
 extension PatientHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,6 +108,7 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
+            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
             cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllNews(_:)), for: .touchUpInside)
             return cell
         }
@@ -120,7 +121,8 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
-            
+            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
+            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllPromotion(_:)), for: .touchUpInside)
             return cell
         }
         

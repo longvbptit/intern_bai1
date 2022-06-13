@@ -32,7 +32,7 @@ final class APIUtilities {
     
     }
     
-    static func requestPromotions(completionHandler: ((PatientNewFeedModel?, APIError?) -> Void)?) {
+    static func requestPromotions(completionHandler: ((ListPromotionModel?, APIError?) -> Void)?) {
         
         let tailStrURL = "/hdhuy179/ef03ed850ad56f0136fe3c5916b3280b/raw/Training_Intern_BasicApp_Promotion"
         jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)

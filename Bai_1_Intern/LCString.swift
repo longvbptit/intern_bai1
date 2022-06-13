@@ -18,6 +18,8 @@ enum LCString: String {
     
     case loading
     
+    case titleNews
+    case titlePromotion
     var localized: String {
         return self.rawValue.localized
     }

@@ -14,6 +14,8 @@
 		E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78D28363A4800C69F3A /* CustomTextField.swift */; };
 		E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF286282822B700B22B88 /* SignUpViewController.swift */; };
 		E75C685F2852044000EBCC74 /* ProgressHUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75C685E2852044000EBCC74 /* ProgressHUB.swift */; };
+		E7742DF42857625600638BAE /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7742DF32857625600638BAE /* PromotionModel.swift */; };
+		E7742DF62857626300638BAE /* ListPromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7742DF52857626300638BAE /* ListPromotionModel.swift */; };
 		E776AAE62828BA580064D271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776AAE42828BA580064D271 /* Main.storyboard */; };
 		E7787A3D284864E5008F45E3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A3C284864E5008F45E3 /* UIView+Extensions.swift */; };
 		E7787A4628486BA3008F45E3 /* PatientArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7787A4528486BA3008F45E3 /* PatientArticleListModel.swift */; };
@@ -40,12 +42,15 @@
 		E7792D1F28318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7792D1028318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf */; };
 		E78C645F283F2B5100C62B9C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78C645E283F2B5100C62B9C /* Constants.swift */; };
 		E78C6461283F2EEB00C62B9C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78C6460283F2EEB00C62B9C /* UIColor+Extensions.swift */; };
+		E78D6E6A28566BC900C8C920 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78D6E6928566BC900C8C920 /* DetailsViewController.swift */; };
 		E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F401B283B2A2F0063FF79 /* IntroModel.swift */; };
 		E79DFAD228408B4600702C40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79DFAD128408B4600702C40 /* String+Extensions.swift */; };
 		E79DFAD428408C9F00702C40 /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */; };
 		E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A217FA284724D500CAF323 /* PatientHomeTableViewCell.swift */; };
 		E7A217FD284724D500CAF323 /* PatientHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */; };
 		E7A2180128474A3100CAF323 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2180028474A3100CAF323 /* UICollectionViewExtensions.swift */; };
+		E7AE02F4285653750081A062 /* FirstNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE02F2285653750081A062 /* FirstNewsTableViewCell.swift */; };
+		E7AE02F5285653750081A062 /* FirstNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AE02F3285653750081A062 /* FirstNewsTableViewCell.xib */; };
 		E7BA83C62855EE3700D9ADC3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA83C52855EE3700D9ADC3 /* NewsViewController.swift */; };
 		E7BAC84F283E2E9D000F6DCB /* OTPStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BAC84E283E2E9D000F6DCB /* OTPStackView.swift */; };
 		E7BBD53F2855E5A800132BD2 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBD53E2855E5A800132BD2 /* NewsModel.swift */; };
@@ -57,6 +62,9 @@
 		E7C6A1F62853671500F7C96B /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1F52853671500F7C96B /* DoctorViewController.swift */; };
 		E7C6A1F928536E3300F7C96B /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1F828536E3300F7C96B /* DoctorModel.swift */; };
 		E7C6A1FB28538A2600F7C96B /* ListDoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A1FA28538A2600F7C96B /* ListDoctorModel.swift */; };
+		E7D8AD872856FFCB00188AC9 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8AD862856FFCB00188AC9 /* PromotionsViewController.swift */; };
+		E7D8AD8B2857009A00188AC9 /* PromotionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8AD892857009A00188AC9 /* PromotionsTableViewCell.swift */; };
+		E7D8AD8C2857009A00188AC9 /* PromotionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D8AD8A2857009A00188AC9 /* PromotionsTableViewCell.xib */; };
 		E7E8BE62284DEAC80028267C /* Ultilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8BE61284DEAC80028267C /* Ultilities.swift */; };
 		E7E8BE64284DF12D0028267C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8BE63284DF12D0028267C /* UIImage+Extensions.swift */; };
 		E7E8BE66284DFB4C0028267C /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8BE65284DFB4C0028267C /* UITableViewExtensions.swift */; };
@@ -110,6 +118,8 @@
 		E70AB78D28363A4800C69F3A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E71DF286282822B700B22B88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E75C685E2852044000EBCC74 /* ProgressHUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUB.swift; sourceTree = "<group>"; };
+		E7742DF32857625600638BAE /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
+		E7742DF52857626300638BAE /* ListPromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPromotionModel.swift; sourceTree = "<group>"; };
 		E776AAE52828BA580064D271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7787A3C284864E5008F45E3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E7787A4528486BA3008F45E3 /* PatientArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientArticleListModel.swift; sourceTree = "<group>"; };
@@ -136,12 +146,15 @@
 		E7792D1028318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		E78C645E283F2B5100C62B9C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E78C6460283F2EEB00C62B9C /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		E78D6E6928566BC900C8C920 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E78F401B283B2A2F0063FF79 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		E79DFAD128408B4600702C40 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		E7A217FA284724D500CAF323 /* PatientHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHomeTableViewCell.swift; sourceTree = "<group>"; };
 		E7A217FB284724D500CAF323 /* PatientHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientHomeTableViewCell.xib; sourceTree = "<group>"; };
 		E7A2180028474A3100CAF323 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		E7AE02F2285653750081A062 /* FirstNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNewsTableViewCell.swift; sourceTree = "<group>"; };
+		E7AE02F3285653750081A062 /* FirstNewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstNewsTableViewCell.xib; sourceTree = "<group>"; };
 		E7BA83C52855EE3700D9ADC3 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E7BAC84E283E2E9D000F6DCB /* OTPStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPStackView.swift; sourceTree = "<group>"; };
 		E7BBD53E2855E5A800132BD2 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
@@ -153,6 +166,9 @@
 		E7C6A1F52853671500F7C96B /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		E7C6A1F828536E3300F7C96B /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		E7C6A1FA28538A2600F7C96B /* ListDoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDoctorModel.swift; sourceTree = "<group>"; };
+		E7D8AD862856FFCB00188AC9 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		E7D8AD892857009A00188AC9 /* PromotionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsTableViewCell.swift; sourceTree = "<group>"; };
+		E7D8AD8A2857009A00188AC9 /* PromotionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionsTableViewCell.xib; sourceTree = "<group>"; };
 		E7E8BE61284DEAC80028267C /* Ultilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultilities.swift; sourceTree = "<group>"; };
 		E7E8BE63284DF12D0028267C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		E7E8BE65284DFB4C0028267C /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
@@ -238,6 +254,15 @@
 				E70AB78D28363A4800C69F3A /* CustomTextField.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		E7742DF22857623700638BAE /* PromotionModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7742DF32857625600638BAE /* PromotionModel.swift */,
+				E7742DF52857626300638BAE /* ListPromotionModel.swift */,
+			);
+			path = PromotionModel;
 			sourceTree = "<group>";
 		};
 		E7787A3E284869AB008F45E3 /* PatientNewFeedModel */ = {
@@ -356,6 +381,8 @@
 			children = (
 				E7C038432855831A003815ED /* NewsTableViewCell.swift */,
 				E7C038442855831A003815ED /* NewsTableViewCell.xib */,
+				E7AE02F2285653750081A062 /* FirstNewsTableViewCell.swift */,
+				E7AE02F3285653750081A062 /* FirstNewsTableViewCell.xib */,
 			);
 			path = NewsTableViewCell;
 			sourceTree = "<group>";
@@ -416,6 +443,7 @@
 		E7D85CC4283DDFFD0042A994 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				E7742DF22857623700638BAE /* PromotionModel */,
 				E7BBD5402855E5B100132BD2 /* NewsModel */,
 				E7C6A1F728536E0C00F7C96B /* DoctorModel */,
 				E7787A3E284869AB008F45E3 /* PatientNewFeedModel */,
@@ -460,6 +488,15 @@
 				E79DFAD328408C9F00702C40 /* NSMutableAttributedString+Extensions.swift */,
 			);
 			path = Cores;
+			sourceTree = "<group>";
+		};
+		E7D8AD882857007700188AC9 /* PromotionsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7D8AD892857009A00188AC9 /* PromotionsTableViewCell.swift */,
+				E7D8AD8A2857009A00188AC9 /* PromotionsTableViewCell.xib */,
+			);
+			path = PromotionsTableViewCell;
 			sourceTree = "<group>";
 		};
 		E7E8BE67284E0D000028267C /* Localizable */ = {
@@ -533,6 +570,8 @@
 				E7F0579C28467A9A00AA6883 /* PatientHomeViewController.swift */,
 				E7C6A1F52853671500F7C96B /* DoctorViewController.swift */,
 				E7BA83C52855EE3700D9ADC3 /* NewsViewController.swift */,
+				E78D6E6928566BC900C8C920 /* DetailsViewController.swift */,
+				E7D8AD862856FFCB00188AC9 /* PromotionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -578,6 +617,7 @@
 		E7FC6B8B2849C7AC0096E480 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E7D8AD882857007700188AC9 /* PromotionsTableViewCell */,
 				E7C03842285582F3003815ED /* NewsTableViewCell */,
 				E7FC6B802849BE1B0096E480 /* SuggestDoctorTableViewCell */,
 				E7A217FF284724FC00CAF323 /* PatientHomeTableViewCell */,
@@ -699,6 +739,7 @@
 				E7792D1F28318DF00096CC61 /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				E7792D1628318DF00096CC61 /* NunitoSans-ExtraBold.ttf in Resources */,
 				E7792D1928318DF00096CC61 /* NunitoSans-Italic.ttf in Resources */,
+				E7D8AD8C2857009A00188AC9 /* PromotionsTableViewCell.xib in Resources */,
 				E7792D1B28318DF00096CC61 /* NunitoSans-Bold.ttf in Resources */,
 				E7EB3B612827792C0007677B /* LaunchScreen.storyboard in Resources */,
 				E7792D1228318DF00096CC61 /* NunitoSans-BoldItalic.ttf in Resources */,
@@ -717,6 +758,7 @@
 				E7792D1328318DF00096CC61 /* NunitoSans-ExtraLight.ttf in Resources */,
 				E7792D1D28318DF00096CC61 /* NunitoSans-Black.ttf in Resources */,
 				E7FC6B892849C7910096E480 /* SuggestDoctorCollectionViewCell.xib in Resources */,
+				E7AE02F5285653750081A062 /* FirstNewsTableViewCell.xib in Resources */,
 				E7C6A1F428535E0800F7C96B /* DoctorCollectionViewCell.xib in Resources */,
 				E7792D1528318DF00096CC61 /* NunitoSans-BlackItalic.ttf in Resources */,
 				E7792D1428318DF00096CC61 /* NunitoSans-Light.ttf in Resources */,
@@ -867,6 +909,7 @@
 				E7787A4C28486BD3008F45E3 /* PatientNewFeedModel.swift in Sources */,
 				E7C6A1F928536E3300F7C96B /* DoctorModel.swift in Sources */,
 				E7C6A1F328535E0800F7C96B /* DoctorCollectionViewCell.swift in Sources */,
+				E7D8AD8B2857009A00188AC9 /* PromotionsTableViewCell.swift in Sources */,
 				E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */,
 				E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */,
 				E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */,
@@ -879,12 +922,14 @@
 				E75C685F2852044000EBCC74 /* ProgressHUB.swift in Sources */,
 				E78C645F283F2B5100C62B9C /* Constants.swift in Sources */,
 				E7C6A1F62853671500F7C96B /* DoctorViewController.swift in Sources */,
+				E7AE02F4285653750081A062 /* FirstNewsTableViewCell.swift in Sources */,
 				E7F0579F28467E4800AA6883 /* UIViewController+Extensions.swift in Sources */,
 				E7A2180128474A3100CAF323 /* UICollectionViewExtensions.swift in Sources */,
 				E79DFAD428408C9F00702C40 /* NSMutableAttributedString+Extensions.swift in Sources */,
 				E7EB3B552827792B0007677B /* AppDelegate.swift in Sources */,
 				E7BBD53F2855E5A800132BD2 /* NewsModel.swift in Sources */,
 				E7E8BE62284DEAC80028267C /* Ultilities.swift in Sources */,
+				E78D6E6A28566BC900C8C920 /* DetailsViewController.swift in Sources */,
 				E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */,
 				E7E8BE69284E0D1C0028267C /* LCString.swift in Sources */,
 				E7787A4828486BB1008F45E3 /* PatientDoctorListModel.swift in Sources */,
@@ -892,12 +937,15 @@
 				E7BBD5422855E5D400132BD2 /* ListNewsModel.swift in Sources */,
 				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,
 				E7FC6B832849BEA90096E480 /* SuggestDoctorTableViewCell.swift in Sources */,
+				E7742DF42857625600638BAE /* PromotionModel.swift in Sources */,
 				E7787A4628486BA3008F45E3 /* PatientArticleListModel.swift in Sources */,
 				E7C038452855831A003815ED /* NewsTableViewCell.swift in Sources */,
 				E78C6461283F2EEB00C62B9C /* UIColor+Extensions.swift in Sources */,
+				E7742DF62857626300638BAE /* ListPromotionModel.swift in Sources */,
 				E7787A592848AE7B008F45E3 /* NewsCollectionViewCell.swift in Sources */,
 				E7EB3B572827792B0007677B /* SceneDelegate.swift in Sources */,
 				E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */,
+				E7D8AD872856FFCB00188AC9 /* PromotionsViewController.swift in Sources */,
 				E7FC6B882849C7910096E480 /* SuggestDoctorCollectionViewCell.swift in Sources */,
 				E7F0579D28467A9A00AA6883 /* PatientHomeViewController.swift in Sources */,
 				E7E8BE64284DF12D0028267C /* UIImage+Extensions.swift in Sources */,

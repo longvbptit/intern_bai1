@@ -97,6 +97,14 @@ extension PatientHomeTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let articleList = articleList {
+            
+            let news = articleList[indexPath.item]
+            
+            
+        }
+        
+        let promotion = promotionList?[indexPath.item]
         
     }
 }
