@@ -6,6 +6,7 @@ target 'Bai_1_Intern' do
   use_frameworks!
     pod 'Alamofire'
     pod 'SDWebImage'
+    pod 'IQKeyboardManager'
   # Pods for Bai_1_Intern
 
   target 'Bai_1_InternTests' do
