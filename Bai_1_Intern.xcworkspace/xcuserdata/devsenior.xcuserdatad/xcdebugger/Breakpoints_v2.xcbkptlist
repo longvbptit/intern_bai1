@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73EB02FF-DBDA-42A2-9295-EEB949942EB3"
-            shouldBeEnabled = "No"
+            uuid = "D4269E96-77D9-49D0-B3ED-C94D802C9B22"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bai_1_Intern/ViewControllers/Cells/CollectionViewCell/NewsCollectionViewCell/NewsCollectionViewCell.swift"
+            filePath = "Bai_1_Intern/Models/Local/test.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "configViews(imageURLStr:title:special:date:)"
-            landmarkType = "7">
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

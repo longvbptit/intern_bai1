@@ -15,6 +15,7 @@ protocol JsonInitObject: NSObject {
 final class APIUtilities {
     static let domain = "https://gist.githubusercontent.com"
     static let responseDatakey = "data"
+    static let responseItemskey = "items"
     static let responseCodekey = "code"
     static let responseMessageKey = "message"
     
@@ -25,25 +26,25 @@ final class APIUtilities {
     
     }
     
-    static func requestNews(completionHandler: ((ListNewsModel?, APIError?) -> Void)?) {
+    static func requestNews(completionHandler: (([NewsModel]?, APIError?) -> Void)?) {
         
         let tailStrURL = "/hdhuy179/84d1dfe96f2c0ab1ddea701df352a7a6/raw"
-        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)
+        jsonResponseObjects(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)
     
     }
     
-    static func requestPromotions(completionHandler: ((ListPromotionModel?, APIError?) -> Void)?) {
+    static func requestPromotions(completionHandler: (([PromotionModel]?, APIError?) -> Void)?) {
         
         let tailStrURL = "/hdhuy179/ef03ed850ad56f0136fe3c5916b3280b/raw/Training_Intern_BasicApp_Promotion"
-        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)
+        jsonResponseObjects(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)
     
     }
     
-    static func requestDoctors(completionHandler: ((ListDoctorModel?, APIError?) -> Void)?) {
-        
+    static func requestDoctors(completionHandler: (([DoctorModel]?, APIError?) -> Void)?) {
+
         let tailStrURL = "/hdhuy179/9ac0a89969b46fb67bc7d1a8b94d180e/raw"
-        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)
-    
+        jsonResponseObjects(tailStrURL: tailStrURL, method: .get, headers: [:], comletionHandler: completionHandler)
+
     }
     
     //MARK: Base
@@ -68,6 +69,43 @@ final class APIUtilities {
                 let obj = T(json: dataDict)
                 
                 comletionHandler?(obj, nil)
+                
+            case .failure(let error):
+                comletionHandler?(nil, .unowned(error))
+            }
+        }
+    }
+    
+    static private func jsonResponseObjects<T: JsonInitObject>(tailStrURL: String, method: HTTPMethod, headers: HTTPHeaders, comletionHandler: (([T]?, APIError?) -> Void)?) {
+        
+        jsonResponse(tailStrURL: tailStrURL, method: method, headers: headers) {
+            response, serverCode, serverMessage in
+            
+            switch response.result {
+            case .success(let value):
+                guard serverCode == 200 else {
+                    comletionHandler?(nil, .serverError(serverCode, serverMessage))
+                    return
+                }
+                
+                var objs : [T] = []
+                guard let responseDict = value as? [String: Any],
+                      let dataDicts = responseDict[responseDatakey] as? [String: Any] else {
+                    comletionHandler?(nil, .resposeFormatError)
+                    return
+                }
+                
+                guard let datas = dataDicts[responseItemskey] as? [[String: Any]] else {
+                    comletionHandler?(nil, .resposeFormatError)
+                    return
+                }
+                
+                for data in datas {
+                    let item = T(json: data)
+                    objs.append(item)
+                }
+                
+                comletionHandler?(objs, nil)
                 
             case .failure(let error):
                 comletionHandler?(nil, .unowned(error))

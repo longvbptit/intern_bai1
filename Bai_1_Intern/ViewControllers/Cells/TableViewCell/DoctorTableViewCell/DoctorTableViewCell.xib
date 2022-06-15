@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="KGk-i7-Jjw" customClass="DoctorTableViewCell" customModule="Bai_1_Intern" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="314" height="210"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOP-KX-Nud">
+                        <rect key="frame" x="12" y="12" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="qVq-5P-mj9"/>
+                            <constraint firstAttribute="width" constant="80" id="zYx-Kk-R0q"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMu-GS-Xco">
+                        <rect key="frame" x="108" y="12" width="194" height="20.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="BS. Đoàn Văn Quang">
+                                <attributes>
+                                    <color key="NSColor" red="0.066618204119999996" green="0.16080120210000001" blue="0.31368213890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="15" name="NunitoSans-Bold"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-VK-cm0">
+                        <rect key="frame" x="108" y="38.5" width="194" height="35.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Chuyên ngành: Phẫu thuật chỉnh hình đẹp trai">
+                                <attributes>
+                                    <color key="NSColor" red="0.58817702530000004" green="0.60787981749999997" blue="0.67050570249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="NunitoSans-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="D64-71-NVa">
+                        <rect key="frame" x="108" y="86" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="0Wi-7p-Ya8"/>
+                            <constraint firstAttribute="width" constant="13" id="lBD-cY-hKd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoD-xt-42B">
+                        <rect key="frame" x="127" y="83" width="117.5" height="19.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="4.8 (456 Đánh giá)">
+                                <attributes>
+                                    <font key="NSFont" size="14" name="NunitoSans-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="D64-71-NVa" firstAttribute="top" secondItem="xjJ-VK-cm0" secondAttribute="bottom" constant="12" id="06B-Qt-9Tt"/>
+                    <constraint firstItem="D64-71-NVa" firstAttribute="leading" secondItem="qOP-KX-Nud" secondAttribute="trailing" constant="16" id="16h-Th-TCm"/>
+                    <constraint firstItem="qOP-KX-Nud" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="5up-L7-O98"/>
+                    <constraint firstItem="xjJ-VK-cm0" firstAttribute="leading" secondItem="qOP-KX-Nud" secondAttribute="trailing" constant="16" id="BpS-yJ-h5t"/>
+                    <constraint firstItem="zMu-GS-Xco" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="H7M-y7-DxT"/>
+                    <constraint firstAttribute="trailing" secondItem="zMu-GS-Xco" secondAttribute="trailing" constant="12" id="KTX-QV-gPf"/>
+                    <constraint firstAttribute="trailing" secondItem="xjJ-VK-cm0" secondAttribute="trailing" constant="12" id="koi-Uo-IPx"/>
+                    <constraint firstItem="EoD-xt-42B" firstAttribute="centerY" secondItem="D64-71-NVa" secondAttribute="centerY" id="lfb-zm-SVz"/>
+                    <constraint firstItem="xjJ-VK-cm0" firstAttribute="top" secondItem="zMu-GS-Xco" secondAttribute="bottom" constant="6" id="n3g-mW-q5B"/>
+                    <constraint firstItem="zMu-GS-Xco" firstAttribute="leading" secondItem="qOP-KX-Nud" secondAttribute="trailing" constant="16" id="otK-4c-CyS"/>
+                    <constraint firstItem="qOP-KX-Nud" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="qQO-h7-jcO"/>
+                    <constraint firstItem="EoD-xt-42B" firstAttribute="leading" secondItem="D64-71-NVa" secondAttribute="trailing" constant="6" id="qZI-g7-3Kn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imvDoctor" destination="qOP-KX-Nud" id="N6e-AC-Faz"/>
+                <outlet property="lblMajor" destination="xjJ-VK-cm0" id="wRV-6m-yu9"/>
+                <outlet property="lblName" destination="zMu-GS-Xco" id="e9l-yd-GHN"/>
+                <outlet property="lblRate" destination="EoD-xt-42B" id="gky-wc-zpi"/>
+            </connections>
+            <point key="canvasLocation" x="-1.4492753623188408" y="133.92857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" width="12" height="12"/>
+    </resources>
+</document>

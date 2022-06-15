@@ -16,6 +16,7 @@ class DoctorCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.contentView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight]
     }
     
     func configViews(doctorInfo: DoctorModel?) {

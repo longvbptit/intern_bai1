@@ -11,16 +11,15 @@ class PatientHomeViewController: UIViewController {
     @IBOutlet weak var lblFullName: UILabel!
     @IBOutlet weak var imvIsActive: UIImageView!
     @IBOutlet weak var lblIsActive: UILabel!
-    @IBOutlet weak var imvAvatar: UIImageView!
     @IBOutlet weak var tbvNewsFeed: UITableView!
     
+
     var newFeed: PatientNewFeedModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpView()
         fetchPatientNewFeed()
-        // Do any additional setup after loading the view.
     }
     
     lazy var refreshControl: UIRefreshControl = {
@@ -31,6 +30,9 @@ class PatientHomeViewController: UIViewController {
     
     
     func setUpView(){
+        self.refreshControl.addTarget(self, action: #selector(fetchPatientNewFeed), for: .valueChanged)
+        tbvNewsFeed.refreshControl = refreshControl
+        
         tbvNewsFeed.registerCells(PatientHomeTableViewCell.self, SuggestDoctorTableViewCell.self)
         tbvNewsFeed.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tbvNewsFeed.delegate = self
@@ -61,8 +63,7 @@ class PatientHomeViewController: UIViewController {
             self.newFeed = patientNewFeed
 
             DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return}
-
+                guard let self = self else { return }
                 self.tbvNewsFeed.reloadData()
             }
         }
@@ -83,6 +84,10 @@ class PatientHomeViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func btnUserInfoTapped(_ sender: Any) {
+        let vc = UIViewController.fromStoryboard(UserInfoViewController.self)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension PatientHomeViewController: UITableViewDelegate {
@@ -108,8 +113,10 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
-            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
-            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllNews(_:)), for: .touchUpInside)
+//            Using Delegate: Via delegate, you can provide more info to the caller and it is more flexible in this case(Click button to next page). Best solution use delegate.
+//            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
+//            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllNews(_:)), for: .touchUpInside)
+            cell.delegate = self
             return cell
         }
         
@@ -121,8 +128,9 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
-            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
-            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllPromotion(_:)), for: .touchUpInside)
+//            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
+//            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllPromotion(_:)), for: .touchUpInside)
+            cell.delegate = self
             return cell
         }
         
@@ -132,13 +140,8 @@ extension PatientHomeViewController: UITableViewDataSource {
             cell.configViews(doctorList: newFeed?.doctorList, pushVCHandler: {
                 
             })
-            cell.btnShowListDoctor.addTarget(self, action: #selector(PatientHomeViewController.seeAllDoctor(_:)), for: .touchUpInside)
-//            cell.showListDoctor = {
-//                let vc = UIViewController.fromStoryboard(DoctorViewController.self)
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            print("Hello")
-//            }
-            
+//            cell.btnShowListDoctor.addTarget(self, action: #selector(PatientHomeViewController.seeAllDoctor(_:)), for: .touchUpInside)
+            cell.delegate = self
             return cell
         }
         fatalError()
@@ -146,5 +149,39 @@ extension PatientHomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+}
+
+extension PatientHomeViewController: PatientHomeTableViewCellProtocol {
+    
+    func didTapSeeAll(choose: ChooseScreen) {
+        switch choose {
+        case .newsScreen:
+            let vc = UIViewController.fromStoryboard(NewsViewController.self)
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .promotionScreen:
+            let vc = UIViewController.fromStoryboard(PromotionsViewController.self)
+            self.navigationController?.pushViewController(vc, animated: true)
+        case.doctorScreen:
+            let vc = UIViewController.fromStoryboard(DoctorViewController.self)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func moveDetailsScreen(choose: ChooseScreen, index: Int) {
+        switch choose {
+        case .newsScreen:
+            let vc = UIViewController.fromStoryboard(DetailsViewController.self)
+            vc.urlString = newFeed?.articleList[index].link
+            vc.titles = Details.news
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .promotionScreen:
+            let vc = UIViewController.fromStoryboard(DetailsViewController.self)
+            vc.urlString = newFeed?.promotionList[index].link
+            vc.titles = Details.promotion
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .doctorScreen:
+            return
+        }
     }
 }

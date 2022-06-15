@@ -69,11 +69,15 @@ import UIKit
             $0.borderStyle = borderStyle
             $0.font = font
             $0.keyboardType = .numberPad
-            $0.layer.masksToBounds = true
+            $0.layer.masksToBounds = false
             $0.layer.borderWidth = borderWidth
             $0.layer.borderColor = UIColor.clear.cgColor
             $0.layer.cornerRadius = cornerRadius
             $0.layer.borderColor = nonEditingborderColor?.cgColor
+           
+            $0.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.08).cgColor
+            $0.layer.shadowOpacity = 1
+            $0.layer.shadowOffset = CGSize(width: 0, height: 4)
         }
         self.nonEditingborderColor = nonEditingborderColor
         self.editingBorderColor = editingBorderColor
@@ -120,6 +124,7 @@ extension OTPStackView: UITextFieldDelegate {
 }
 
 class OTPTextField: UITextField {
+
     weak var previousTextField: UITextField?
     weak var nextTextFiled: UITextField?
     

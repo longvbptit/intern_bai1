@@ -13,28 +13,47 @@ class PromotionsViewController: UIViewController {
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    var listPromotions: ListPromotionModel?
+    lazy var refreshControl: UIRefreshControl = {
+        let rfc = UIRefreshControl()
+        
+        return rfc
+    }()
+    var listPromotions: [PromotionModel]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configView()
-        fetchNews()
+        fetchPromotion()
     }
     
     func configView(){
+        
+        self.refreshControl.addTarget(self, action: #selector(fetchPromotion), for: .valueChanged)
+        tbvPromotions.refreshControl = refreshControl
+        
         tbvPromotions.registerCells(PromotionsTableViewCell.self)
         tbvPromotions.delegate = self
         tbvPromotions.dataSource = self
         tbvPromotions.separatorColor = Constants.Color.gray
+        tbvPromotions.tableFooterView = UIView()
     }
     
-    @objc func fetchNews() {
-//        self.showLoaderView()
+    func showLoaderView( toView: UIView? = nil) {
+        self.view.endEditing(true)
+        ProgressHUD.colorStatus = .black
+        ProgressHUD.show(LCString.loading.localized, interaction: false)
+    }
+    
+    func dismissLoaderView() {
+        ProgressHUD.dismiss()
+    }
+    
+    @objc func fetchPromotion() {
+        self.showLoaderView()
         APIUtilities.requestPromotions { [weak self] listPromotions, error in
             guard let self = self else { return}
-//            self.dismissLoaderView()
-//            self.refreshControl.endRefreshing()
+            self.dismissLoaderView()
+            self.refreshControl.endRefreshing()
             self.listPromotions = listPromotions
 
             DispatchQueue.main.async { [weak self] in
@@ -57,8 +76,8 @@ extension PromotionsViewController: UITableViewDelegate {
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let vc = UIViewController.fromStoryboard(DetailsViewController.self)
-        vc.urlString = listPromotions?.listPromotions[indexPath.row].link
-        vc.titles = "promotion"
+        vc.urlString = listPromotions?[indexPath.row].link
+        vc.titles = Details.promotion
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -67,13 +86,13 @@ extension PromotionsViewController: UITableViewDelegate {
 extension PromotionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return (listPromotions?.listPromotions.count  ?? 0)
+        return (listPromotions?.count  ?? 0)
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(PromotionsTableViewCell.self, indexPath: indexPath)
-        let promotion = listPromotions?.listPromotions[indexPath.row]
+        let promotion = listPromotions?[indexPath.row]
         cell.configViews(promotion: promotion)
         cell.selectionStyle = .none
         return cell

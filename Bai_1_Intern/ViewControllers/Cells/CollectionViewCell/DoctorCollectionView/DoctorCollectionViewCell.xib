@@ -64,8 +64,8 @@
                                     <constraint firstAttribute="height" constant="13" id="NpV-QN-v37"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIo-vi-T6U">
-                                <rect key="frame" x="126" y="103.5" width="117.5" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIo-vi-T6U">
+                                <rect key="frame" x="126" y="103.5" width="188" height="19.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="4.8 (456 Đánh giá)">
                                         <attributes>
@@ -86,6 +86,7 @@
                             <constraint firstItem="oVE-It-PXn" firstAttribute="leading" secondItem="yjP-mn-rrZ" secondAttribute="trailing" constant="15" id="HVr-Wy-dSh"/>
                             <constraint firstItem="lAp-ti-7xz" firstAttribute="leading" secondItem="D1X-9E-5GC" secondAttribute="leading" constant="107" id="JGB-cd-Xd4"/>
                             <constraint firstAttribute="trailing" secondItem="QSM-x9-86m" secondAttribute="trailing" constant="12" id="NQs-dm-Qgu"/>
+                            <constraint firstAttribute="trailing" secondItem="KIo-vi-T6U" secondAttribute="trailing" constant="12" id="NS6-lk-JYy"/>
                             <constraint firstItem="yjP-mn-rrZ" firstAttribute="top" secondItem="D1X-9E-5GC" secondAttribute="top" constant="12" id="TT8-gA-4W3"/>
                             <constraint firstItem="QSM-x9-86m" firstAttribute="top" secondItem="oVE-It-PXn" secondAttribute="bottom" constant="6" id="ZEg-97-iLf"/>
                             <constraint firstItem="lAp-ti-7xz" firstAttribute="top" secondItem="QSM-x9-86m" secondAttribute="bottom" constant="12" id="cv8-e9-Hj2"/>

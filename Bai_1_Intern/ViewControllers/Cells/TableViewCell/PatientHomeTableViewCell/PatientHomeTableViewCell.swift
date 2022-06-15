@@ -12,14 +12,11 @@ class PatientHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var cltvHome: UICollectionView!
     @IBOutlet weak var btnSeeAll: UIButton!
-    var seeAll: (() -> Void)? = nil
-    @IBAction func btnSeeAllTapped(_ sender: Any) {
-        seeAll?()
-    }
+    var delegate: PatientHomeTableViewCellProtocol?
+    
     var articleList     : [PatientArticleListModel]?
     var promotionList     : [PatientPromotionListModel]?
     var pushVCHandler: ((UIViewController) -> ())? = nil
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -48,11 +45,19 @@ class PatientHomeTableViewCell: UITableViewCell {
         self.promotionList = promotionList
         cltvHome.reloadData()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+    }
+    
+    @IBAction func btnSeeAllTapped(_ sender: Any) {
+        if let articleList = articleList {
+            delegate?.didTapSeeAll(choose: ChooseScreen.newsScreen)
+        } else {
+            delegate?.didTapSeeAll(choose: ChooseScreen.promotionScreen)
+        }
     }
     
 }
@@ -98,13 +103,9 @@ extension PatientHomeTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let articleList = articleList {
-            
-            let news = articleList[indexPath.item]
-            
-            
+            delegate?.moveDetailsScreen(choose: ChooseScreen.newsScreen, index: indexPath.row)
+        } else {
+            delegate?.moveDetailsScreen(choose: ChooseScreen.promotionScreen, index: indexPath.row)
         }
-        
-        let promotion = promotionList?[indexPath.item]
-        
     }
 }

@@ -17,7 +17,13 @@ class NewsViewController: UIViewController {
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    var listNews: ListNewsModel?
+    
+    lazy var refreshControl: UIRefreshControl = {
+            let rfc  = UIRefreshControl()
+            return rfc
+        }()
+    
+    var listNews: [NewsModel]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,25 +32,38 @@ class NewsViewController: UIViewController {
     }
     
     func configView(){
+        
+        self.refreshControl.addTarget(self, action: #selector(fetchNews), for: .valueChanged)
+        tbvNews.refreshControl = refreshControl
+        
         tbvNews.registerCells(NewsTableViewCell.self, FirstNewsTableViewCell.self)
         tbvNews.delegate = self
         tbvNews.dataSource = self
         tbvNews.separatorColor = Constants.Color.gray
+        tbvNews.tableFooterView = UIView()
     }
     
+    func showLoaderView( toView: UIView? = nil) {
+        self.view.endEditing(true)
+        ProgressHUD.colorStatus = .black
+        ProgressHUD.show(LCString.loading.localized, interaction: false)
+    }
+    
+    func dismissLoaderView() {
+        ProgressHUD.dismiss()
+    }
+    
+    
     @objc func fetchNews() {
-//        self.showLoaderView()
+        self.showLoaderView()
         APIUtilities.requestNews { [weak self] listNews, error in
             guard let self = self else { return}
-//            self.dismissLoaderView()
-//            self.refreshControl.endRefreshing()
+            self.dismissLoaderView()
+            self.refreshControl.endRefreshing()
             self.listNews = listNews
 
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
-//                Ultilities.loadImage(self.imvNews, strURL: listNews?.newsList[0].picture ?? "", placeHolder: Constants.Icon.imagePlacehold)
-//                self.lblNewsTitle.text = self.listNews?.newsList[0].title ?? " "
-//                self.lblDate.text = self.listNews?.newsList[0].created_at ?? " "
                 self.tbvNews.reloadData()
             }
         }
@@ -68,8 +87,8 @@ extension NewsViewController: UITableViewDelegate {
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let vc = UIViewController.fromStoryboard(DetailsViewController.self)
-        vc.urlString = listNews?.newsList[indexPath.row].link
-        vc.titles = "news"
+        vc.urlString = listNews?[indexPath.row].link
+        vc.titles = Details.news
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -77,23 +96,22 @@ extension NewsViewController: UITableViewDelegate {
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-//        print(listNews?.newsList.count  ?? 1)
-        return (listNews?.newsList.count  ?? 0)
+
+        return (listNews?.count  ?? 0)
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(FirstNewsTableViewCell.self, indexPath: indexPath)
-            let news = listNews?.newsList[indexPath.row]
+            let news = listNews?[indexPath.row]
             cell.configViews(news: news)
             cell.selectionStyle = .none
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(NewsTableViewCell.self, indexPath: indexPath)
-            let news = listNews?.newsList[indexPath.row]
+            let news = listNews?[indexPath.row]
             cell.configViews(news: news)
             cell.selectionStyle = .none
             return cell

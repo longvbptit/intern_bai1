@@ -12,12 +12,9 @@ class SuggestDoctorTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var clvSuggestion: UICollectionView!
     @IBOutlet weak var btnShowListDoctor: UIButton!
-    var showListDoctor: (() -> Void)? = nil
+    var delegate: PatientHomeTableViewCellProtocol?
     @IBAction func btnShowListDoctorTapped(_ sender: UIButton) {
-//        let patientHomeViewController = UIViewController.fromStoryboard(PatientHomeViewController.self)
-//        let doctorViewController = UIViewController.fromStoryboard(DoctorViewController.self)
-//        patientHomeViewController.navigationController?.pushViewController(doctorViewController, animated: true)
-        showListDoctor?()
+        self.delegate?.didTapSeeAll(choose: ChooseScreen.doctorScreen)
     }
     var doctorList     : [PatientDoctorListModel]?
     var pushVCHandler: (() -> ())? = nil

@@ -22,6 +22,7 @@ struct Constants {
         static let gray2 = UIColor(hexString: "#474A57")
         static let gray3 = UIColor(hexString: "#969BAB")
         static let gray4 = UIColor(hexString: "#D9DBE1")
+//        static let gray5 = UIColor(hexString: "##EEEFF4")
         static let gray6 = UIColor(hexString: "#F4F5F7")
         static let borderBlue = UIColor(hexString: "#242A61")
         
@@ -43,4 +44,21 @@ struct Constants {
         static let tableNewsCellHeight: CGFloat = 320
         static let tableSuggestionCellHeight: CGFloat = 290
     }
+
+}
+
+protocol PatientHomeTableViewCellProtocol {
+    func didTapSeeAll(choose: ChooseScreen)
+    func moveDetailsScreen(choose: ChooseScreen, index: Int)
+}
+
+enum ChooseScreen{
+    case newsScreen
+    case promotionScreen
+    case doctorScreen
+}
+
+enum Details {
+    case news
+    case promotion
 }

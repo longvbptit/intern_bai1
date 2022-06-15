@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DoctorModel {
+class DoctorModel : NSObject, JsonInitObject {
     var id  : Int?
     var full_name   : String?
     var avatar  : String?
@@ -30,7 +30,7 @@ class DoctorModel {
         self.number_of_reviews = number_of_reviews
     }
     
-    convenience init(json: [String: Any]) {
+    required convenience init(json: [String: Any]) {
         self.init()
         
         if let wrapValue = json["id"] as? Int {
