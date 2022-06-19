@@ -8,8 +8,10 @@
 import UIKit
 
 class PromotionsViewController: UIViewController {
-
+    
     @IBOutlet weak var tbvPromotions: UITableView!
+    @IBOutlet weak var viwPromotionFilter: UIView!
+    @IBOutlet weak var viwTitle: UIView!
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -36,6 +38,12 @@ class PromotionsViewController: UIViewController {
         tbvPromotions.dataSource = self
         tbvPromotions.separatorColor = Constants.Color.gray
         tbvPromotions.tableFooterView = UIView()
+        
+        viwPromotionFilter.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        viwPromotionFilter.layer.shadowOpacity = 1
+        viwPromotionFilter.layer.shadowRadius = 20
+        viwPromotionFilter.layer.shadowOffset = CGSize(width: 0, height: 4)
+
     }
     
     func showLoaderView( toView: UIView? = nil) {
@@ -55,7 +63,7 @@ class PromotionsViewController: UIViewController {
             self.dismissLoaderView()
             self.refreshControl.endRefreshing()
             self.listPromotions = listPromotions
-
+            
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
                 self.tbvPromotions.reloadData()
@@ -70,8 +78,8 @@ extension PromotionsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 102
-//        return UITableView.automaticDimension
+        return 102
+        //        return UITableView.automaticDimension
     }
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -95,6 +103,11 @@ extension PromotionsViewController: UITableViewDataSource {
         let promotion = listPromotions?[indexPath.row]
         cell.configViews(promotion: promotion)
         cell.selectionStyle = .none
+        
+        //hide separator at the last item
+        if (indexPath.row == (self.listPromotions?.count ?? 0) - 1) {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width);
+        }
         return cell
     }
 }
