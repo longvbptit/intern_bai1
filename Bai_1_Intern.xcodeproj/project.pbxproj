@@ -13,6 +13,8 @@
 		E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78A283632F600C69F3A /* OTPViewController.swift */; };
 		E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78D28363A4800C69F3A /* CustomTextField.swift */; };
 		E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF286282822B700B22B88 /* SignUpViewController.swift */; };
+		E724AC28285AD82900298627 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724AC27285AD82900298627 /* UserModel.swift */; };
+		E724AC2A285AE08100298627 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724AC29285AE08100298627 /* LocationModel.swift */; };
 		E75C685F2852044000EBCC74 /* ProgressHUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75C685E2852044000EBCC74 /* ProgressHUB.swift */; };
 		E7742DF42857625600638BAE /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7742DF32857625600638BAE /* PromotionModel.swift */; };
 		E776AAE62828BA580064D271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776AAE42828BA580064D271 /* Main.storyboard */; };
@@ -117,6 +119,8 @@
 		E70AB78A283632F600C69F3A /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		E70AB78D28363A4800C69F3A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E71DF286282822B700B22B88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E724AC27285AD82900298627 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E724AC29285AE08100298627 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		E75C685E2852044000EBCC74 /* ProgressHUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUB.swift; sourceTree = "<group>"; };
 		E7742DF32857625600638BAE /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
 		E776AAE52828BA580064D271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,6 +258,15 @@
 				E70AB78D28363A4800C69F3A /* CustomTextField.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		E724AC26285AD81500298627 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				E724AC27285AD82900298627 /* UserModel.swift */,
+				E724AC29285AE08100298627 /* LocationModel.swift */,
+			);
+			path = UserModel;
 			sourceTree = "<group>";
 		};
 		E7742DF22857623700638BAE /* PromotionModel */ = {
@@ -449,6 +462,7 @@
 		E7D85CC4283DDFFD0042A994 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				E724AC26285AD81500298627 /* UserModel */,
 				E7742DF22857623700638BAE /* PromotionModel */,
 				E7BBD5402855E5B100132BD2 /* NewsModel */,
 				E7C6A1F728536E0C00F7C96B /* DoctorModel */,
@@ -942,6 +956,7 @@
 				E78D6E6A28566BC900C8C920 /* DetailsViewController.swift in Sources */,
 				E7A217FC284724D500CAF323 /* PatientHomeTableViewCell.swift in Sources */,
 				E7E8BE69284E0D1C0028267C /* LCString.swift in Sources */,
+				E724AC2A285AE08100298627 /* LocationModel.swift in Sources */,
 				E7787A4828486BB1008F45E3 /* PatientDoctorListModel.swift in Sources */,
 				E7787A3D284864E5008F45E3 /* UIView+Extensions.swift in Sources */,
 				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,
@@ -959,6 +974,7 @@
 				E7F0579D28467A9A00AA6883 /* PatientHomeViewController.swift in Sources */,
 				E7E8BE64284DF12D0028267C /* UIImage+Extensions.swift in Sources */,
 				E7E8BE66284DFB4C0028267C /* UITableViewExtensions.swift in Sources */,
+				E724AC28285AD82900298627 /* UserModel.swift in Sources */,
 				E7787A4F28486E0B008F45E3 /* APIUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,6 +25,7 @@ struct Constants {
 //        static let gray5 = UIColor(hexString: "##EEEFF4")
         static let gray6 = UIColor(hexString: "#F4F5F7")
         static let borderBlue = UIColor(hexString: "#242A61")
+        static let userSeparator = UIColor(hexString: "#E5E5E5")
         
     }
     
@@ -38,6 +39,11 @@ struct Constants {
     struct Icon {
         static let imagePlacehold = UIImage.imageWithColor(color: .lightGray)
         static let doctorAvatarPlacehold = UIImage(named: "doctor-placeholder")
+        
+        static let maleIcon = UIImage(named: "icon-male")
+        static let maleSelectedIcon = UIImage(named: "icon-maleSelected")
+        static let femaleIcon = UIImage(named: "icon-female")
+        static let femaleSelectedIcon = UIImage(named: "icon-femaleSelected")
     }
     
     struct HomeVC {

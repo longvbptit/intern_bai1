@@ -52,12 +52,12 @@ class SignUpViewController: UIViewController {
         txtPhoneNumber.minimumFontSize = 17
         txtPhoneNumber.placeholder = "Nhập số điện thoại"
         
-        // create attributed string
-        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: Constants.Font.regular, size: 17.0)! ]
-        let hotline = NSMutableAttributedString(string: "Hotline 1900 636 893", attributes: myAttribute )
-        hotline.addAttribute(NSAttributedString.Key.foregroundColor, value: Constants.Color.greenBlue.cgColor, range: NSRange(location: 8, length: 12))
-        // set attributed text on a UILabel
-        lblHotline.attributedText = hotline
+        let hotline = "Hotline "
+        let phoneNumber = "1900 6036 893"
+        let font = UIFont(name: Constants.Font.regular, size: 17)
+        let phoneNumberfont = UIFont(name: Constants.Font.bold, size: 17)
+        lblHotline.attributedText = NSMutableAttributedString().attrStr(text: hotline, font: font)
+            .attrStr(text: phoneNumber, font: phoneNumberfont, textColor: Constants.Color.greenBlue)
         
         txtPhoneNumber.addTarget(self, action: #selector(SignUpViewController.textFieldEditingDidBegin(_:)), for: .editingDidBegin)
         txtPhoneNumber.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange(_:)), for: .editingChanged)
