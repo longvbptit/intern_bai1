@@ -90,27 +90,29 @@ class UserInfoViewController: UIViewController {
     }
     
     func addLabel() {
+        lblSetUp.removeAll()
         lblSetUp.append(lblLastName)
         lblLastName.tag = 1
         lblSetUp.append(lblFirstName)
         lblFirstName.tag = 2
         lblSetUp.append(lblDateOfBirth)
-        lblDateOfBirth.tag = 7
+        lblDateOfBirth.tag = 3
         lblSetUp.append(lblPhone)
         lblPhone.tag = 4
         lblSetUp.append(lblEmail)
         lblEmail.tag = 5
         lblSetUp.append(lblAddress)
-        lblDateOfBirth.tag = 6
+        lblAddress.tag = 6
     }
     
     func addView() {
+        viwSetUp.removeAll()
         viwSetUp.append(viwLastNameSeparator)
         viwLastNameSeparator.tag = 1
         viwSetUp.append(viwFirstNameSeparator)
         viwFirstNameSeparator.tag = 2
         viwSetUp.append(viwDateOfBirthSeparator)
-        viwDateOfBirthSeparator.tag = 7
+        viwDateOfBirthSeparator.tag = 3
         viwSetUp.append(viwPhoneSeparator)
         viwPhoneSeparator.tag = 4
         viwSetUp.append(viwEmailSeparator)
@@ -128,7 +130,7 @@ class UserInfoViewController: UIViewController {
         txtFirstName.tag = 2
         
         txtDateOfBirth.delegate = self
-        txtDateOfBirth.tag = 7
+        txtDateOfBirth.tag = 3
         
         txtPhone.delegate = self
         txtPhone.tag = 4
@@ -229,13 +231,14 @@ extension UserInfoViewController: UITextFieldDelegate,UIGestureRecognizerDelegat
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
-        print(textField.tag)
+        print(lblSetUp[2].tag)
         for i in 0..<lblSetUp.count {
             if lblSetUp[i].tag == textField.tag {
                 lblSetUp[i].textColor = Constants.Color.greenBlue
                 viwSetUp[i].backgroundColor = Constants.Color.greenBlue
             }
         }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -246,5 +249,6 @@ extension UserInfoViewController: UITextFieldDelegate,UIGestureRecognizerDelegat
                 viwSetUp[i].backgroundColor = Constants.Color.userSeparator
             }
         }
+
     }
 }

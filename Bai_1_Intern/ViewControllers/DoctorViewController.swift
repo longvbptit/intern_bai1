@@ -36,6 +36,11 @@ class DoctorViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.tbvDoctor.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        if #available(iOS 11.0, *) {
+            tbvDoctor.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     func configView(){
@@ -46,6 +51,11 @@ class DoctorViewController: UIViewController {
         tbvDoctor.registerCells(DoctorTableViewCell.self)
         tbvDoctor.delegate = self
         tbvDoctor.dataSource = self
+        if #available(iOS 11.0, *) {
+            tbvDoctor.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     

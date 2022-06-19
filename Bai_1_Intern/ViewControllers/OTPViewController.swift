@@ -42,7 +42,7 @@ class OTPViewController: UIViewController {
         setupView()
         startCountDown()
         registerObserver()
-//        self.setupHideKeyboardOnTap()
+        //        self.setupHideKeyboardOnTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,11 +81,11 @@ class OTPViewController: UIViewController {
         
         let otpFont = UIFont(name: Constants.Font.semiBold, size: 20)
         stvOtp.configTextFieldView(borderStyle: .none,
-                                    font: otpFont,
-                                    editingBorderColor: Constants.Color.greenBlue,
-                                    nonEditingborderColor: .white,
-                                    borderWidth: 1,
-                                    cornerRadius: 8)
+                                   font: otpFont,
+                                   editingBorderColor: Constants.Color.greenBlue,
+                                   nonEditingborderColor: .white,
+                                   borderWidth: 1,
+                                   cornerRadius: 8)
         
         stvOtp.otpValueDidChanged = {[weak self] in
             guard let self = self else { return}
@@ -104,10 +104,8 @@ class OTPViewController: UIViewController {
     private func startCountDown(){
         let counter = Int(60 + dateStart.timeIntervalSinceNow)
         guard counter >= 0 else { return }
-            
-        var counterStr = counter < 10 ? "0\(counter)" : "\(counter)"
-        counterStr += "s"
-        btnResendOTP.setTitle("Gửi lại mã sau" + " " + counterStr, for: .disabled)
+        //        var counterStr = counter < 10 ? "0\(counter)" : "\(counter)"
+        btnResendOTP.setTitle("Gửi lại mã sau \(counter)s", for: .disabled)
         if counter == 0 {
             self.updateResendOTPButtonUI(enable: true)
         }
@@ -154,15 +152,4 @@ class OTPViewController: UIViewController {
             self.btnContinue.transform = .identity
         }
     }
-    
-//    //hide keyboard and end editing
-//    func setupHideKeyboardOnTap() {
-//        self.view.addGestureRecognizer(self.endEditingRecognizer())
-//        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
-//    }
-//    private func endEditingRecognizer() -> UIGestureRecognizer {
-//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
-//        tap.cancelsTouchesInView = false
-//        return tap
-//    }
 }
