@@ -79,7 +79,6 @@ extension PromotionsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 102
-        //        return UITableView.automaticDimension
     }
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){

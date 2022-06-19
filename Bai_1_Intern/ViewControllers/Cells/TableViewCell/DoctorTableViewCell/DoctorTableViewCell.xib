@@ -16,12 +16,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="314" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOP-KX-Nud">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOP-KX-Nud">
                         <rect key="frame" x="12" y="12" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="qVq-5P-mj9"/>
                             <constraint firstAttribute="width" constant="80" id="zYx-Kk-R0q"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMu-GS-Xco">
                         <rect key="frame" x="108" y="12" width="194" height="20.5"/>
@@ -76,20 +81,33 @@
                     <constraint firstItem="xjJ-VK-cm0" firstAttribute="leading" secondItem="qOP-KX-Nud" secondAttribute="trailing" constant="16" id="BpS-yJ-h5t"/>
                     <constraint firstItem="zMu-GS-Xco" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="H7M-y7-DxT"/>
                     <constraint firstAttribute="trailing" secondItem="zMu-GS-Xco" secondAttribute="trailing" constant="12" id="KTX-QV-gPf"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="EoD-xt-42B" secondAttribute="bottom" constant="10" id="Q4f-Vo-flS"/>
                     <constraint firstAttribute="trailing" secondItem="xjJ-VK-cm0" secondAttribute="trailing" constant="12" id="koi-Uo-IPx"/>
                     <constraint firstItem="EoD-xt-42B" firstAttribute="centerY" secondItem="D64-71-NVa" secondAttribute="centerY" id="lfb-zm-SVz"/>
                     <constraint firstItem="xjJ-VK-cm0" firstAttribute="top" secondItem="zMu-GS-Xco" secondAttribute="bottom" constant="6" id="n3g-mW-q5B"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qOP-KX-Nud" secondAttribute="bottom" constant="10" id="oOP-6R-ClN"/>
                     <constraint firstItem="zMu-GS-Xco" firstAttribute="leading" secondItem="qOP-KX-Nud" secondAttribute="trailing" constant="16" id="otK-4c-CyS"/>
                     <constraint firstItem="qOP-KX-Nud" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="qQO-h7-jcO"/>
                     <constraint firstItem="EoD-xt-42B" firstAttribute="leading" secondItem="D64-71-NVa" secondAttribute="trailing" constant="6" id="qZI-g7-3Kn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" red="0.93325060609999999" green="0.93730789420000005" blue="0.95674878360000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="imvDoctor" destination="qOP-KX-Nud" id="N6e-AC-Faz"/>
-                <outlet property="lblMajor" destination="xjJ-VK-cm0" id="wRV-6m-yu9"/>
-                <outlet property="lblName" destination="zMu-GS-Xco" id="e9l-yd-GHN"/>
-                <outlet property="lblRate" destination="EoD-xt-42B" id="gky-wc-zpi"/>
+                <outlet property="lblDoctorMajor" destination="xjJ-VK-cm0" id="wRV-6m-yu9"/>
+                <outlet property="lblDoctorName" destination="zMu-GS-Xco" id="e9l-yd-GHN"/>
+                <outlet property="lblDoctorRate" destination="EoD-xt-42B" id="gky-wc-zpi"/>
             </connections>
             <point key="canvasLocation" x="-1.4492753623188408" y="133.92857142857142"/>
         </tableViewCell>

@@ -12,7 +12,7 @@ class DoctorViewController: UIViewController {
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBOutlet weak var clvDoctor: UICollectionView!
+    @IBOutlet weak var tbvDoctor: UITableView!
     
     lazy var refreshControl: UIRefreshControl = {
         let rfc = UIRefreshControl()
@@ -21,6 +21,7 @@ class DoctorViewController: UIViewController {
     }()
     
     var listDoctor     : [DoctorModel]?
+    let cellSpacingHeight: CGFloat = 11
     
     var pushVCHandler: (() -> ())? = nil
     
@@ -29,17 +30,22 @@ class DoctorViewController: UIViewController {
         
         configView()
         fetchDoctor()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tbvDoctor.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
     }
     
     func configView(){
         
-//        self.refreshControl.addTarget(self, action: #selector(fetchDoctor), for: .valueChanged)
-//        clvDoctor.refreshControl = refreshControl
+        self.refreshControl.addTarget(self, action: #selector(fetchDoctor), for: .valueChanged)
+        tbvDoctor.refreshControl = refreshControl
         
-        clvDoctor.registerCells(DoctorCollectionViewCell.self)
-        clvDoctor.contentInset = UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
-        clvDoctor.delegate = self
-        clvDoctor.dataSource = self
+        tbvDoctor.registerCells(DoctorTableViewCell.self)
+        tbvDoctor.delegate = self
+        tbvDoctor.dataSource = self
     }
     
     
@@ -55,11 +61,11 @@ class DoctorViewController: UIViewController {
     
     @objc func fetchDoctor() {
         self.showLoaderView()
-//        self.refreshControl.isHidden = true
+        self.refreshControl.isHidden = true
         APIUtilities.requestDoctors{ [weak self] doctorList, error in
             guard let self = self else { return }
             self.dismissLoaderView()
-//            self.refreshControl.endRefreshing()
+            self.refreshControl.endRefreshing()
             
             guard let doctorList = doctorList, error == nil else {
                 return
@@ -69,32 +75,51 @@ class DoctorViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                self.clvDoctor.reloadData()
+                self.tbvDoctor.reloadData()
             }
         }
     }
     
 }
 
-extension DoctorViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 32, height: 102)      
+extension DoctorViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 128
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
 }
 
-extension DoctorViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listDoctor?.count ?? 0
+extension DoctorViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.listDoctor?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(DoctorCollectionViewCell.self, indexPath: indexPath)
-        let doctor = listDoctor?[indexPath.item]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(DoctorTableViewCell.self, indexPath: indexPath)
+        let doctor = listDoctor?[indexPath.section]
         cell.configViews(doctorInfo: doctor)
+        cell.selectionStyle = .none
         return cell
     }
 }

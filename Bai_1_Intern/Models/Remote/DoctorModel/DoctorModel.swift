@@ -14,13 +14,15 @@ class DoctorModel : NSObject, JsonInitObject {
     var majors_name : String?
     var ratio_star  : Double?
     var number_of_reviews : Int?
+    var user_type_name  : String?
     
     convenience init(id: Int?,
                      full_name: String?,
                      avatar: String?,
                      majors_name: String?,
                      ratio_star: Double?,
-                     number_of_reviews: Int?) {
+                     number_of_reviews: Int?,
+                     user_type_name : String?) {
         self.init()
         self.id = id
         self.full_name = full_name
@@ -28,6 +30,7 @@ class DoctorModel : NSObject, JsonInitObject {
         self.majors_name = majors_name
         self.ratio_star = ratio_star
         self.number_of_reviews = number_of_reviews
+        self.user_type_name = user_type_name
     }
     
     required convenience init(json: [String: Any]) {
@@ -50,6 +53,9 @@ class DoctorModel : NSObject, JsonInitObject {
         }
         if let wrapValue = json["number_of_reviews"] as? Int {
             self.number_of_reviews = wrapValue
+        }
+        if let wrapValue = json["user_type_name"] as? String {
+            self.user_type_name = wrapValue
         }
     }
     
