@@ -9,7 +9,7 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
-    
+    //MARK: - IB Outlet
     @IBOutlet weak var lblLastName: UILabel!
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var viwLastNameSeparator: UIView!
@@ -56,7 +56,6 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var imvFemale: UIImageView!
     @IBOutlet weak var lblFemale: UILabel!
     
-//    var valueSegmented: Int?
     var userModel: UserModel?
     var locationModel: LocationModel?
     var lblSetUp: [UILabel] = []
@@ -67,19 +66,12 @@ class UserInfoViewController: UIViewController {
         return rfc
     }()
     
-    @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    @IBAction func btnDoneTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addLabel()
         addView()
-    
+        
         self.refreshControl.addTarget(self, action: #selector(fetchPatienUserFeed), for: .valueChanged)
         self.refreshControl.addTarget(self, action: #selector(fetchPatientLocationFeed), for: .valueChanged)
         smcGender.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
@@ -148,6 +140,14 @@ class UserInfoViewController: UIViewController {
         txtBlood.delegate = self
     }
     
+    //MARK: - IB Action
+    @IBAction func btnBackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btnDoneTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @objc func fetchPatientLocationFeed() {
         
         APIUtilities.requestLocation(province_code: (userModel?.province_code)!, district_code: (userModel?.district_code)!, ward_code: (userModel?.ward_code)!) { [weak self] patientLocationFeed, error in
@@ -195,42 +195,43 @@ class UserInfoViewController: UIViewController {
         txtBlood.text = userModel?.blood_name ?? ""
         if userModel?.sex == 0 {
             self.smcGender.selectedSegmentIndex = 0
-            self.lblMale.textColor = Constants.Color.greenBlue
-            self.lblFemale.textColor = Constants.Color.gray3
-            self.imvMale.image = Constants.Icon.maleSelectedIcon
-            self.imvFemale.image = Constants.Icon.femaleIcon
+            setUpSecmentGenderMale()
         }
         else {
             self.smcGender.selectedSegmentIndex = 1
-            self.lblMale.textColor = Constants.Color.gray3
-            self.lblFemale.textColor = Constants.Color.greenBlue
-            self.imvMale.image = Constants.Icon.maleIcon
-            self.imvFemale.image = Constants.Icon.femaleSelectedIcon
+            setUpSecmentGenderFemale()
         }
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0  {
-            lblMale.textColor = Constants.Color.greenBlue
-            lblFemale.textColor = Constants.Color.gray3
-            imvMale.image = Constants.Icon.maleSelectedIcon
-            imvFemale.image = Constants.Icon.femaleIcon
+            setUpSecmentGenderMale()
         }
         else {
-            lblMale.textColor = Constants.Color.gray3
-            lblFemale.textColor = Constants.Color.greenBlue
-            imvMale.image = Constants.Icon.maleIcon
-            imvFemale.image = Constants.Icon.femaleSelectedIcon
+            setUpSecmentGenderFemale()
         }
     }
     
+    func setUpSecmentGenderMale(){
+        self.lblMale.textColor = Constants.Color.greenBlue
+        self.lblFemale.textColor = Constants.Color.gray3
+        self.imvMale.image = Constants.Icon.maleSelectedIcon
+        self.imvFemale.image = Constants.Icon.femaleIcon
+    }
     
+    func setUpSecmentGenderFemale(){
+        self.lblMale.textColor = Constants.Color.gray3
+        self.lblFemale.textColor = Constants.Color.greenBlue
+        self.imvMale.image = Constants.Icon.maleIcon
+        self.imvFemale.image = Constants.Icon.femaleSelectedIcon
+    }
+  
 }
 
 extension UserInfoViewController: UITextFieldDelegate,UIGestureRecognizerDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+        
         print(lblSetUp[2].tag)
         for i in 0..<lblSetUp.count {
             if lblSetUp[i].tag == textField.tag {
@@ -242,13 +243,13 @@ extension UserInfoViewController: UITextFieldDelegate,UIGestureRecognizerDelegat
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-
+        
         for i in 0..<lblSetUp.count {
             if lblSetUp[i].tag == textField.tag {
                 lblSetUp[i].textColor = Constants.Color.gray3
                 viwSetUp[i].backgroundColor = Constants.Color.userSeparator
             }
         }
-
+        
     }
 }

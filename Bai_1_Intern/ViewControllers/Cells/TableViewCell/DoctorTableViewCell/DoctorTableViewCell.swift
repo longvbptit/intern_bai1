@@ -13,21 +13,11 @@ class DoctorTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDoctorMajor: UILabel!
     @IBOutlet weak var lblDoctorRate: UILabel!
     @IBOutlet weak var imvDoctor: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configViews(doctorInfo: DoctorModel?) {
         let imageURL = doctorInfo?.avatar
-        let fullname = doctorInfo?.full_name
-        let major = doctorInfo?.majors_name
+        let fullname = "\(doctorInfo?.user_type_name ?? "") \(doctorInfo?.full_name ?? "")"
+        let major = "Chuyên ngành: \(doctorInfo?.majors_name ?? "")"
         let star = doctorInfo?.ratio_star
         let numberOfReviews = doctorInfo?.number_of_reviews
         let userTypeName = doctorInfo?.user_type_name

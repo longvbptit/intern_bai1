@@ -9,14 +9,8 @@ import UIKit
 
 class NewsViewController: UIViewController {
 
-//    @IBOutlet weak var imvNews: UIImageView!
-//    @IBOutlet weak var lblNewsTitle: UILabel!
-//    @IBOutlet weak var lblDate: UILabel!
+    //MARK: - IB Outlet
     @IBOutlet weak var tbvNews: UITableView!
-    
-    @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
     
     lazy var refreshControl: UIRefreshControl = {
             let rfc  = UIRefreshControl()
@@ -53,6 +47,10 @@ class NewsViewController: UIViewController {
         ProgressHUD.dismiss()
     }
     
+    //MARK: - IB Action
+    @IBAction func btnBackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @objc func fetchNews() {
         self.showLoaderView()

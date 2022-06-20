@@ -9,13 +9,12 @@ import UIKit
 
 class PromotionsViewController: UIViewController {
     
+    //MARK: IB Outlet
     @IBOutlet weak var tbvPromotions: UITableView!
     @IBOutlet weak var viwPromotionFilter: UIView!
     @IBOutlet weak var viwTitle: UIView!
-    @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    lazy var refreshControl: UIRefreshControl = {
+    
+    var refreshControl: UIRefreshControl = {
         let rfc = UIRefreshControl()
         
         return rfc
@@ -54,6 +53,11 @@ class PromotionsViewController: UIViewController {
     
     func dismissLoaderView() {
         ProgressHUD.dismiss()
+    }
+    
+    //MARK: - IB Action
+    @IBAction func btnBackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func fetchPromotion() {

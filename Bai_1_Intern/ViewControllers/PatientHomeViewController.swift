@@ -8,11 +8,12 @@
 import UIKit
 
 class PatientHomeViewController: UIViewController {
+    
+    //MARK: - IB Outlet
     @IBOutlet weak var lblFullName: UILabel!
     @IBOutlet weak var imvIsActive: UIImageView!
     @IBOutlet weak var lblIsActive: UILabel!
     @IBOutlet weak var tbvNewsFeed: UITableView!
-    
 
     var newFeed: PatientNewFeedModel?
     override func viewDidLoad() {
@@ -84,6 +85,7 @@ class PatientHomeViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //MARK: - IB Action
     @IBAction func btnUserInfoTapped(_ sender: Any) {
         let vc = UIViewController.fromStoryboard(UserInfoViewController.self)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -113,9 +115,6 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
-//            Using Delegate: Via delegate, you can provide more info to the caller and it is more flexible in this case(Click button to next page). Best solution use delegate.
-//            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
-//            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllNews(_:)), for: .touchUpInside)
             cell.delegate = self
             return cell
         }
@@ -128,8 +127,6 @@ extension PatientHomeViewController: UITableViewDataSource {
                 
                 self.show(vc, sender: nil)
             })
-//            cell.btnSeeAll.removeTarget(nil, action: nil, for: .allEvents)
-//            cell.btnSeeAll.addTarget(self, action: #selector(PatientHomeViewController.seeAllPromotion(_:)), for: .touchUpInside)
             cell.delegate = self
             return cell
         }
@@ -140,15 +137,10 @@ extension PatientHomeViewController: UITableViewDataSource {
             cell.configViews(doctorList: newFeed?.doctorList, pushVCHandler: {
                 
             })
-//            cell.btnShowListDoctor.addTarget(self, action: #selector(PatientHomeViewController.seeAllDoctor(_:)), for: .touchUpInside)
             cell.delegate = self
             return cell
         }
         fatalError()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> Bool {
-        return false
     }
 }
 

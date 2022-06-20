@@ -9,9 +9,7 @@ import UIKit
 
 class DoctorViewController: UIViewController {
     
-    @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    //MARK: - IB Outlet
     @IBOutlet weak var tbvDoctor: UITableView!
     
     lazy var refreshControl: UIRefreshControl = {
@@ -27,35 +25,20 @@ class DoctorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configView()
         fetchDoctor()
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.tbvDoctor.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-        if #available(iOS 11.0, *) {
-            tbvDoctor.contentInsetAdjustmentBehavior = .never
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
     }
     
     func configView(){
         
         self.refreshControl.addTarget(self, action: #selector(fetchDoctor), for: .valueChanged)
         tbvDoctor.refreshControl = refreshControl
-        
+        tbvDoctor.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         tbvDoctor.registerCells(DoctorTableViewCell.self)
         tbvDoctor.delegate = self
         tbvDoctor.dataSource = self
-        if #available(iOS 11.0, *) {
-            tbvDoctor.contentInsetAdjustmentBehavior = .never
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
     }
     
     
@@ -67,6 +50,11 @@ class DoctorViewController: UIViewController {
     
     func dismissLoaderView() {
         ProgressHUD.dismiss()
+    }
+    
+    //MARK: - IB Action
+    @IBAction func btnBackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func fetchDoctor() {

@@ -13,36 +13,18 @@ class OTPViewController: UIViewController {
     var timer : Timer? = nil
     var phoneNumberWithoutPrefix : String = ""
     
-    //MARK: IBOutlet
+    //MARK: - IBOutlet
     @IBOutlet weak var lblOtpGuid: UILabel!
     @IBOutlet weak var stvOtp: OTPStackView!
     @IBOutlet weak var lblOtpError: UILabel!
     @IBOutlet weak var btnResendOTP: UIButton!
     @IBOutlet weak var btnContinue: UIButton!
     
-    //MARK: IBAction
-    @IBAction func back_btn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    @IBAction func btnResendOTPTapped(_ sender: Any) {
-        restartCountDown()
-    }
-    
-    @IBAction func btnContinueTapped(_ sender: Any) {
-        if stvOtp.getOTPString() == "111111" {
-            let vc = UIViewController.fromStoryboard(PatientHomeViewController.self)
-            self.navigationController?.viewControllers = [vc]
-        } else {
-            updateErrorLabelUI(hidden: false)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         startCountDown()
         registerObserver()
-        //        self.setupHideKeyboardOnTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,7 +47,7 @@ class OTPViewController: UIViewController {
         lblOtpError.isHidden = hidden
     }
     
-    //MARK: Setup view
+    //MARK: - Setup view
     func setupView(){
         
         lblOtpError.isHidden = true
@@ -122,7 +104,7 @@ class OTPViewController: UIViewController {
         startCountDown()
     }
     
-    //MARK: Observer
+    //MARK: - Observer
     private func registerObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -130,6 +112,24 @@ class OTPViewController: UIViewController {
     
     private func removeObserver() {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: - IBAction
+    @IBAction func back_btn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnResendOTPTapped(_ sender: Any) {
+        restartCountDown()
+    }
+    
+    @IBAction func btnContinueTapped(_ sender: Any) {
+        if stvOtp.getOTPString() == "111111" {
+            let vc = UIViewController.fromStoryboard(PatientHomeViewController.self)
+            self.navigationController?.viewControllers = [vc]
+        } else {
+            updateErrorLabelUI(hidden: false)
+        }
     }
     
     @objc func keyboardWillShow(notification: Notification) {

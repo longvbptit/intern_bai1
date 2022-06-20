@@ -9,30 +9,14 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    //MARK: IBOutlet
+    //MARK: - IBOutlet
     @IBOutlet weak var phoneNum_view: UIView!
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var lblReigonNumber: UILabel!
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var hotLine_view: UIView!
     @IBOutlet weak var lblHotline: UILabel!
-    
-    //MARK: IBAction
-    @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    @IBAction func btnContinueTapped(_ sender: Any) {
-        
-        var phoneNumber = (txtPhoneNumber.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-        if phoneNumber.first == "0", phoneNumber.count > 9 {
-            phoneNumber.removeFirst()
-        }
-        
-        let vc = UIViewController.fromStoryboard(OTPViewController.self)
-        vc.phoneNumberWithoutPrefix = phoneNumber
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -40,15 +24,11 @@ class SignUpViewController: UIViewController {
         setUpView()
     }
     
-    //MARK: set up view
+    //MARK: - set up view
     func setUpView(){
         
         btnContinue.isEnabled = false
         
-//        reigonNum_lb.adjustsFontSizeToFitWidth = true
-//        reigonNum_lb.minimumScaleFactor = 0.5
-//
-//        phoneNumber_tf.adjustsFontSizeToFitWidth = true
         txtPhoneNumber.minimumFontSize = 17
         txtPhoneNumber.placeholder = "Nhập số điện thoại"
         
@@ -76,7 +56,7 @@ class SignUpViewController: UIViewController {
         phoneNum_view.layer.borderWidth = 1
     }
     
-    //MARK: Set event for text field phone number
+    //MARK: - Set event for text field phone number
     @objc func textFieldDidChange(_ textField: UITextField) {
         
         guard let phoneNum = txtPhoneNumber.text else {
@@ -92,6 +72,22 @@ class SignUpViewController: UIViewController {
             btnContinue.isEnabled = false
             btnContinue.alpha = 0.3
         }
+    }
+    
+    //MARK: - IBAction
+    @IBAction func btnBackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btnContinueTapped(_ sender: Any) {
+        
+        var phoneNumber = (txtPhoneNumber.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        if phoneNumber.first == "0", phoneNumber.count > 9 {
+            phoneNumber.removeFirst()
+        }
+        
+        let vc = UIViewController.fromStoryboard(OTPViewController.self)
+        vc.phoneNumberWithoutPrefix = phoneNumber
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //change hightlight color

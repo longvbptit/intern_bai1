@@ -77,8 +77,8 @@
 		E7EB3B612827792C0007677B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EB3B5F2827792C0007677B /* LaunchScreen.storyboard */; };
 		E7EB3B6C2827792C0007677B /* Bai_1_InternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B6B2827792C0007677B /* Bai_1_InternTests.swift */; };
 		E7EB3B772827792C0007677B /* Bai_1_InternUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B762827792C0007677B /* Bai_1_InternUITests.swift */; };
-		E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B862827872E0007677B /* IntroCLVCell.swift */; };
-		E7EB3B892827872E0007677B /* IntroCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7EB3B872827872E0007677B /* IntroCLVCell.xib */; };
+		E7EB3B882827872E0007677B /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB3B862827872E0007677B /* IntroCollectionViewCell.swift */; };
+		E7EB3B892827872E0007677B /* IntroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7EB3B872827872E0007677B /* IntroCollectionViewCell.xib */; };
 		E7F0579D28467A9A00AA6883 /* PatientHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0579C28467A9A00AA6883 /* PatientHomeViewController.swift */; };
 		E7F0579F28467E4800AA6883 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0579E28467E4800AA6883 /* UIViewController+Extensions.swift */; };
 		E7FC6B832849BEA90096E480 /* SuggestDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6B812849BEA90096E480 /* SuggestDoctorTableViewCell.swift */; };
@@ -187,8 +187,8 @@
 		E7EB3B722827792C0007677B /* Bai_1_InternUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bai_1_InternUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EB3B762827792C0007677B /* Bai_1_InternUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bai_1_InternUITests.swift; sourceTree = "<group>"; };
 		E7EB3B782827792C0007677B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7EB3B862827872E0007677B /* IntroCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCLVCell.swift; sourceTree = "<group>"; };
-		E7EB3B872827872E0007677B /* IntroCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroCLVCell.xib; sourceTree = "<group>"; };
+		E7EB3B862827872E0007677B /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7EB3B872827872E0007677B /* IntroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7F0579C28467A9A00AA6883 /* PatientHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHomeViewController.swift; sourceTree = "<group>"; };
 		E7F0579E28467E4800AA6883 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E7FC6B812849BEA90096E480 /* SuggestDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestDoctorTableViewCell.swift; sourceTree = "<group>"; };
@@ -361,8 +361,8 @@
 		E7A217FE284724E700CAF323 /* IntroCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				E7EB3B862827872E0007677B /* IntroCLVCell.swift */,
-				E7EB3B872827872E0007677B /* IntroCLVCell.xib */,
+				E7EB3B862827872E0007677B /* IntroCollectionViewCell.swift */,
+				E7EB3B872827872E0007677B /* IntroCollectionViewCell.xib */,
 			);
 			path = IntroCollectionViewCell;
 			sourceTree = "<group>";
@@ -409,6 +409,24 @@
 				E7C6A1F828536E3300F7C96B /* DoctorModel.swift */,
 			);
 			path = DoctorModel;
+			sourceTree = "<group>";
+		};
+		E7CECE3C286054B900DA3754 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7FC6B802849BE1B0096E480 /* SuggestDoctorTableViewCell */,
+				E7A217FF284724FC00CAF323 /* PatientHomeTableViewCell */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		E7CECE3D286054F200DA3754 /* HomeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7FC6B852849C7690096E480 /* SuggestDoctorCollectionViewCell */,
+				E7787A562848AE5F008F45E3 /* NewsCollectionViewCell */,
+			);
+			path = HomeCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E7D85CC1283DD9B70042A994 /* Resources */ = {
@@ -614,9 +632,8 @@
 		E7FC6B8A2849C79C0096E480 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				E7FC6B852849C7690096E480 /* SuggestDoctorCollectionViewCell */,
-				E7787A562848AE5F008F45E3 /* NewsCollectionViewCell */,
 				E7A217FE284724E700CAF323 /* IntroCollectionViewCell */,
+				E7CECE3D286054F200DA3754 /* HomeCollectionViewCell */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -624,11 +641,10 @@
 		E7FC6B8B2849C7AC0096E480 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E7CECE3C286054B900DA3754 /* HomeTableViewCell */,
 				E794EE5C2859E2550056F39C /* DoctorTableViewCell */,
 				E7D8AD882857007700188AC9 /* PromotionsTableViewCell */,
 				E7C03842285582F3003815ED /* NewsTableViewCell */,
-				E7FC6B802849BE1B0096E480 /* SuggestDoctorTableViewCell */,
-				E7A217FF284724FC00CAF323 /* PatientHomeTableViewCell */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -756,7 +772,7 @@
 				E7EB3B5E2827792C0007677B /* Assets.xcassets in Resources */,
 				E7E8BE6B284E0D740028267C /* Localizable.strings in Resources */,
 				E794EE602859E2780056F39C /* DoctorTableViewCell.xib in Resources */,
-				E7EB3B892827872E0007677B /* IntroCLVCell.xib in Resources */,
+				E7EB3B892827872E0007677B /* IntroCollectionViewCell.xib in Resources */,
 				E7792D1828318DF00096CC61 /* NunitoSans-SemiBoldItalic.ttf in Resources */,
 				E7792D1E28318DF00096CC61 /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				E7792D1728318DF00096CC61 /* NunitoSans-Regular.ttf in Resources */,
@@ -943,7 +959,7 @@
 				E724AC2A285AE08100298627 /* LocationModel.swift in Sources */,
 				E7787A4828486BB1008F45E3 /* PatientDoctorListModel.swift in Sources */,
 				E7787A3D284864E5008F45E3 /* UIView+Extensions.swift in Sources */,
-				E7EB3B882827872E0007677B /* IntroCLVCell.swift in Sources */,
+				E7EB3B882827872E0007677B /* IntroCollectionViewCell.swift in Sources */,
 				E7FC6B832849BEA90096E480 /* SuggestDoctorTableViewCell.swift in Sources */,
 				E7742DF42857625600638BAE /* PromotionModel.swift in Sources */,
 				E7787A4628486BA3008F45E3 /* PatientArticleListModel.swift in Sources */,

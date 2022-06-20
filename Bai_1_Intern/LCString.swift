@@ -8,6 +8,11 @@
 import Foundation
 
 enum LCString: String {
+    
+    case introImage1
+    case introImage2
+    case introImage3
+    
     case introTitle1
     case introTitle2
     case introTitle3

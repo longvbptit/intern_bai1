@@ -7,11 +7,9 @@
 
 import UIKit
 
-
-let imgIntro: [String] = ["intro1", "intro2", "intro3"]
 class IntroViewController: UIViewController {
     
-    //MARK: IB Outlet
+    //MARK: - IB Outlet
     @IBOutlet weak var clvIntro: UICollectionView!
     @IBOutlet weak var dots: UIPageControl!
     @IBOutlet weak var btnLogin: UIButton!
@@ -19,6 +17,9 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var bgIntro: UIView!
     
     var introDetails : [IntroModel]!
+    let gradient = CAGradientLayer()
+    let startColor = Constants.Color.startGradientIntro.cgColor
+    let endColor = Constants.Color.endGradientIntro.cgColor
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,47 +27,42 @@ class IntroViewController: UIViewController {
         setupViews()
     }
     
-    //MARK: Set up view
+    //MARK: - Set up view
     func setupViews() {
         
-        clvIntro.registerCells(IntroCLVCell.self)
+        clvIntro.registerCells(IntroCollectionViewCell.self)
         
         //Disable clicking for dots
         dots.isUserInteractionEnabled = false
         dots.transform = CGAffineTransform(scaleX: 1, y: 1)
+        dots.numberOfPages = 3
+        
+        gradient.colors = [startColor, endColor]
+        gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
         
         btnCreateAccount.layer.borderColor = Constants.Color.borderBlue.cgColor
         btnCreateAccount.layer.borderWidth = 1
         
+        let introImage1 : String = LCString.introImage1.localized
         let introTitle1: String = LCString.introTitle1.localized
         let introDetail1 :String = LCString.introDetail1.localized
+        
+        let introImage2 : String = LCString.introImage2.localized
         let introTitle2: String = LCString.introTitle2.localized
         let introDetail2 :String = LCString.introDetail2.localized
+        
+        let introImage3 : String = LCString.introImage3.localized
         let introTitle3: String = LCString.introTitle3.localized
         let introDetail3 :String = LCString.introDetail3.localized
-        introDetails = [IntroModel(image: UIImage(named: imgIntro[0]), title: introTitle1, detail: introDetail1), IntroModel(image: UIImage(named: imgIntro[1]), title: introTitle2, detail: introDetail2), IntroModel(image: UIImage(named: imgIntro[2]), title: introTitle3, detail: introDetail3)]
+        introDetails = [IntroModel(image: UIImage(named: introImage1), title: introTitle1, detail: introDetail1), IntroModel(image: UIImage(named: introImage2), title: introTitle2, detail: introDetail2), IntroModel(image: UIImage(named: introImage3), title: introTitle3, detail: introDetail3)]
         
         btnLogin.layer.cornerRadius = 24
         btnCreateAccount.layer.cornerRadius = 24
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
-       
-    }
-    
-    //    override func viewWillLayoutSubviews() {
-    //        <#code#>
-    //    }
+
         override func viewDidLayoutSubviews() {
             //gradient
-            let gradient = CAGradientLayer()
-            let startColor = Constants.Color.startGradientIntro.cgColor
-            let endColor = Constants.Color.endGradientIntro.cgColor
-            gradient.frame = bgIntro.bounds
-            gradient.colors = [startColor, endColor]
-            gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
             gradient.frame = bgIntro.bounds
             bgIntro.layer.insertSublayer(gradient, at: 0)
         }
@@ -78,7 +74,7 @@ class IntroViewController: UIViewController {
         )
     }
     
-    //MARK: IBAction
+    //MARK: - IBAction
     @IBAction func btnLoginTapped(_ sender: Any) {
         let vc = UIViewController.fromStoryboard(SignUpViewController.self)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -90,27 +86,22 @@ class IntroViewController: UIViewController {
     }
 }
 
-//MARK: UICollectionViewDelegate
-
-extension IntroViewController {
+//MARK: - UICollectionViewDataSource
+extension IntroViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dots.numberOfPages = imgIntro.count
-        return imgIntro.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(IntroCLVCell.self, indexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(IntroCollectionViewCell.self, indexPath: indexPath)
         cell.configViews(introDetails[indexPath.item])
         return cell
     }
     
 }
 
-extension IntroViewController:  UICollectionViewDataSource {
-    
-}
-
+//MARK: - UICollectionViewDelegate
 extension IntroViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
