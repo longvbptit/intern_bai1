@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
 class OTPViewController: UIViewController {
     
@@ -52,6 +53,7 @@ class OTPViewController: UIViewController {
         
         lblOtpError.isHidden = true
         self.updateResendOTPButtonUI(enable: false)
+        IQKeyboardManager.shared().previousNextDisplayMode = .alwaysHide
         
         let guide = "Vui lòng nhập mã gồm 6 chữ số đã được gửi đến bạn vào số điện thoại "
         let prefixPhoneNumber = "+84"

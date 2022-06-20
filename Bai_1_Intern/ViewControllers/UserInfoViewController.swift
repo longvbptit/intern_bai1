@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManager
 class UserInfoViewController: UIViewController {
     
     //MARK: - IB Outlet
@@ -72,6 +72,8 @@ class UserInfoViewController: UIViewController {
         addLabel()
         addView()
         
+        IQKeyboardManager.shared().previousNextDisplayMode = .alwaysShow
+        
         self.refreshControl.addTarget(self, action: #selector(fetchPatienUserFeed), for: .valueChanged)
         self.refreshControl.addTarget(self, action: #selector(fetchPatientLocationFeed), for: .valueChanged)
         smcGender.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
@@ -82,19 +84,14 @@ class UserInfoViewController: UIViewController {
     }
     
     func addLabel() {
-        lblSetUp.removeAll()
-        lblSetUp.append(lblLastName)
-        lblLastName.tag = 1
-        lblSetUp.append(lblFirstName)
-        lblFirstName.tag = 2
-        lblSetUp.append(lblDateOfBirth)
-        lblDateOfBirth.tag = 3
-        lblSetUp.append(lblPhone)
-        lblPhone.tag = 4
-        lblSetUp.append(lblEmail)
-        lblEmail.tag = 5
-        lblSetUp.append(lblAddress)
-        lblAddress.tag = 6
+        
+        lblSetUp = [lblLastName, lblFirstName, lblDateOfBirth, lblPhone, lblEmail, lblAddress]
+        
+//        lblSetUp.append(contentsOf: [])
+        
+        for i in 0...(lblSetUp.count-1) {
+            lblSetUp[i].tag = i + 1
+        }
     }
     
     func addView() {
@@ -111,6 +108,8 @@ class UserInfoViewController: UIViewController {
         viwEmailSeparator.tag = 5
         viwSetUp.append(viwAddressSeparator)
         viwAddressSeparator.tag = 6
+        
+//        txtCity.superview?.subviews
     }
     
     func setUpViews(){

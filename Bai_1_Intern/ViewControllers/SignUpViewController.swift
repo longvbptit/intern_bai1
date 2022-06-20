@@ -98,6 +98,8 @@ class SignUpViewController: UIViewController {
         phoneNum_view.layer.borderColor = Constants.Color.borderGray.cgColor
     }
     
+
+    
     //hide keyboard and end editing
     func setupHideKeyboardOnTap() {
         self.view.addGestureRecognizer(self.endEditingRecognizer())

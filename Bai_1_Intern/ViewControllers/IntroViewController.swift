@@ -39,6 +39,7 @@ class IntroViewController: UIViewController {
         
         gradient.colors = [startColor, endColor]
         gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        bgIntro.layer.insertSublayer(gradient, at: 0)
         
         btnCreateAccount.layer.borderColor = Constants.Color.borderBlue.cgColor
         btnCreateAccount.layer.borderWidth = 1
@@ -60,12 +61,11 @@ class IntroViewController: UIViewController {
         btnCreateAccount.layer.cornerRadius = 24
         
     }
-
-        override func viewDidLayoutSubviews() {
-            //gradient
-            gradient.frame = bgIntro.bounds
-            bgIntro.layer.insertSublayer(gradient, at: 0)
-        }
+    
+    override func viewDidLayoutSubviews() {
+        //gradient
+        gradient.frame = bgIntro.bounds
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         dots.currentPage = Int(
