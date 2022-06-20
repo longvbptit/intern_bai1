@@ -1514,10 +1514,9 @@
         <!--Navigation Controller-->
         <scene sceneID="E0b-Lh-eo3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WoC-ln-6FB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WoC-ln-6FB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lzI-lA-w7s">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

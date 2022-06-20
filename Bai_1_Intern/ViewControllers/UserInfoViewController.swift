@@ -95,20 +95,11 @@ class UserInfoViewController: UIViewController {
     }
     
     func addView() {
-        viwSetUp.removeAll()
-        viwSetUp.append(viwLastNameSeparator)
-        viwLastNameSeparator.tag = 1
-        viwSetUp.append(viwFirstNameSeparator)
-        viwFirstNameSeparator.tag = 2
-        viwSetUp.append(viwDateOfBirthSeparator)
-        viwDateOfBirthSeparator.tag = 3
-        viwSetUp.append(viwPhoneSeparator)
-        viwPhoneSeparator.tag = 4
-        viwSetUp.append(viwEmailSeparator)
-        viwEmailSeparator.tag = 5
-        viwSetUp.append(viwAddressSeparator)
-        viwAddressSeparator.tag = 6
-        
+
+        viwSetUp = [viwLastNameSeparator, viwFirstNameSeparator, viwDateOfBirthSeparator, viwPhoneSeparator, viwEmailSeparator, viwAddressSeparator]
+        for i in 0...(viwSetUp.count-1) {
+            viwSetUp[i].tag = i + 1
+        }
 //        txtCity.superview?.subviews
     }
     

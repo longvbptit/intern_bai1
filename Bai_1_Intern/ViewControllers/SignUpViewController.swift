@@ -19,8 +19,6 @@ class SignUpViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
-        self.setupHideKeyboardOnTap()
         setUpView()
     }
     
@@ -98,17 +96,14 @@ class SignUpViewController: UIViewController {
         phoneNum_view.layer.borderColor = Constants.Color.borderGray.cgColor
     }
     
-
-    
     //hide keyboard and end editing
-    func setupHideKeyboardOnTap() {
-        self.view.addGestureRecognizer(self.endEditingRecognizer())
-        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
-    }
-    private func endEditingRecognizer() -> UIGestureRecognizer {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
-        tap.cancelsTouchesInView = false
-        return tap
-    }
+//    func setupHideKeyboardOnTap() {
+//        self.view.addGestureRecognizer(self.endEditingRecognizer())
+//        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+//    }
+//    private func endEditingRecognizer() -> UIGestureRecognizer {
+//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+//        tap.cancelsTouchesInView = false
+//        return tap
+//    }
 }
-
