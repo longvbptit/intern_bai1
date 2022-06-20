@@ -35,7 +35,7 @@ class DoctorViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tbvDoctor.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        self.tbvDoctor.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         if #available(iOS 11.0, *) {
             tbvDoctor.contentInsetAdjustmentBehavior = .never
         } else {

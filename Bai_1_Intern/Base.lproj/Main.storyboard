@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zoH-AU-nLr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WoC-ln-6FB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -205,6 +205,7 @@
                                         <rect key="frame" x="81.5" y="15.5" width="274.5" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.1644872725" green="0.50198805329999996" blue="0.38818123939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.094117647058823528" green="0.098048053679999997" blue="0.12546956540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                     </textField>
@@ -375,11 +376,10 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-mE-1MO">
-                                <rect key="frame" x="43.5" y="798" width="327" height="48"/>
+                                <rect key="frame" x="24" y="798" width="366" height="48"/>
                                 <color key="backgroundColor" red="0.16840693349999999" green="0.50983154770000005" blue="0.39210230109999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="fxb-AO-Dxh"/>
-                                    <constraint firstAttribute="width" constant="327" id="yu6-D1-15c"/>
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -438,12 +438,14 @@
                             <constraint firstItem="GbI-M1-dy0" firstAttribute="top" secondItem="VEg-TM-Jcm" secondAttribute="bottom" constant="20" id="N90-qa-gvO"/>
                             <constraint firstItem="VEg-TM-Jcm" firstAttribute="top" secondItem="ug0-0K-mQy" secondAttribute="bottom" constant="32" id="Th3-qa-ddU"/>
                             <constraint firstItem="VEg-TM-Jcm" firstAttribute="centerX" secondItem="AVm-8d-akB" secondAttribute="centerX" id="Yya-2d-jOY"/>
+                            <constraint firstItem="DBm-mE-1MO" firstAttribute="leading" secondItem="AVm-8d-akB" secondAttribute="leading" constant="24" id="d4n-d5-Kvy"/>
                             <constraint firstItem="aCc-xU-jXz" firstAttribute="top" secondItem="GbI-M1-dy0" secondAttribute="bottom" constant="16" id="ehQ-0l-wg4"/>
                             <constraint firstItem="aCc-xU-jXz" firstAttribute="centerX" secondItem="AVm-8d-akB" secondAttribute="centerX" id="fFP-zF-zRM"/>
                             <constraint firstItem="DBm-mE-1MO" firstAttribute="centerX" secondItem="AVm-8d-akB" secondAttribute="centerX" id="faS-TK-jKs"/>
                             <constraint firstItem="AVm-8d-akB" firstAttribute="bottom" secondItem="DBm-mE-1MO" secondAttribute="bottom" constant="16" id="kkN-JY-Pbd"/>
                             <constraint firstItem="ug0-0K-mQy" firstAttribute="top" secondItem="AVm-8d-akB" secondAttribute="top" constant="12" id="knD-of-ifW"/>
                             <constraint firstItem="ug0-0K-mQy" firstAttribute="centerX" secondItem="AVm-8d-akB" secondAttribute="centerX" id="qEK-aR-Ils"/>
+                            <constraint firstItem="AVm-8d-akB" firstAttribute="trailing" secondItem="DBm-mE-1MO" secondAttribute="trailing" constant="24" id="qZQ-aN-Qsh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -611,7 +613,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TqZ-6b-dzd">
-                                <rect key="frame" x="0.0" y="152" width="414" height="710"/>
+                                <rect key="frame" x="0.0" y="152" width="414" height="744"/>
                                 <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                             </tableView>
@@ -639,7 +641,7 @@
                                                 <state key="normal" image="showmore-icon"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-ss-bdv">
-                                                <rect key="frame" x="16" y="28.5" width="74.5" height="19.5"/>
+                                                <rect key="frame" x="16" y="28.5" width="74" height="19.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Khuyến mãi">
                                                         <attributes>
@@ -724,9 +726,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPs-La-qcV">
                                         <rect key="frame" x="16" y="6" width="32" height="32"/>
                                         <state key="normal" image="back1"/>
+                                        <connections>
+                                            <action selector="btnBackTapped:" destination="gyR-ad-aVZ" eventType="touchUpInside" id="7C1-bv-GeI"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-zy-Gva">
-                                        <rect key="frame" x="113" y="9.5" width="188" height="25"/>
+                                        <rect key="frame" x="113.5" y="9.5" width="187.5" height="25"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Danh sách khuyến mãi">
                                                 <attributes>
@@ -759,7 +764,7 @@
                             <constraint firstItem="QXv-kF-Z2B" firstAttribute="trailing" secondItem="j1G-m1-hEo" secondAttribute="trailing" id="epK-j5-icw"/>
                             <constraint firstItem="TqZ-6b-dzd" firstAttribute="leading" secondItem="QXv-kF-Z2B" secondAttribute="leading" id="fGb-hm-AyM"/>
                             <constraint firstItem="j1G-m1-hEo" firstAttribute="top" secondItem="QXv-kF-Z2B" secondAttribute="top" id="iR9-Hc-74a"/>
-                            <constraint firstItem="QXv-kF-Z2B" firstAttribute="bottom" secondItem="TqZ-6b-dzd" secondAttribute="bottom" id="mnF-e1-tyW"/>
+                            <constraint firstAttribute="bottom" secondItem="TqZ-6b-dzd" secondAttribute="bottom" id="mnF-e1-tyW"/>
                             <constraint firstItem="2GU-d6-t0s" firstAttribute="leading" secondItem="QXv-kF-Z2B" secondAttribute="leading" id="uHv-GX-xSj"/>
                             <constraint firstItem="QXv-kF-Z2B" firstAttribute="trailing" secondItem="2GU-d6-t0s" secondAttribute="trailing" id="wNc-Xp-yOy"/>
                         </constraints>
