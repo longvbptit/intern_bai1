@@ -11,7 +11,7 @@
 		B784BB7F1DD27797C49C0CAC /* Pods_Bai_1_Intern_Bai_1_InternUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1003122DBBABB3289952EE0B /* Pods_Bai_1_Intern_Bai_1_InternUITests.framework */; };
 		D5BBB3D3E7C142937A88CAA5 /* Pods_Bai_1_Intern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC6D50758F6A1EBC5E9F5AF /* Pods_Bai_1_Intern.framework */; };
 		E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78A283632F600C69F3A /* OTPViewController.swift */; };
-		E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78D28363A4800C69F3A /* CustomTextField.swift */; };
+		E70AB78E28363A4800C69F3A /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AB78D28363A4800C69F3A /* PhoneNumberTextField.swift */; };
 		E71DF287282822B700B22B88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF286282822B700B22B88 /* SignUpViewController.swift */; };
 		E724AC28285AD82900298627 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724AC27285AD82900298627 /* UserModel.swift */; };
 		E724AC2A285AE08100298627 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724AC29285AE08100298627 /* LocationModel.swift */; };
@@ -115,7 +115,7 @@
 		BFE4A67C499F1779D7207634 /* Pods-Bai_1_Intern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bai_1_Intern.release.xcconfig"; path = "Target Support Files/Pods-Bai_1_Intern/Pods-Bai_1_Intern.release.xcconfig"; sourceTree = "<group>"; };
 		DDC6D50758F6A1EBC5E9F5AF /* Pods_Bai_1_Intern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bai_1_Intern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70AB78A283632F600C69F3A /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
-		E70AB78D28363A4800C69F3A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E70AB78D28363A4800C69F3A /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		E71DF286282822B700B22B88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E724AC27285AD82900298627 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E724AC29285AE08100298627 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		E70AB78C28363A2000C69F3A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				E70AB78D28363A4800C69F3A /* CustomTextField.swift */,
+				E70AB78D28363A4800C69F3A /* PhoneNumberTextField.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -935,7 +935,7 @@
 				E7C6A1F928536E3300F7C96B /* DoctorModel.swift in Sources */,
 				E7D8AD8B2857009A00188AC9 /* PromotionsTableViewCell.swift in Sources */,
 				E78F401C283B2A2F0063FF79 /* IntroModel.swift in Sources */,
-				E70AB78E28363A4800C69F3A /* CustomTextField.swift in Sources */,
+				E70AB78E28363A4800C69F3A /* PhoneNumberTextField.swift in Sources */,
 				E794EE5F2859E2780056F39C /* DoctorTableViewCell.swift in Sources */,
 				E70AB78B283632F600C69F3A /* OTPViewController.swift in Sources */,
 				E7BA83C62855EE3700D9ADC3 /* NewsViewController.swift in Sources */,
