@@ -17,7 +17,6 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var webNews: WKWebView!
     
     var titles : Details!
-    var newsWebView: WKWebView!
     var urlString : String!
     override func viewDidLoad() {
         super.viewDidLoad()

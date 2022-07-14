@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customizatiosn after application launch.
         IQKeyboardManager.shared().isEnabled = true
-//        IQKeyboardManager.shared().disabledToolbarClasses.add(OTPViewController.self)
         return true
     }
 

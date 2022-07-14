@@ -7,6 +7,7 @@ target 'Bai_1_Intern' do
     pod 'Alamofire'
     pod 'SDWebImage'
     pod 'IQKeyboardManager'
+    pod 'IGListKit'
   # Pods for Bai_1_Intern
 
   target 'Bai_1_InternTests' do

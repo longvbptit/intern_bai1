@@ -204,18 +204,17 @@ class UserInfoViewController: UIViewController {
     
     func setUpSecmentGenderMale(){
         self.lblMale.textColor = Constants.Color.greenBlue
-        self.lblFemale.textColor = Constants.Color.gray3
-        self.imvMale.image = Constants.Icon.maleSelectedIcon
-        self.imvFemale.image = Constants.Icon.femaleIcon
+        self.lblFemale.textColor = Constants.Color.gray2
+        self.imvMale.tintColor = Constants.Color.greenBlue
+        self.imvFemale.tintColor = Constants.Color.gray2
     }
     
     func setUpSecmentGenderFemale(){
-        self.lblMale.textColor = Constants.Color.gray3
+        self.lblMale.textColor = Constants.Color.gray2
         self.lblFemale.textColor = Constants.Color.greenBlue
-        self.imvMale.image = Constants.Icon.maleIcon
-        self.imvFemale.image = Constants.Icon.femaleSelectedIcon
+        self.imvMale.tintColor = Constants.Color.gray2
+        self.imvFemale.tintColor = Constants.Color.greenBlue
     }
-  
 }
 
 extension UserInfoViewController: UITextFieldDelegate,UIGestureRecognizerDelegate {

@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var phoneNum_view: UIView!
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var lblReigonNumber: UILabel!
-    @IBOutlet weak var txtPhoneNumber: PhoneNumberTextField!
+    @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var hotLine_view: UIView!
     @IBOutlet weak var lblHotline: UILabel!
   

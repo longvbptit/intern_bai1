@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-Bai_1_Intern-Bai_1_InternTests/Pods-Bai_1_Intern-Bai_1_InternTests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework
+${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
